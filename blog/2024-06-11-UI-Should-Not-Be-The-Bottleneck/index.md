@@ -1,7 +1,7 @@
 ---
 slug: ui-should-not-be-the-bottleneck
 title: UI Should Not Be The Bottleneck
-authors: [tim]
+authors: [admin]
 tags: [release, v0.3.3]
 ---
 

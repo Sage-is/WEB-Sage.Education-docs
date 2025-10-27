@@ -3,24 +3,6 @@ sidebar_position: 2
 title: "⏱️ Quick Start"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { TopBanners } from "@site/src/components/TopBanners";
-
-import DockerCompose from './tab-docker/DockerCompose.md';
-import Podman from './tab-docker/Podman.md';
-import ManualDocker from './tab-docker/ManualDocker.md';
-import DockerSwarm from './tab-docker/DockerSwarm.md';
-import DockerUpdating from './tab-docker/DockerUpdating.md';
-import Helm from './tab-kubernetes/Helm.md';
-import Kustomize from './tab-kubernetes/Kustomize.md';
-import Venv from './tab-python/Venv.md';
-import Uv from './tab-python/Uv.md';
-import Conda from './tab-python/Conda.md';
-import PythonUpdating from './tab-python/PythonUpdating.md';
-
-<TopBanners />
-
 :::info **Important Note on User Roles and Privacy:**
 
 - **Admin Creation:** The first account created on Sage WebUI gains **Administrator privileges**, controlling user management and system settings.
@@ -36,107 +18,355 @@ Choose your preferred installation method below:
 - **Python:** Suitable for low-resource environments or those wanting a manual setup
 - **Kubernetes:** Ideal for enterprise deployments that require scaling and orchestration
 
+## Docker Deployment Options
 
-<Tabs>
-  <TabItem value="docker" label="Docker">
-    <Tabs>
-      <TabItem value="docker" label="Docker">
-        <div className='mt-5'>
-          <ManualDocker />
-          <DockerUpdating />
-        </div>
-      </TabItem>
+### Docker CLI
 
-      <TabItem value="compose" label="Docker Compose">
-        <div className='mt-5'>
-          <DockerCompose />
-        </div>
-      </TabItem>
+Follow these steps to install Sage WebUI with Docker.
 
-      <TabItem value="podman" label="Podman">
-        <div className='mt-5'>
-          <Podman />
-        </div>
-      </TabItem>
+#### Step 1: Pull the Sage WebUI image
 
-      <TabItem value="swarm" label="Docker Swarm">
-        <div className='mt-5'>
-          <DockerSwarm />
-        </div>
-      </TabItem>
-    </Tabs>
+Pull the latest image from the GitHub Container Registry:
 
-  </TabItem>
-  <TabItem value="python" label="Python">
-    <Tabs>
-      <TabItem value="uv" label="uv">
-        <div className='mt-5'>
-          <Uv />
-        </div>
-        <PythonUpdating />
-      </TabItem>
+```bash
+docker pull ghcr.io/Startr/AI-WEB-openwebui:main
+```
 
+#### Step 2: Run the container
 
-      <TabItem value="conda" label="Conda">
-        <div className='mt-5'>
-          <Conda />
-        </div>
-        <PythonUpdating />
-      </TabItem>
+Run the container with default settings. This command includes a volume mapping to ensure persistent data storage.
 
-      <TabItem value="venv" label="Venv">
-        <div className='mt-5'>
-          <Venv />
-        </div>
-        <PythonUpdating />
+```bash
+docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main
+```
 
-      </TabItem>
+##### Important flags
 
+- **Volume mapping (`-v sage-open-webui:/app/backend/data`)** keeps your data between restarts.
+- **Port mapping (`-p 3000:8080`)** exposes the WebUI on port 3000 of your machine.
 
-      <TabItem value="development" label="Development">
-        <div className='mt-5'>
-          <h3>Development Setup</h3>
-          <p>
-            For developers who want to contribute, check the Development Guide in <a href="/getting-started/advanced-topics">Advanced Topics</a>.
-          </p>
-        </div>
-      </TabItem>
+##### GPU support
 
+Add `--gpus all` if you have an NVIDIA GPU:
 
-    </Tabs>
-  </TabItem>
+```bash
+docker run -d -p 3000:8080 --gpus all -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:cuda
+```
 
-  <TabItem value="kubernetes" label="Kubernetes">
-    <Tabs>
-      <TabItem value="helm" label="Helm">
-        <Helm />
-      </TabItem>
+##### Single-user mode (no login)
 
-      <TabItem value="kustomize" label="Kustomize">
-        <Kustomize />
-      </TabItem>
-    </Tabs>
-  </TabItem>
+```bash
+docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main
+```
 
+:::warning
+You cannot switch between single-user and multi-account modes after this change.
+:::
 
-  <TabItem value="third-party" label="Third Party">
-    <Tabs>
-      <TabItem value="pinokio-computer" label="Pinokio.computer">
-        ### Pinokio.computer Installation
+##### Connect to a remote Ollama server
 
-        For installation via Pinokio.computer, please visit their website:
+```bash
+docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
+```
 
-        [https://pinokio.computer/](https://pinokio.computer/)
+Once the container is running, open [http://localhost:3000](http://localhost:3000).
 
-        Support for this installation method is provided through their website.
-      </TabItem>
-    </Tabs>
+### Updating Docker containers
 
-    ### Additional Third-Party Integrations
+Keep your deployment current using either Watchtower or a manual update.
 
-    *(Add information about third-party integrations as they become available.)*
-  </TabItem>
-</Tabs>
+#### Option 1: Watchtower
+
+```bash
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-open-webui
+```
+
+Replace `sage-open-webui` if you named your container differently.
+
+#### Option 2: Manual update
+
+1. Stop and remove the running container:
+   ```bash
+   docker rm -f sage-open-webui
+   ```
+2. Pull the latest image:
+   ```bash
+   docker pull ghcr.io/Startr/AI-WEB-openwebui:main
+   ```
+3. Run the container again using your preferred command.
+
+### Docker Compose
+
+Docker Compose simplifies multi-container deployments.
+
+If you need Docker itself, start with the [Docker installation tutorial](/docs/tutorials/docker-install).
+
+Docker Compose requires the version 2 CLI (`docker compose`). Older guides using `docker-compose` refer to version 1 syntax.
+
+#### Example `docker-compose.yml`
+
+```yaml
+version: '3'
+services:
+  openwebui:
+    image: ghcr.io/Startr/AI-WEB-openwebui:main
+    ports:
+      - "3000:8080"
+    volumes:
+      - sage-open-webui:/app/backend/data
+volumes:
+  sage-open-webui:
+```
+
+Start the service:
+
+```bash
+docker compose up -d
+```
+
+If you need a helper, the repository ships with `run-compose.sh` to assemble the right Compose files.
+
+##### NVIDIA GPU support
+
+Switch the image and add a device reservation:
+
+```yaml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - driver: nvidia
+          count: all
+          capabilities: [gpu]
+```
+
+### Podman
+
+Podman is a daemonless alternative to Docker.
+
+Run Sage WebUI:
+
+```bash
+podman run -d --name openwebui -p 3000:8080 ghcr.io/Startr/AI-WEB-openwebui:main
+```
+
+List running containers:
+
+```bash
+podman ps
+```
+
+If you run into networking issues, allow host loopback:
+
+```bash
+--network=slirp4netns:allow_host_loopback=true
+```
+
+See the [Podman documentation](https://podman.io/) for additional configuration.
+
+### Docker Swarm
+
+Deploying with Swarm uses a stack file to run three services (ChromaDB, Ollama, and Sage WebUI).
+
+Create the directories used for persistent volumes before deploying:
+
+```bash
+mkdir -p data/sage-open-webui data/chromadb data/ollama
+```
+
+#### Sample `docker-stack.yaml`
+
+```yaml
+version: '3.9'
+
+services:
+  openWebUI:
+    image: ghcr.io/Startr/AI-WEB-openwebui:main
+    depends_on:
+      - chromadb
+      - ollama
+    volumes:
+      - ./data/sage-open-webui:/app/backend/data
+    environment:
+      DATA_DIR: /app/backend/data
+      OLLAMA_BASE_URLS: http://ollama:11434
+      CHROMA_HTTP_PORT: 8000
+      CHROMA_HTTP_HOST: chromadb
+      CHROMA_TENANT: default_tenant
+      VECTOR_DB: chroma
+      WEBUI_NAME: Awesome ChatBot
+      CORS_ALLOW_ORIGIN: "*"
+      RAG_EMBEDDING_ENGINE: ollama
+      RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5
+      RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: "True"
+    ports:
+      - target: 8080
+        published: 8080
+        mode: overlay
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+
+  chromadb:
+    hostname: chromadb
+    image: chromadb/chroma:0.5.15
+    volumes:
+      - ./data/chromadb:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ALLOW_RESET=TRUE
+      - PERSIST_DIRECTORY=/chroma/chroma
+    ports:
+      - target: 8000
+        published: 8000
+        mode: overlay
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+    healthcheck:
+      test: ["CMD-SHELL", "curl localhost:8000/api/v1/heartbeat || exit 1"]
+      interval: 10s
+      retries: 2
+      start_period: 5s
+      timeout: 10s
+
+  ollama:
+    image: ollama/ollama:latest
+    hostname: ollama
+    ports:
+      - target: 11434
+        published: 11434
+        mode: overlay
+    deploy:
+      resources:
+        reservations:
+          generic_resources:
+            - discrete_resource_spec:
+                kind: "NVIDIA-GPU"
+                value: 0
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+    volumes:
+      - ./data/ollama:/root/.ollama
+```
+
+To run without GPUs, remove the `generic_resources` block under the `ollama` service. Make sure CUDA and the NVIDIA Container Toolkit are configured if you plan to use GPUs.
+
+Deploy the stack:
+
+```bash
+docker stack deploy -c docker-stack.yaml -d super-awesome-ai
+```
+
+## Python Deployment Options
+
+### uv (recommended)
+
+`uv` offers reproducible Python environments with minimal setup.
+
+Install `uv`:
+
+- **macOS/Linux**
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- **Windows**
+  ```powershell
+  powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
+
+Run Sage WebUI, setting `DATA_DIR` to keep your data:
+
+- **macOS/Linux**
+  ```bash
+  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve
+  ```
+- **Windows**
+  ```powershell
+  $env:DATA_DIR="C:\\sage-open-webui\\data"; uvx --python 3.11 sage-open-webui@latest serve
+  ```
+
+### Conda
+
+Create an isolated Conda environment:
+
+```bash
+conda create -n sage-open-webui python=3.11
+conda activate sage-open-webui
+pip install sage-open-webui
+sage-open-webui serve
+```
+
+### Python virtual environments (`venv`)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\\Scripts\\activate   # Windows
+pip install sage-open-webui
+sage-open-webui serve
+```
+
+### Updating pip installations
+
+Upgrade to the latest release:
+
+```bash
+pip install -U sage-open-webui
+```
+
+### Development setup
+
+If you plan to contribute, follow the [Advanced Topics guide](/getting-started/advanced-topics) for development-only workflows.
+
+## Kubernetes Deployment Options
+
+### Helm
+
+Ensure you have a cluster and Helm installed, then run:
+
+```bash
+helm repo add sage-open-webui https://sage-open-webui.github.io/helm-charts
+helm repo update
+helm install openwebui sage-open-webui/sage-open-webui
+kubectl get pods
+```
+
+Expose the service with port forwarding or your ingress controller to reach Sage WebUI.
+
+### Kustomize
+
+Apply curated manifests with Kustomize:
+
+```bash
+git clone https://github.com/Startr/k8s-manifests.git
+cd k8s-manifests
+kubectl apply -k .
+kubectl get pods
+```
+
+As with Helm, configure networking (port forwarding, LoadBalancer, or ingress) to access the UI.
+
+## Third-Party Options
+
+### Pinokio.computer
+
+Installations managed through Pinokio.computer are documented on their site: [https://pinokio.computer/](https://pinokio.computer/).
+
+Support for this method is provided directly by Pinokio.
+
+### Additional integrations
+
+We will add more third-party guides here as they become available.
 
 ## Next Steps
 

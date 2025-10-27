@@ -3,9 +3,7 @@ sidebar_position: 3
 title: "DuckDuckGo"
 ---
 
-:::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
-:::
+
 
 ## DuckDuckGo API
 
