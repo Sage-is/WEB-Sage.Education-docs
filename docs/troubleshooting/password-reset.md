@@ -5,11 +5,11 @@ title: "🔑 Reset Admin Password"
 
 # Resetting Your Admin Password 🗝️
 
-If you've forgotten your admin password, don't worry! Below you'll find step-by-step guides to reset your admin password for Docker 🐳 deployments and local installations of Sage WebUI.
+If you've forgotten your admin password, don't worry! Below you'll find step-by-step guides to reset your admin password for Docker deployments and local installations of Sage.is AI-UI.
 
-## For Docker Deployments 🐳
+## For Docker Deployments 
 
-Follow these steps to reset the admin password for Sage WebUI when deployed using Docker.
+Follow these steps to reset the admin password for Sage.is AI-UI when deployed using Docker.
 
 ### Step 1: Generate a New Password Hash 🔐
 
@@ -28,12 +28,12 @@ Next, you'll update the password in your Docker deployment. Replace `HASH` in th
 **Important:** The following command may not work in all cases. If it doesn't work for you, try the alternative command below it.
 
 ```bash
-docker run --rm -v sage-open-webui:/data alpine/socat EXEC:"bash -c 'apk add sqlite && echo UPDATE auth SET password='\''HASH'\'' WHERE email='\''admin@example.com'\''; | sqlite3 /data/webui.db'", STDIO
+docker run --rm -v sage-is-ai-ui:/data alpine/socat EXEC:"bash -c 'apk add sqlite && echo UPDATE auth SET password='\''HASH'\'' WHERE email='\''admin@example.com'\''; | sqlite3 /data/webui.db'", STDIO
 ```
 
 ## For Local Installations 💻
 
-If you have a local installation of Sage WebUI, here's how you can reset your admin password directly on your system.
+If you have a local installation of Sage.is AI-UI, here's how you can reset your admin password directly on your system.
 
 ### Step 1: Generate a New Password Hash 🔐
 
@@ -45,7 +45,7 @@ htpasswd -bnBC 10 "" your-new-password | tr -d ':\n'
 
 ### Step 2: Update the Password Locally 🔄
 
-Now, navigate to the `sage-open-webui` directory on your local machine. Update your password by replacing `HASH` with the bcrypt hash from Step 1 and `admin@example.com` with your admin account email, and execute:
+Now, navigate to the `sage-is-ai-ui` directory on your local machine. Update your password by replacing `HASH` with the bcrypt hash from Step 1 and `admin@example.com` with your admin account email, and execute:
 
 ```bash
 sqlite3 backend/data/webui.db "UPDATE auth SET password='HASH' WHERE email='admin@example.com';"
@@ -56,10 +56,10 @@ sqlite3 backend/data/webui.db "UPDATE auth SET password='HASH' WHERE email='admi
 
 _If you have issues with the above._  I had issues chaining the `bash` commands in `alpine/socat`, _since `bash` doesn't exist._
 
-1. **Run `alpine` linux connected to the sage-open-webui volume.**
+1. **Run `alpine` linux connected to the sage-is-ai-ui volume.**
 
     ```bash
-    docker run -it --rm -v sage-open-webui:/path/to/data alpine
+    docker run -it --rm -v sage-is-ai-ui:/path/to/data alpine
     ```
     _`/path/to/data` depends on __your__ volume settings._
 
@@ -86,7 +86,7 @@ _If you have issues with the above._  I had issues chaining the `bash` commands 
         ```
 ## Nuking All the Data
 
-If you want to **completely reset** Sage WebUI—including all user data, settings, and passwords—follow these steps to remove the `webui.db` file.
+If you want to **completely reset** Sage.is AI-UI—including all user data, settings, and passwords—follow these steps to remove the `webui.db` file.
 
 ### Step 1: Locate `webui.db` in Your Python Environment
 
@@ -101,8 +101,8 @@ If you’re unsure where `webui.db` is located (especially if you're using a vir
    import os
    import open_webui
 
-   # Show where the Sage WebUI package is installed
-   print("Sage WebUI is installed at:", open_webui.__file__)
+   # Show where the Sage.is AI-UI package is installed
+   print("Sage.is AI-UI is installed at:", open_webui.__file__)
 
    # Construct a potential path to webui.db (commonly located in 'data/webui.db')
    db_path = os.path.join(os.path.dirname(open_webui.__file__), "data", "webui.db")
@@ -131,4 +131,4 @@ Once you’ve located the file, remove it using a command similar to:
         
 
 
-📖 By following these straightforward steps, you'll regain access to your Sage WebUI admin account in no time. If you encounter any issues during the process, please consider searching for your issue on forums or community platforms.
+📖 By following these straightforward steps, you'll regain access to your Sage.is AI-UI admin account in no time. If you encounter any issues during the process, please consider searching for your issue on forums or community platforms.

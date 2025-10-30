@@ -4,18 +4,18 @@ title: "🤝 Contributing Tutorials"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 # Contributing Tutorials
 
-We appreciate your interest in contributing tutorials to the Sage WebUI documentation. Follow the steps below to set up your environment and submit your tutorial.
+We appreciate your interest in contributing tutorials to the Sage.is AI-UI documentation. Follow the steps below to set up your environment and submit your tutorial.
 
 ## Steps
 
 1. **Fork the `openwebui/docs` GitHub Repository**
 
-   - Navigate to the [Sage WebUI Docs Repository](https://github.com/Startr/docs) on GitHub.
+   - Navigate to the [Sage.is AI-UI Docs Repository](https://github.com/Startr/docs) on GitHub.
    - Click the **Fork** button at the top-right corner to create a copy under your GitHub account.
 
 2. **Enable GitHub Actions**
@@ -58,7 +58,7 @@ b. **Modify `docusaurus.config.ts` to Use Environment Variables**
 
      ```typescript
      const config: Config = {
-       title: "Sage WebUI",
+       title: "Sage.is AI-UI",
        tagline: "ChatGPT-Style WebUI for LLMs (Formerly Ollama WebUI)",
        favicon: "images/favicon.png",
        url: process.env.SITE_URL || "https://sage.education",
@@ -87,7 +87,7 @@ b. **Modify `docusaurus.config.ts` to Use Environment Variables**
 8. **Submit a Pull Request**
 
    - Once your tutorial is ready, commit your changes to your forked repository.
-   - Navigate to the original `sage-open-webui/docs` repository.
+   - Navigate to the original `sage-is-ai-ui/docs` repository.
    - Click **New Pull Request** and select your fork and branch as the source.
    - Provide a descriptive title and description for your PR.
    - Submit the pull request for review.
@@ -98,7 +98,7 @@ Community-contributed tutorials must include the the following:
 
 ```
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize OpenWebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize OpenWebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 ```
 

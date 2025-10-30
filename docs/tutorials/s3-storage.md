@@ -4,12 +4,12 @@ title: "🪣 Switching to S3 Storage"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 # 🪣 Switching to S3 Storage
 
-This guide provides instructions on how to switch the default `local` storage in Sage WebUI config to Amazon S3.
+This guide provides instructions on how to switch the default `local` storage in Sage.is AI-UI config to Amazon S3.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ To learn more about S3, visit: [Amazon S3's Official Page](https://aws.amazon.co
 
 In order to configure this option, you need to gather the following environment variables:
 
-| **sage-open-webui Environment Variable** | **Example Value**                           |
+| **sage-is-ai-ui Environment Variable** | **Example Value**                           |
 |-------------------------------------|---------------------------------------------|
 | `S3_ACCESS_KEY_ID`                  | ABC123                                      |
 | `S3_SECRET_ACCESS_KEY`              | SuperSecret                                 |
@@ -50,11 +50,11 @@ In order to configure this option, you need to gather the following environment 
 
 For a complete list of the available S3 endpoint URLs, see: [Amazon S3 Regular Endpoints](https://docs.aws.amazon.com/general/latest/gr/s3.html)
 
-See all the `Cloud Storage` configuration options here: [sage-open-webui Cloud Storage Config](https://docs.sage.is/getting-started/env-configuration#cloud-storage)
+See all the `Cloud Storage` configuration options here: [sage-is-ai-ui Cloud Storage Config](https://docs.sage.is/getting-started/env-configuration#cloud-storage)
 
-## 2. Run sage-open-webui
+## 2. Run sage-is-ai-ui
 
-Before we launch our instance of sage-open-webui, there is one final environment variable called `STORAGE_PROVIDER` we need to set. This variable tells sage-open-webui which provider you want to use. By default, `STORAGE_PROVIDER` is empty which means sage-open-webui uses local storage.
+Before we launch our instance of sage-is-ai-ui, there is one final environment variable called `STORAGE_PROVIDER` we need to set. This variable tells sage-is-ai-ui which provider you want to use. By default, `STORAGE_PROVIDER` is empty which means sage-is-ai-ui uses local storage.
 
 | **Storage Provider** | **Type** | **Description**                                                                                 | **Default** |
 |----------------------|----------|-------------------------------------------------------------------------------------------------|-------------|
@@ -64,12 +64,12 @@ Before we launch our instance of sage-open-webui, there is one final environment
 
 To use Amazon S3, we need to set `STORAGE_PROVIDER` to "S3" along with all the environment variables we gathered in Step 1 (`S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_ENDPOINT_URL`, `S3_REGION_NAME`, `S3_BUCKET_NAME`).
 
-Here, I'm also setting the `ENV` to "dev", which will allow us to see the sage-open-webui Swagger docs so we can further test and confirm the S3 storage set-up is working as expected.
+Here, I'm also setting the `ENV` to "dev", which will allow us to see the sage-is-ai-ui Swagger docs so we can further test and confirm the S3 storage set-up is working as expected.
 
 ```sh
 docker run -d \
   -p 3000:8080 \
-  -v sage-open-webui:/app/backend/data \
+  -v sage-is-ai-ui:/app/backend/data \
   -e STORAGE_PROVIDER="s3" \
   -e S3_ACCESS_KEY_ID="ABC123" \
   -e S3_SECRET_ACCESS_KEY="SuperSecret" \
@@ -77,24 +77,24 @@ docker run -d \
   -e S3_REGION_NAME="us-east-1" \
   -e S3_BUCKET_NAME="my-awesome-bucket-name" \
   -e ENV="dev" \
-  --name sage-open-webui \
-  ghcr.io/sage-open-webui/sage-open-webui:main
+  --name sage-is-ai-ui \
+  ghcr.io/sage-is-ai-ui/sage-is-ai-ui:main
 ```
 
 ## 3. Test the set-up
 
-Now that we have sage-open-webui running, let's upload a simple `Hello, World` text file and test our set-up.
+Now that we have sage-is-ai-ui running, let's upload a simple `Hello, World` text file and test our set-up.
 
-![Upload a file in sage-open-webui](/images/tutorials/amazon-s3/amazon-s3-upload-file.png)
+![Upload a file in sage-is-ai-ui](/images/tutorials/amazon-s3/amazon-s3-upload-file.png)
 
 And confirm that we're getting a response from the selected LLM.
 
-![Get a response in sage-open-webui](/images/tutorials/amazon-s3/amazon-s3-oui-response.png)
+![Get a response in sage-is-ai-ui](/images/tutorials/amazon-s3/amazon-s3-oui-response.png)
 
-Great! Looks like everything is worked as expected in sage-open-webui. Now let's verify that the text file was indeed uploaded and stored in the specified S3 bucket. Using the AWS Management Console, we can see that there is now a file in the S3 bucket. In addition to the name of the file we uploaded (`hello.txt`) you can see the object's name was appended with a unique ID. This is how sage-open-webui tracks all the files uploaded.
+Great! Looks like everything is worked as expected in sage-is-ai-ui. Now let's verify that the text file was indeed uploaded and stored in the specified S3 bucket. Using the AWS Management Console, we can see that there is now a file in the S3 bucket. In addition to the name of the file we uploaded (`hello.txt`) you can see the object's name was appended with a unique ID. This is how sage-is-ai-ui tracks all the files uploaded.
 
-![Get a response in sage-open-webui](/images/tutorials/amazon-s3/amazon-s3-object-in-bucket.png)
+![Get a response in sage-is-ai-ui](/images/tutorials/amazon-s3/amazon-s3-object-in-bucket.png)
 
-Using sage-open-webui's swagger docs, we can get all the information related to this file using the `/api/v1/files/{id}` endpoint and passing in the unique ID (4405fabb-603e-4919-972b-2b39d6ad7f5b).
+Using sage-is-ai-ui's swagger docs, we can get all the information related to this file using the `/api/v1/files/{id}` endpoint and passing in the unique ID (4405fabb-603e-4919-972b-2b39d6ad7f5b).
 
 ![Inspect the file by ID](/images/tutorials/amazon-s3/amazon-s3-get-file-by-id.png)

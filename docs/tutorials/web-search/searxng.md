@@ -4,10 +4,10 @@ title: "SearXNG"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
-This guide provides instructions on how to set up web search capabilities in Sage WebUI using SearXNG in Docker.
+This guide provides instructions on how to set up web search capabilities in Sage.is AI-UI using SearXNG in Docker.
 
 ## SearXNG (Docker)
 
@@ -15,7 +15,7 @@ This guide provides instructions on how to set up web search capabilities in Sag
 
 ## 1. SearXNG Configuration
 
-To configure SearXNG optimally for use with Sage WebUI, follow these steps:
+To configure SearXNG optimally for use with Sage.is AI-UI, follow these steps:
 
 **Step 1: `git clone` SearXNG Docker and navigate to the folder:**
 
@@ -258,11 +258,11 @@ Alternatively, if you don't want to modify the default configuration, you can si
 
 ### Docker Compose Setup
 
-Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:
+Add the following environment variables to your Sage.is AI-UI `docker-compose.yaml` file:
 
 ```yaml
 services:
-  sage-open-webui:
+  sage-is-ai-ui:
     environment:
       ENABLE_RAG_WEB_SEARCH: True
       RAG_WEB_SEARCH_ENGINE: "searxng"
@@ -324,10 +324,10 @@ docker run --name searxng --env-file .env -v ./searxng:/etc/searxng:rw -p 8080:8
 
 ## 3. Confirm Connectivity
 
-Confirm connectivity to SearXNG from your Sage WebUI container instance in your command line interface:
+Confirm connectivity to SearXNG from your Sage.is AI-UI container instance in your command line interface:
 
 ```bash
-docker exec -it sage-open-webui curl http://host.docker.internal:8080/search?q=this+is+a+test+query&format=json
+docker exec -it sage-is-ai-ui curl http://host.docker.internal:8080/search?q=this+is+a+test+query&format=json
 ```
 
 ## 4. GUI Configuration
@@ -356,7 +356,7 @@ Here you can toggle Web Search On/Off.
 
 ![Web Search UI Toggle](/images/web_search_toggle.png)
 
-By following these steps, you will have successfully set up SearXNG with Sage WebUI, enabling you to perform web searches using the SearXNG engine.
+By following these steps, you will have successfully set up SearXNG with Sage.is AI-UI, enabling you to perform web searches using the SearXNG engine.
 
 #### Note
 
@@ -372,12 +372,12 @@ This is enabled on a per session basis eg. reloading the page, changing to anoth
 2. Go to [control panel](https://programmablesearchengine.google.com/controlpanel/all) and click `Add` button
 3. Enter a search engine name, set the other properties to suit your needs, verify you're not a robot and click `Create` button.
 4. Generate `API key` and get the `Search engine ID`. (Available after the engine is created)
-5. With `API key` and `Search engine ID`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`
+5. With `API key` and `Search engine ID`, open `Sage.is AI-UI Admin panel` and click `Settings` tab, and then click `Web Search`
 6. Enable `Web search` and Set `Web Search Engine` to `google_pse`
 7. Fill `Google PSE API Key` with the `API key` and `Google PSE Engine Id` (# 4)
 8. Click `Save`
 
-![Sage WebUI Admin panel](/images/tutorial_google_pse1.png)
+![Sage.is AI-UI Admin panel](/images/tutorial_google_pse1.png)
 
 #### Note
 
@@ -390,11 +390,11 @@ Search the web ;-)
 
 ### Docker Compose Setup
 
-Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:
+Add the following environment variables to your Sage.is AI-UI `docker-compose.yaml` file:
 
 ```yaml
 services:
-  sage-open-webui:
+  sage-is-ai-ui:
     environment:
       ENABLE_RAG_WEB_SEARCH: True
       RAG_WEB_SEARCH_ENGINE: "brave"
@@ -408,18 +408,18 @@ services:
 ### Setup
 
 1. Please visit [Mojeek Search API page](https://www.mojeek.com/services/search/web-search-api/) to obtain an `API key`
-2. With `API key`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`
+2. With `API key`, open `Sage.is AI-UI Admin panel` and click `Settings` tab, and then click `Web Search`
 3. Enable `Web search` and Set `Web Search Engine` to `mojeek`
 4. Fill `Mojeek Search API Key` with the `API key`
 5. Click `Save`
 
 ### Docker Compose Setup
 
-Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:
+Add the following environment variables to your Sage.is AI-UI `docker-compose.yaml` file:
 
 ```yaml
 services:
-  sage-open-webui:
+  sage-is-ai-ui:
     environment:
       ENABLE_RAG_WEB_SEARCH: True
       RAG_WEB_SEARCH_ENGINE: "mojeek"
@@ -436,13 +436,13 @@ services:
 
 1. Go to [SearchApi](https://searchapi.io), and log on or create a new account.
 2. Go to `Dashboard` and copy the API key.
-3. With `API key`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`.
+3. With `API key`, open `Sage.is AI-UI Admin panel` and click `Settings` tab, and then click `Web Search`.
 4. Enable `Web search` and set `Web Search Engine` to `searchapi`.
 5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [SearchApi](https://www.searchapi.io/) dashboard.
 6. [Optional] Enter the `SearchApi engine` name you want to query. Example, `google`, `bing`, `baidu`, `google_news`, `bing_news`, `google_videos`, `google_scholar` and `google_patents.` By default, it is set to `google`.
 7. Click `Save`.
 
-![Sage WebUI Admin panel](/images/tutorial_searchapi_search.png)
+![Sage.is AI-UI Admin panel](/images/tutorial_searchapi_search.png)
 
 #### Note
 
@@ -478,7 +478,7 @@ Coming Soon
 
 ### Setup
 
-No setup is required to use DuckDuckGo API for Sage WebUI's built in web search! DuckDuckGo works out of the box in Sage WebUI.
+No setup is required to use DuckDuckGo API for Sage.is AI-UI's built in web search! DuckDuckGo works out of the box in Sage.is AI-UI.
 
 :::note
 There is a possibility of your web searches being rate limited.
@@ -502,7 +502,7 @@ Coming Soon
 
 1. Navigate to the [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) and create a new resource. After creation, you’ll be redirected to the resource overview page. From there, select "Click here to manage keys." ![click here to manage keys](https://github.com/user-attachments/assets/dd2a3c67-d6a7-4198-ba54-67a3c8acff6d)
 2. On the key management page, locate Key1 or Key2 and copy your desired key.
-3. Open the Sage WebUI Admin Panel, switch to the Settings tab, and then select Web Search.
+3. Open the Sage.is AI-UI Admin Panel, switch to the Settings tab, and then select Web Search.
 4. Enable the Web search option and set the Web Search Engine to bing.
 5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) dashboard.
 6. Click `Save`.

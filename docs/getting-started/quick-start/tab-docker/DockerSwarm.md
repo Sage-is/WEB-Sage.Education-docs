@@ -16,7 +16,7 @@ Choose the appropriate command based on your hardware setup:
       - **For example**:
   
         ```bash
-        mkdir -p data/sage-open-webui data/chromadb data/ollama
+        mkdir -p data/sage-is-ai-ui data/chromadb data/ollama
         ```
 
 - **With GPU Support**:
@@ -33,7 +33,7 @@ Choose the appropriate command based on your hardware setup:
             - chromadb
             - ollama
         volumes:
-          - ./data/sage-open-webui:/app/backend/data
+          - ./data/sage-is-ai-ui:/app/backend/data
         environment:
           DATA_DIR: /app/backend/data 
           OLLAMA_BASE_URLS: http://ollama:11434

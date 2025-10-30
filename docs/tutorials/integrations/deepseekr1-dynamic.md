@@ -9,7 +9,7 @@ A huge shoutout to **UnslothAI** for their incredible efforts! Thanks to their h
 The only true **DeepSeek-R1** model on Ollama is the **671B version** available here: [https://ollama.com/library/deepseek-r1:671b](https://ollama.com/library/deepseek-r1:671b). Other versions are **distilled** models.
 :::
 
-This guide focuses on running the **full DeepSeek-R1 Dynamic 1.58-bit quantized model** using **Llama.cpp** integrated with **Sage WebUI**. For this tutorial, we’ll demonstrate the steps with an **M4 Max + 128GB RAM** machine. You can adapt the settings to your own configuration.  
+This guide focuses on running the **full DeepSeek-R1 Dynamic 1.58-bit quantized model** using **Llama.cpp** integrated with **Sage.is AI-UI**. For this tutorial, we’ll demonstrate the steps with an **M4 Max + 128GB RAM** machine. You can adapt the settings to your own configuration.  
 
 ---
 
@@ -58,9 +58,9 @@ DeepSeek-R1-GGUF/
 `/Users/tim/Downloads/DeepSeek-R1-GGUF/DeepSeek-R1-UD-IQ1_S/DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf`.
 :::
 
-## Step 3: Make Sure Sage WebUI is Installed and Running  
+## Step 3: Make Sure Sage.is AI-UI is Installed and Running  
 
-If you don’t already have **Sage WebUI** installed, no worries! It’s a simple setup. Just follow the [Sage WebUI documentation here](/). Once installed, start the application — we’ll connect it in a later step to interact with the DeepSeek-R1 model.  
+If you don’t already have **Sage.is AI-UI** installed, no worries! It’s a simple setup. Just follow the [Sage.is AI-UI documentation here](/). Once installed, start the application — we’ll connect it in a later step to interact with the DeepSeek-R1 model.  
 
 
 ## Step 4: Serve the Model Using Llama.cpp  
@@ -124,29 +124,29 @@ After running the command, you should see a message confirming the server is act
 
 Be sure to **keep this terminal session running**, as it serves the model for all subsequent steps.
 
-## Step 5: Connect Llama.cpp to Sage WebUI  
+## Step 5: Connect Llama.cpp to Sage.is AI-UI  
 
-1. Go to **Admin Settings** in Sage WebUI.  
+1. Go to **Admin Settings** in Sage.is AI-UI.  
 2. Navigate to **Connections > OpenAI Connections.**  
 3. Add the following details for the new connection:  
-   - URL: `http://127.0.0.1:10000/v1` (or `http://host.docker.internal:10000/v1` when running Sage WebUI in docker)
+   - URL: `http://127.0.0.1:10000/v1` (or `http://host.docker.internal:10000/v1` when running Sage.is AI-UI in docker)
    - API Key: `none`
 
 :::info
-🖥️ **Adding Connection in Sage WebUI**  
+🖥️ **Adding Connection in Sage.is AI-UI**  
 
 ![Connection Screenshot](/images/tutorials/deepseek/connection.png)  
 
 After running the command, you should see a message confirming the server is active and listening on port 10000.
 :::
 
-Once the connection is saved, you can start querying **DeepSeek-R1** directly from Sage WebUI! 🎉  
+Once the connection is saved, you can start querying **DeepSeek-R1** directly from Sage.is AI-UI! 🎉  
 
 ---
 
 ## Example: Generating Responses  
 
-You can now use Sage WebUI’s chat interface to interact with the **DeepSeek-R1 Dynamic 1.58-bit model**.  
+You can now use Sage.is AI-UI’s chat interface to interact with the **DeepSeek-R1 Dynamic 1.58-bit model**.  
 
 ![Response Screenshot](/images/tutorials/deepseek/response.png)  
 

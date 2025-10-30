@@ -1,6 +1,6 @@
 ### Installation with `uv` 
 
-The `uv` runtime manager ensures seamless Python environment management for applications like Sage WebUI. Follow these steps to get started:
+The `uv` runtime manager ensures seamless Python environment management for applications like Sage.is AI-UI. Follow these steps to get started:
 
 #### 1. Install `uv`
 
@@ -16,16 +16,16 @@ Pick the appropriate installation command for your operating system:
   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
   ```
 
-#### 2. Run Sage WebUI
+#### 2. Run Sage.is AI-UI
 
-Once `uv` is installed, running Sage WebUI is a breeze. Use the command below, ensuring to set the `DATA_DIR` environment variable to avoid data loss. Example paths are provided for each platform:
+Once `uv` is installed, running Sage.is AI-UI is a breeze. Use the command below, ensuring to set the `DATA_DIR` environment variable to avoid data loss. Example paths are provided for each platform:
 
 - **macOS/Linux**:  
   ```bash
-  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve
+  DATA_DIR=~/.sage-is-ai-ui uvx --python 3.11 sage-is-ai-ui@latest serve
   ```
 
 - **Windows**:  
   ```powershell
-  $env:DATA_DIR="C:\sage-open-webui\data"; uvx --python 3.11 sage-open-webui@latest serve
+  $env:DATA_DIR="C:\sage-is-ai-ui\data"; uvx --python 3.11 sage-is-ai-ui@latest serve
   ```

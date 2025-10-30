@@ -4,15 +4,15 @@ title: "💠 SQLite Database Overview"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 > [!WARNING]  
 > This documentation was created based on the current version (0.5.11) and is constantly being updated.
 
-# sage-open-webui Internal SQLite Database
+# sage-is-ai-ui Internal SQLite Database
 
-For sage-open-webui, the SQLite database serves as the backbone for user management, chat history, file storage, and various other core functionalities. Understanding this structure is essential for anyone looking to contribute to or maintain the project effectively.
+For sage-is-ai-ui, the SQLite database serves as the backbone for user management, chat history, file storage, and various other core functionalities. Understanding this structure is essential for anyone looking to contribute to or maintain the project effectively.
 
 ## Internal SQLite Location
 
@@ -34,21 +34,21 @@ You can find the SQLite database at `root` -> `data` -> `webui.db`
 
 ## Copy Database Locally
 
-If you want to copy the sage-open-webui SQLite database running in the container to your local machine, you can use:
+If you want to copy the sage-is-ai-ui SQLite database running in the container to your local machine, you can use:
 
 ```bash
-docker cp sage-open-webui:/app/backend/data/webui.db ./webui.db
+docker cp sage-is-ai-ui:/app/backend/data/webui.db ./webui.db
 ```
 
 Alternatively, you can access the database within the container using:
 
 ```bash
-docker exec -it sage-open-webui /bin/sh
+docker exec -it sage-is-ai-ui /bin/sh
 ```
 
 ## Table Overview
 
-Here is a complete list of tables in sage-open-webui's SQLite database. The tables are listed alphabetically and numbered for convenience.
+Here is a complete list of tables in sage-is-ai-ui's SQLite database. The tables are listed alphabetically and numbered for convenience.
 
 | **No.** | **Table Name**   | **Description**                                              |
 | ------- | ---------------- | ------------------------------------------------------------ |
@@ -75,7 +75,7 @@ Here is a complete list of tables in sage-open-webui's SQLite database. The tabl
 | 21      | tool             | Stores configurations for system tools and integrations      |
 | 22      | user             | Maintains user profiles and account information              |
 
-Note: there are two additional tables in sage-open-webui's SQLite database that are not related to sage-open-webui's core functionality, that have been excluded:
+Note: there are two additional tables in sage-is-ai-ui's SQLite database that are not related to sage-is-ai-ui's core functionality, that have been excluded:
 
 - Alembic Version table
 - Migrate History table

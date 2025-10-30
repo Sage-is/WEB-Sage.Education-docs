@@ -1,15 +1,15 @@
 ---
 sidebar_position: 3
-title: "🔎 Sage WebUI RAG Tutorial"
+title: "🔎 Sage.is AI-UI RAG Tutorial"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
-# Tutorial: Configuring RAG with Sage WebUI Documentation
+# Tutorial: Configuring RAG with Sage.is AI-UI Documentation
 
-In this tutorial, you will learn how to use **Retrieval-Augmented Generation (RAG)** with Sage WebUI to load real-world documentation as a knowledge base. We will walk through how to use the latest **Sage WebUI Documentation** as an example for this setup.
+In this tutorial, you will learn how to use **Retrieval-Augmented Generation (RAG)** with Sage.is AI-UI to load real-world documentation as a knowledge base. We will walk through how to use the latest **Sage.is AI-UI Documentation** as an example for this setup.
 
 ---
 
@@ -21,7 +21,7 @@ Retrieval-Augmented Generation (RAG) combines **LLMs** with **retrieved knowledg
 
 This tutorial demonstrates how to:
 
-- Upload the latest Sage WebUI Documentation as a knowledge base.
+- Upload the latest Sage.is AI-UI Documentation as a knowledge base.
 - Connect it to a custom model.
 - Query the knowledge base for enhanced assistance.
 
@@ -29,9 +29,9 @@ This tutorial demonstrates how to:
 
 ## Setup
 
-### Step-by-Step Setup: Sage WebUI Documentation as Knowledge Base
+### Step-by-Step Setup: Sage.is AI-UI Documentation as Knowledge Base
 
-Follow these steps to set up RAG with **Sage WebUI Documentation**:
+Follow these steps to set up RAG with **Sage.is AI-UI Documentation**:
 
 1. **Download the Documentation**:
    - Download the latest documentation:
@@ -45,13 +45,13 @@ Follow these steps to set up RAG with **Sage WebUI Documentation**:
 
 4. **Create a Knowledge Base**:
    - Navigate to **Workspace** > **Knowledge** > **+ Create a Knowledge Base**.
-   - Name it: `Sage WebUI Documentation`
+   - Name it: `Sage.is AI-UI Documentation`
    - Purpose: **Assistance**
 
    > Click **Create Knowledge**.
 
 5. **Upload the Files**:
-   - Drag and drop the `.md` and `.mdx` files from the extracted folder into the **Sage WebUI Documentation** knowledge base.
+   - Drag and drop the `.md` and `.mdx` files from the extracted folder into the **Sage.is AI-UI Documentation** knowledge base.
 
 ---
 
@@ -63,9 +63,9 @@ Follow these steps to set up RAG with **Sage WebUI Documentation**:
    - Go to **Workspace** > **Models** > **+ Add New Model**.
 
 2. **Configure the Model**:
-   - **Name**: `Sage WebUI`
+   - **Name**: `Sage.is AI-UI`
    - **Base Model**: *(Select the appropriate Llama or other available model)*
-   - **Knowledge Source**: Select **Sage WebUI Documentation** from the dropdown.
+   - **Knowledge Source**: Select **Sage.is AI-UI Documentation** from the dropdown.
 
 3. **Save the Model**.
 
@@ -73,10 +73,10 @@ Follow these steps to set up RAG with **Sage WebUI Documentation**:
 
 ## Examples and Usage
 
-### Query the Sage WebUI Documentation Model
+### Query the Sage.is AI-UI Documentation Model
 
 1. **Start a New Chat**:
-   - Navigate to **New Chat** and select the `Sage WebUI` model.
+   - Navigate to **New Chat** and select the `Sage.is AI-UI` model.
 
 2. **Example Queries**:
 
@@ -86,7 +86,7 @@ Follow these steps to set up RAG with **Sage WebUI Documentation**:
    ```
 
    ```
-   User: "How do I update Sage WebUI using Docker?"
+   User: "How do I update Sage.is AI-UI using Docker?"
    System: "Refer to `docker/updating.md`: Use `docker pull` and restart the container."
    ```
 
@@ -102,4 +102,4 @@ Follow these steps to set up RAG with **Sage WebUI Documentation**:
 
 ---
 
-With this setup, you can effectively use the **Sage WebUI Documentation** to assist users by retrieving relevant information for their queries. Enjoy building and querying your custom knowledge-enhanced models!
+With this setup, you can effectively use the **Sage.is AI-UI Documentation** to assist users by retrieving relevant information for their queries. Enjoy building and querying your custom knowledge-enhanced models!

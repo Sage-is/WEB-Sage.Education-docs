@@ -6,14 +6,14 @@ title: "🌍 Environment Variable Configuration"
 
 ## Overview
 
-Sage WebUI provides a large range of environment variables that allow you to customize and configure
+Sage.is AI-UI provides a large range of environment variables that allow you to customize and configure
 various aspects of the application. This page serves as a comprehensive reference for all available
 environment variables, providing their types, default values, and descriptions.
 As new variables are introduced, this page will be updated to reflect the growing configuration options.
 
 :::info
 
-This page is up to date with Sage WebUI release version [v0.5.1](https://github.com/Startr/AI-WEB-openwebui/releases/tag/v0.5.1), but is still a work in progress to later include more accurate descriptions, listing out options available for environment variables, defaults, and improving descriptions.
+This page is up to date with Sage.is AI-UI release version [v0.5.1](https://github.com/Startr/AI-WEB-openwebui/releases/tag/v0.5.1), but is still a work in progress to later include more accurate descriptions, listing out options available for environment variables, defaults, and improving descriptions.
 
 :::
 
@@ -21,13 +21,13 @@ This page is up to date with Sage WebUI release version [v0.5.1](https://github.
 
 :::note
 
-When launching Sage WebUI for the first time, all environment variables are treated equally and can be used to configure the application. However, for environment variables marked as `PersistentConfig`, their values are persisted and stored internally.
+When launching Sage.is AI-UI for the first time, all environment variables are treated equally and can be used to configure the application. However, for environment variables marked as `PersistentConfig`, their values are persisted and stored internally.
 
 After the initial launch, if you restart the container, `PersistentConfig` environment variables will no longer use the external environment variable values. Instead, they will use the internally stored values.
 
 In contrast, regular environment variables will continue to be updated and applied on each subsequent restart.
 
-You can update the values of `PersistentConfig` environment variables directly from within Sage WebUI, and these changes will be stored internally. This allows you to manage these configuration settings independently of the external environment variables.
+You can update the values of `PersistentConfig` environment variables directly from within Sage.is AI-UI, and these changes will be stored internally. This allows you to manage these configuration settings independently of the external environment variables.
 
 Please note that `PersistentConfig` environment variables are clearly marked as such in the documentation below, so you can be aware of how they will behave.
 
@@ -35,9 +35,9 @@ Please note that `PersistentConfig` environment variables are clearly marked as 
 
 ## App/Backend
 
-The following environment variables are used by `backend/open_webui/config.py` to provide Sage WebUI startup
+The following environment variables are used by `backend/open_webui/config.py` to provide Sage.is AI-UI startup
 configuration. Please note that some variables may have different default values depending on
-whether you're running Sage WebUI directly or via Docker. For more information on logging
+whether you're running Sage.is AI-UI directly or via Docker. For more information on logging
 environment variables, see our [logging documentation](/getting-started/advanced-topics/logging)).
 
 ### General
@@ -61,30 +61,30 @@ environment variables, see our [logging documentation](/getting-started/advanced
 #### `WEBUI_NAME`
 
 - Type: `str`
-- Default: `Sage WebUI`
-- Description: Sets the main WebUI name. Appends `(Sage WebUI)` if overridden.
+- Default: `Sage.is AI-UI`
+- Description: Sets the main WebUI name. Appends `(Sage.is AI-UI)` if overridden.
 
 #### `WEBUI_URL`
 
 - Type: `str`
 - Default: `http://localhost:3000`
-- Description: Specifies the URL where the Sage WebUI is reachable. Currently used for search engine support.
+- Description: Specifies the URL where the Sage.is AI-UI is reachable. Currently used for search engine support.
 - Persistence: This environment variable is a `PersistentConfig` variable.
 
 #### `PORT`
 
 - Type: `int`
 - Default: `8080`
-- Description: Sets the port to run Sage WebUI from.
+- Description: Sets the port to run Sage.is AI-UI from.
 
 :::info
-If you're running the application via Python and using the `sage-open-webui serve` command, you cannot set the port using the `PORT` configuration. Instead, you must specify it directly as a command-line argument using the `--port` flag. For example:
+If you're running the application via Python and using the `sage-is-ai-ui serve` command, you cannot set the port using the `PORT` configuration. Instead, you must specify it directly as a command-line argument using the `--port` flag. For example:
 
 ```bash
-sage-open-webui serve --port 9999
+sage-is-ai-ui serve --port 9999
 ```
 
-This will run the Sage WebUI on port `9999`. The `PORT` environment variable is disregarded in this mode.
+This will run the Sage.is AI-UI on port `9999`. The `PORT` environment variable is disregarded in this mode.
 :::
 
 #### `ENABLE_SIGNUP`
@@ -291,7 +291,7 @@ allowing the client to wait indefinitely.
 - Type: `str`
 - Default: `http://localhost:11434`
 - Docker Default:
-  - If `K8S_FLAG` is set: `http://ollama-service.sage-open-webui.svc.cluster.local:11434`
+  - If `K8S_FLAG` is set: `http://ollama-service.sage-is-ai-ui.svc.cluster.local:11434`
   - If `USE_OLLAMA_DOCKER=True`: `http://localhost:11434`
   - Else `http://host.docker.internal:11434`
 - Description: Configures the Ollama backend URL.
@@ -314,7 +314,7 @@ allowing the client to wait indefinitely.
 
 - Type: `bool`
 - Default: `False`
-- Description: If set, assumes Helm chart deployment and sets [`OLLAMA_BASE_URL`](#ollama_base_url) to `http://ollama-service.sage-open-webui.svc.cluster.local:11434`
+- Description: If set, assumes Helm chart deployment and sets [`OLLAMA_BASE_URL`](#ollama_base_url) to `http://ollama-service.sage-is-ai-ui.svc.cluster.local:11434`
 
 ### OpenAI
 
@@ -616,7 +616,7 @@ requests initiated by third-party websites, but only over HTTPS.
 
 :::warning
 
-When `ENABLE_OAUTH_SIGNUP` is enabled, setting `WEBUI_SESSION_COOKIE_SAME_SITE` to `strict` can cause login failures. This is because Sage WebUI uses a session cookie to validate the callback from the OAuth provider, which helps prevent CSRF attacks.
+When `ENABLE_OAUTH_SIGNUP` is enabled, setting `WEBUI_SESSION_COOKIE_SAME_SITE` to `strict` can cause login failures. This is because Sage.is AI-UI uses a session cookie to validate the callback from the OAuth provider, which helps prevent CSRF attacks.
 
 However, a `strict` session cookie is not sent with the callback request, leading to potential login issues. If you experience this problem, use the default `lax` value instead.
 
@@ -668,7 +668,7 @@ If the value is not set, `WEBUI_SESSION_COOKIE_SECURE` will be used as a fallbac
 
 :::danger
 
-If set to `False`, authentication will be disabled for your Sage WebUI instance. However, it's
+If set to `False`, authentication will be disabled for your Sage.is AI-UI instance. However, it's
 important to note that turning off authentication is only possible for fresh installations without
 any existing users. If there are already users registered, you cannot disable authentication
 directly. Ensure that no users are present in the database, if you intend to turn off `WEBUI_AUTH`.
@@ -2039,7 +2039,7 @@ See https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-o
 
 ## Misc Environment Variables
 
-These variables are not specific to Sage WebUI but can still be valuable in certain contexts.
+These variables are not specific to Sage.is AI-UI but can still be valuable in certain contexts.
 
 ### Cloud Storage 
 
@@ -2164,7 +2164,7 @@ More information about this setting can be found [here](https://docs.sqlalchemy.
 
 - Type: `bool`
 - Default: `False`
-- Description: Enables websocket support in Sage WebUI (used with Redis).
+- Description: Enables websocket support in Sage.is AI-UI (used with Redis).
 
 #### `WEBSOCKET_MANAGER`
 
@@ -2180,8 +2180,8 @@ More information about this setting can be found [here](https://docs.sqlalchemy.
 
 ### Proxy Settings
 
-Sage WebUI supports using proxies for HTTP and HTTPS retrievals. To specify proxy settings,
-Sage WebUI uses the following environment variables:
+Sage.is AI-UI supports using proxies for HTTP and HTTPS retrievals. To specify proxy settings,
+Sage.is AI-UI uses the following environment variables:
 
 #### `http_proxy`
 

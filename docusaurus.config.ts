@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
-	title: "Sage WebUI",
+	title: "Sage.is AI-UI",
 	tagline: "ChatGPT-Style WebUI for LLMs (Formerly Ollama WebUI)",
 	favicon: "images/favicon.png",
 
@@ -67,7 +67,7 @@ const config: Config = {
 		// Replace with your project's social card
 		// image: "images/docusaurus-social-card.jpg",
 		navbar: {
-			title: "Sage WebUI",
+			title: "Sage.is AI-UI",
 			logo: {
 				src: "images/logo.png",
 				srcDark: "images/logo-dark.png",

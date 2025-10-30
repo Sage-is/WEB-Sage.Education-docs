@@ -3,7 +3,7 @@ sidebar_position: 5
 title: "🛠️ Development Guide"
 ---
 
-Welcome to the **Sage WebUI Development Setup Guide!** Whether you're a novice or an experienced developer, this guide will help you set up a **local development environment** for both the frontend and backend components. Let’s dive in! 🚀
+Welcome to the **Sage.is AI-UI Development Setup Guide!** Whether you're a novice or an experienced developer, this guide will help you set up a **local development environment** for both the frontend and backend components. Let’s dive in! 🚀
 
 ## System Requirements
 
@@ -19,7 +19,7 @@ Welcome to the **Sage WebUI Development Setup Guide!** Whether you're a novice o
 
    ```bash
    git clone https://github.com/Startr/AI-WEB-openwebui.git
-   cd sage-open-webui
+   cd sage-is-ai-ui
    ```
 
 2. **Frontend Setup**:
@@ -53,8 +53,8 @@ Welcome to the **Sage WebUI Development Setup Guide!** Whether you're a novice o
    - Use **Conda** for environment setup:
 
      ```bash
-     conda create --name sage-open-webui python=3.11
-     conda activate sage-open-webui
+     conda create --name sage-is-ai-ui python=3.11
+     conda activate sage-is-ai-ui
      ```
 
    - Install dependencies:
@@ -96,7 +96,7 @@ If you encounter memory-related errors during the build, increase the **Node.js 
 - **Hot Reload Not Working**:  
    Verify that **watch mode** is enabled for both frontend and backend.
 
-## Contributing to Sage WebUI
+## Contributing to Sage.is AI-UI
 
 ### Local Workflow
 

@@ -6,14 +6,14 @@ title: "🔰 Customizable Banners"
 Overview
 --------
 
-Sage WebUI provides a feature that allows administrators to create customizable banners with persistence in the `config.json` file. These banners can feature options for content, background color (info, warning, error, or success), and dismissibility. Banners are accessible only to logged-in users, ensuring the confidentiality of sensitive information.
+Sage.is AI-UI provides a feature that allows administrators to create customizable banners with persistence in the `config.json` file. These banners can feature options for content, background color (info, warning, error, or success), and dismissibility. Banners are accessible only to logged-in users, ensuring the confidentiality of sensitive information.
 
 Configuring Banners through the Admin Panel
 ---------------------------------------------
 
 To configure banners through the admin panel, follow these steps:
 
-1. Log in to your Sage WebUI instance as an administrator.
+1. Log in to your Sage.is AI-UI instance as an administrator.
 2. Navigate to the `Admin Panel` -> `Settings` -> `Interface`.
 3. Locate the `Banners` option directly above the `Default Prompt Suggestions` option.
 4. Click on the `+` icon to add a new banner.
@@ -31,7 +31,7 @@ Alternatively, you can configure banners through environment variables. To do th
 [{"id": "string","type": "string [info, success, warning, error]","title": "string","content": "string","dismissible": False,"timestamp": 1000}]
 ```
 
-For more information on configuring environment variables in Sage WebUI, see [Environment Variable Configuration](/getting-started/env-configuration#webui_banners).
+For more information on configuring environment variables in Sage.is AI-UI, see [Environment Variable Configuration](/getting-started/env-configuration#webui_banners).
 
 Environment Variable Description
 ---------------------------------

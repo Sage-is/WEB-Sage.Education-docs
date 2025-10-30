@@ -7,16 +7,16 @@ Here, we provide clear and structured diagrams to help you understand how variou
 
 ## Mac OS/Windows Setup Options 🖥️
 
-### Ollama on Host, Sage WebUI in Container
+### Ollama on Host, Sage.is AI-UI in Container
 
-In this scenario, `Ollama` runs directly on the host machine while `Sage WebUI` operates within a Docker container.
+In this scenario, `Ollama` runs directly on the host machine while `Sage.is AI-UI` operates within a Docker container.
 
 ```mermaid
 C4Context
 Boundary(b0, "Hosting Machine - Mac OS/Windows") {
    Person(user, "User")
    Boundary(b1, "Docker Desktop's Linux VM") {
-      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+      Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
    }
    Component(ollama, "Ollama", "Listening on port 11434")
 }
@@ -25,9 +25,9 @@ Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://loc
 UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 ```
 
-### Ollama and Sage WebUI in Compose Stack
+### Ollama and Sage.is AI-UI in Compose Stack
 
-Both `Ollama` and `Sage WebUI` are configured within the same Docker Compose stack, simplifying network communications.
+Both `Ollama` and `Sage.is AI-UI` are configured within the same Docker Compose stack, simplifying network communications.
 
 ```mermaid
 C4Context
@@ -35,7 +35,7 @@ Boundary(b0, "Hosting Machine - Mac OS/Windows") {
    Person(user, "User")
    Boundary(b1, "Docker Desktop's Linux VM") {
       Boundary(b2, "Compose Stack") {
-         Component(openwebui, "Sage WebUI", "Listening on port 8080")
+         Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
          Component(ollama, "Ollama", "Listening on port 11434")
       }
    }
@@ -45,9 +45,9 @@ Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://loc
 UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 ```
 
-### Ollama and Sage WebUI, Separate Networks
+### Ollama and Sage.is AI-UI, Separate Networks
 
-Here, `Ollama` and `Sage WebUI` are deployed in separate Docker networks, potentially leading to connectivity issues.
+Here, `Ollama` and `Sage.is AI-UI` are deployed in separate Docker networks, potentially leading to connectivity issues.
 
 ```mermaid
 C4Context
@@ -55,7 +55,7 @@ Boundary(b0, "Hosting Machine - Mac OS/Windows") {
    Person(user, "User")
    Boundary(b1, "Docker Desktop's Linux VM") {
       Boundary(b2, "Network A") {
-         Component(openwebui, "Sage WebUI", "Listening on port 8080")
+         Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
       }
       Boundary(b3, "Network B") {
          Component(ollama, "Ollama", "Listening on port 11434")
@@ -67,16 +67,16 @@ Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://loc
 UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 ```
 
-### Sage WebUI in Host Network
+### Sage.is AI-UI in Host Network
 
-In this configuration, `Sage WebUI` utilizes the host network, which impacts its ability to connect in certain environments.
+In this configuration, `Sage.is AI-UI` utilizes the host network, which impacts its ability to connect in certain environments.
 
 ```mermaid
 C4Context
 Boundary(b0, "Hosting Machine - Mac OS/Windows") {
    Person(user, "User")
    Boundary(b1, "Docker Desktop's Linux VM") {
-      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+      Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
    }
 }
 Rel(user, openwebui, "Unable to connect, host network is the VM's network")
@@ -86,16 +86,16 @@ UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 
 ## Linux Setup Options 🐧
 
-### Ollama on Host, Sage WebUI in Container (Linux)
+### Ollama on Host, Sage.is AI-UI in Container (Linux)
 
-This diagram is specific to the Linux platform, with `Ollama` running on the host and `Sage WebUI` deployed inside a Docker container.
+This diagram is specific to the Linux platform, with `Ollama` running on the host and `Sage.is AI-UI` deployed inside a Docker container.
 
 ```mermaid
 C4Context
 Boundary(b0, "Hosting Machine - Linux") {
    Person(user, "User")
    Boundary(b1, "Container Network") {
-      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+      Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
    }
    Component(ollama, "Ollama", "Listening on port 11434")
 }
@@ -104,9 +104,9 @@ Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://loc
 UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 ```
 
-### Ollama and Sage WebUI in Compose Stack (Linux)
+### Ollama and Sage.is AI-UI in Compose Stack (Linux)
 
-A set-up where both `Ollama` and `Sage WebUI` reside within the same Docker Compose stack, allowing for straightforward networking on Linux.
+A set-up where both `Ollama` and `Sage.is AI-UI` reside within the same Docker Compose stack, allowing for straightforward networking on Linux.
 
 ```mermaid
 C4Context
@@ -114,7 +114,7 @@ Boundary(b0, "Hosting Machine - Linux") {
    Person(user, "User")
    Boundary(b1, "Container Network") {
       Boundary(b2, "Compose Stack") {
-         Component(openwebui, "Sage WebUI", "Listening on port 8080")
+         Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
          Component(ollama, "Ollama", "Listening on port 11434")
       }
    }
@@ -124,16 +124,16 @@ Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://loc
 UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 ```
 
-### Ollama and Sage WebUI, Separate Networks (Linux)
+### Ollama and Sage.is AI-UI, Separate Networks (Linux)
 
-A scenario in which `Ollama` and `Sage WebUI` are in different Docker networks under a Linux environment, which could hinder connectivity.
+A scenario in which `Ollama` and `Sage.is AI-UI` are in different Docker networks under a Linux environment, which could hinder connectivity.
 
 ```mermaid
 C4Context
 Boundary(b0, "Hosting Machine - Linux") {
    Person(user, "User")
    Boundary(b2, "Container Network A") {
-      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+      Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
    }
    Boundary(b3, "Container Network B") {
       Component(ollama, "Ollama", "Listening on port 11434")
@@ -144,15 +144,15 @@ Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://loc
 UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
 ```
 
-### Sage WebUI in Host Network, Ollama on Host (Linux)
+### Sage.is AI-UI in Host Network, Ollama on Host (Linux)
 
-An optimal layout where both `Sage WebUI` and `Ollama` use the host’s network, facilitating seamless interaction on Linux systems.
+An optimal layout where both `Sage.is AI-UI` and `Ollama` use the host’s network, facilitating seamless interaction on Linux systems.
 
 ```mermaid
 C4Context
 Boundary(b0, "Hosting Machine - Linux") {
    Person(user, "User")
-   Component(openwebui, "Sage WebUI", "Listening on port 8080")
+   Component(openwebui, "Sage.is AI-UI", "Listening on port 8080")
    Component(ollama, "Ollama", "Listening on port 11434")
 }
 Rel(openwebui, ollama, "Makes API calls via localhost", "http://localhost:11434")

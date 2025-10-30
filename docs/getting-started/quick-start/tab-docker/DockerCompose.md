@@ -10,7 +10,7 @@ Docker Compose requires an additional package, `docker-compose-v2`.
 
 ## Example `docker-compose.yml`
 
-Here is an example configuration file for setting up Sage WebUI with Docker Compose:
+Here is an example configuration file for setting up Sage.is AI-UI with Docker Compose:
 
 ```yaml
 version: '3'
@@ -20,9 +20,9 @@ services:
     ports:
       - "3000:8080"
     volumes:
-      - sage-open-webui:/app/backend/data
+      - sage-is-ai-ui:/app/backend/data
 volumes:
-  sage-open-webui:
+  sage-is-ai-ui:
 ```
 
 ## Starting the Services
@@ -39,7 +39,7 @@ A useful helper script called `run-compose.sh` is included with the codebase. Th
 
 ---
 
-**Note:** For Nvidia GPU support, you change the image from `ghcr.io/sage-open-webui/sage-open-webui:main` to `ghcr.io/sage-open-webui/sage-open-webui:cuda` and add the following to your service definition in the `docker-compose.yml` file:
+**Note:** For Nvidia GPU support, you change the image from `ghcr.io/sage-is-ai-ui/sage-is-ai-ui:main` to `ghcr.io/sage-is-ai-ui/sage-is-ai-ui:cuda` and add the following to your service definition in the `docker-compose.yml` file:
 
 ```yaml
 deploy:

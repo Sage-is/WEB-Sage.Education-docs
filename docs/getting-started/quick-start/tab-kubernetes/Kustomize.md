@@ -10,7 +10,7 @@ Kustomize allows you to customize Kubernetes YAML configurations.
 
 ## Steps
 
-1. **Clone the Sage WebUI Manifests:**
+1. **Clone the Sage.is AI-UI Manifests:**
 
    ```bash
    git clone https://github.com/Startr/k8s-manifests.git
@@ -31,4 +31,4 @@ Kustomize allows you to customize Kubernetes YAML configurations.
 
 ## Access the WebUI
 
-Set up port forwarding or load balancing to access Sage WebUI from outside the cluster.
+Set up port forwarding or load balancing to access Sage.is AI-UI from outside the cluster.

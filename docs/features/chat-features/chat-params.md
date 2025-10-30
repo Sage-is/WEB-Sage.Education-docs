@@ -3,7 +3,7 @@ sidebar_position: 4
 title: "⚙️ Chat Parameters"
 ---
 
-Within Sage WebUI, there are three levels to setting a **System Prompt** and **Advanced Parameters**: per-chat basis, per-model basis, and per-account basis. This hierarchical system allows for flexibility while maintaining structured administration and control.
+Within Sage.is AI-UI, there are three levels to setting a **System Prompt** and **Advanced Parameters**: per-chat basis, per-model basis, and per-account basis. This hierarchical system allows for flexibility while maintaining structured administration and control.
 
 ## System Prompt and Advanced Parameters Hierarchy Chart
 
@@ -16,7 +16,7 @@ Within Sage WebUI, there are three levels to setting a **System Prompt** and **A
 ### 1. **Per-chat basis:**
 
 - **Description**: The per-chat basis setting refers to the system prompt and advanced parameters configured for a specific chat instance. These settings are only applicable to the current conversation and do not affect future chats.
-- **How to set**: Users can modify the system prompt and advanced parameters for a specific chat instance within the right-hand sidebar's **Chat Controls** section in Sage WebUI.
+- **How to set**: Users can modify the system prompt and advanced parameters for a specific chat instance within the right-hand sidebar's **Chat Controls** section in Sage.is AI-UI.
 - **Override capabilities**: Users are restricted from overriding the **System Prompt** or specific **Advanced Parameters** already set by an administrator on a per-model basis (**#2**). This ensures consistency and adherence to model-specific settings.
 
 <details>
@@ -29,7 +29,7 @@ Suppose a user wants to set a custom system prompt for a specific conversation. 
 ### 2. **Per-account basis:**
 
 - **Description**: The per-account basis setting refers to the default system prompt and advanced parameters configured for a specific user account. Any user-specific changes can serve as a fallback in situations where lower-level settings aren't defined.
-- **How to set**: Users can set their own system prompt and advanced parameters for their account within the **General** section of the **Settings** menu in Sage WebUI.
+- **How to set**: Users can set their own system prompt and advanced parameters for their account within the **General** section of the **Settings** menu in Sage.is AI-UI.
 - **Override capabilities**: Users have the ability to set their own system prompt on their account, but they must be aware that such parameters can still be overridden if an administrator has already set the **System Prompt** or specific **Advanced Parameters** on a per-model basis for the particular model being used.
 
 <details>
@@ -42,7 +42,7 @@ Suppose a user wants to set their own system prompt for their account. They can 
 ### 3. **Per-model basis:**
 
 - **Description**: The per-model basis setting refers to the default system prompt and advanced parameters configured for a specific model. These settings are applicable to all chat instances using that model.
-- **How to set**: Administrators can set the default system prompt and advanced parameters for a specific model within the **Models** section of the **Workspace** in Sage WebUI.
+- **How to set**: Administrators can set the default system prompt and advanced parameters for a specific model within the **Models** section of the **Workspace** in Sage.is AI-UI.
 - **Override capabilities**: **User** accounts are restricted from modifying the **System Prompt** or specific **Advanced Parameters** on a per-model basis (**#3**). This restriction prevents users from inappropriately altering default settings.
 - **Context length preservation:** When a model's **System Prompt** or specific **Advanced Parameters** are set manually in the **Workspace** section by an Admin, said **System Prompt** or manually set **Advanced Parameters** cannot be overridden or adjusted on a per-account basis within the **General** settings or **Chat Controls** section by a **User** account. This ensures consistency and prevents excessive reloading of the model whenever a user's context length setting changes.
 - **Model precedence:** If a model's **System Prompt** or specific **Advanced Parameters** value is pre-set in the Workspace section by an Admin, any context length changes made by a **User** account in the **General** settings or **Chat Controls** section will be disregarded, maintaining the pre-configured value for that model. Be advised that parameters left untouched by an **Admin** account can still be manually adjusted by a **User** account on a per-account or per-chat basis.

@@ -7,14 +7,14 @@ This guide provides essential information on how to interact with the API endpoi
 
 ## Authentication
 
-To ensure secure access to the API, authentication is required 🛡️. You can authenticate your API requests using the Bearer Token mechanism. Obtain your API key from **Settings > Account** in the Sage WebUI, or alternatively, use a JWT (JSON Web Token) for authentication.
+To ensure secure access to the API, authentication is required 🛡️. You can authenticate your API requests using the Bearer Token mechanism. Obtain your API key from **Settings > Account** in the Sage.is AI-UI, or alternatively, use a JWT (JSON Web Token) for authentication.
 
 ## Notable API Endpoints
 
 ### 📜 Retrieve All Models
 
 - **Endpoint**: `GET /api/models`
-- **Description**: Fetches all models created or added via Sage WebUI.
+- **Description**: Fetches all models created or added via Sage.is AI-UI.
 - **Example**:
 
   ```bash
@@ -24,7 +24,7 @@ To ensure secure access to the API, authentication is required 🛡️. You can 
 ### 💬 Chat Completions
 
 - **Endpoint**: `POST /api/chat/completions`
-- **Description**: Serves as an OpenAI API compatible chat completion endpoint for models on Sage WebUI including Ollama models, OpenAI models, and Sage WebUI Function models.
+- **Description**: Serves as an OpenAI API compatible chat completion endpoint for models on Sage.is AI-UI including Ollama models, OpenAI models, and Sage.is AI-UI Function models.
 - **Example**:
 
   ```bash
@@ -192,11 +192,11 @@ Leverage a knowledge collection to enhance the response when the inquiry may ben
       return response.json()
   ```
 
-These methods enable effective utilization of external knowledge via uploaded files and curated knowledge collections, enhancing chat applications' capabilities using the Sage WebUI API. Whether using files individually or within collections, you can customize the integration based on your specific needs.
+These methods enable effective utilization of external knowledge via uploaded files and curated knowledge collections, enhancing chat applications' capabilities using the Sage.is AI-UI API. Whether using files individually or within collections, you can customize the integration based on your specific needs.
 
-## Advantages of Using Sage WebUI as a Unified LLM Provider
+## Advantages of Using Sage.is AI-UI as a Unified LLM Provider
 
-Sage WebUI offers a myriad of benefits, making it an essential tool for developers and businesses alike:
+Sage.is AI-UI offers a myriad of benefits, making it an essential tool for developers and businesses alike:
 
 - **Unified Interface**: Simplify your interactions with different LLMs through a single, integrated platform.
 - **Ease of Implementation**: Quick start integration with comprehensive documentation and community support.
@@ -207,11 +207,11 @@ Sage WebUI offers a myriad of benefits, making it an essential tool for develope
 Make sure to set the `ENV` environment variable to `dev` in order to access the Swagger documentation for any of these services. Without this configuration, the documentation will not be available.
 :::
 
-Access detailed API documentation for different services provided by Sage WebUI:
+Access detailed API documentation for different services provided by Sage.is AI-UI:
 
 | Application | Documentation Path      |
 |-------------|-------------------------|
 | Main        | `/docs`                 |
 
 
-By following these guidelines, you can swiftly integrate and begin utilizing the Sage WebUI API. Should you encounter any issues or have questions, feel free to reach out through our Discord Community or consult the FAQs. Happy coding! 🌟
+By following these guidelines, you can swiftly integrate and begin utilizing the Sage.is AI-UI API. Should you encounter any issues or have questions, feel free to reach out through our Discord Community or consult the FAQs. Happy coding! 🌟

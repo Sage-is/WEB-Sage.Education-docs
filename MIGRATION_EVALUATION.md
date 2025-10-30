@@ -1,7 +1,7 @@
 # Docusaurus → 11ty Migration Snapshot
 
 **Date:** October 27, 2025  
-**Project:** Sage WebUI Documentation
+**Project:** Sage.is AI-UI Documentation
 
 ---
 

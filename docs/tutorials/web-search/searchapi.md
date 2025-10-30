@@ -4,7 +4,7 @@ title: "SearchApi"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 ## SearchApi API
@@ -15,13 +15,13 @@ This tutorial is a community contribution and is not supported by the Sage WebUI
 
 1. Go to [SearchApi](https://searchapi.io), and log on or create a new account.
 2. Go to `Dashboard` and copy the API key.
-3. With `API key`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`.
+3. With `API key`, open `Sage.is AI-UI Admin panel` and click `Settings` tab, and then click `Web Search`.
 4. Enable `Web search` and set `Web Search Engine` to `searchapi`.
 5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [SearchApi](https://www.searchapi.io/) dashboard.
 6. [Optional] Enter the `SearchApi engine` name you want to query. Example, `google`, `bing`, `baidu`, `google_news`, `bing_news`, `google_videos`, `google_scholar` and `google_patents.` By default, it is set to `google`.
 7. Click `Save`.
 
-![Sage WebUI Admin panel](/images/tutorial_searchapi_search.png)
+![Sage.is AI-UI Admin panel](/images/tutorial_searchapi_search.png)
 
 #### Note
 

@@ -29,7 +29,7 @@ title: "🛣️ Roadmap"
 </div>
 
 
-At Sage WebUI, we're committed to continually enhancing our platform to provide the best experience for our users. Below, you'll find the structured roadmap for our ongoing and future developments, categorized into Interface, Information Retrieval, and Community.
+At Sage.is AI-UI, we're committed to continually enhancing our platform to provide the best experience for our users. Below, you'll find the structured roadmap for our ongoing and future developments, categorized into Interface, Information Retrieval, and Community.
 
 ## Interface 🖥️
 
@@ -47,7 +47,7 @@ Our roadmap for interface innovations aims to create a highly intuitive and acce
 
 - 📈 **Advanced User Tracking and Cost Management Tools**: Users will gain access to comprehensive tools designed for tracking application performance and user activities, as well as managing costs effectively. These tools will empower users with the data they need to make informed decisions, improve user experiences, and maintain budget control, optimizing the use of resources across their AI applications.
 
-- 🧠 **AI Workflow Tool**: A node-based tool to orchestrate and compose multiple aspects of AI systems. This tool will allow users to visually connect different AI modules and services, creating complex workflows with ease. It's designed to empower users to harness the full potential of AI without needing deep technical knowledge in AI programming.
+- 🧠 **AI Workflow Tool**: A block-based tool to orchestrate and compose multiple aspects of AI systems. This tool will allow users to visually connect different AI modules and services, creating complex workflows with ease. It's designed to empower users to harness the full potential of AI without needing deep technical knowledge in AI programming.
 
 - 🔊 **Local Text-to-Speech Integration**: This feature will allow natural language processing to convert text into lifelike spoken audio, thus making the platform more accessible, especially for visually impaired users. This integration helps in consuming information without screen interaction, facilitating multitasking and improving user engagement.
 
@@ -57,12 +57,12 @@ Our roadmap for interface innovations aims to create a highly intuitive and acce
 
 - 🤖 **Code Interpreter Function**: A flexible code interpreter embedded into the platform can support multiple programming languages, which reduces the dependency on external tools and streamlines the development process, increasing efficiency.
 
-- 🔧 **Streamlined Fine-tune Support**: Sage WebUI will offer a seamless fine-tuning process by allowing users to automatically build a fine-tune dataset simply by using the interface and rating the responses. We will provide Python notebooks to help preprocess your dataset, making it ready for fine-tuning directly from the notebook. This approach will be super simple and elegantly integrates fine-tuning into user workflows.
+- 🔧 **Streamlined Fine-tune Support**: Sage.is AI-UI will offer a seamless fine-tuning process by allowing users to automatically build a fine-tune dataset simply by using the interface and rating the responses. We will provide Python notebooks to help preprocess your dataset, making it ready for fine-tuning directly from the notebook. This approach will be super simple and elegantly integrates fine-tuning into user workflows.
 
 
 ## Information Retrieval (RAG) 📚
 
-Sage WebUI currently provides an interface that enables the use of existing information retrieval (IR) models efficiency. However, we believe there is vast potential for improvement. We fully recognize the limitations of our current RAG (Retrieval-Augmented Generation) implementation in our WebUI, understanding that a one-size-fits-all approach does not effectively meet all users' needs. 
+Sage.is AI-UI currently provides an interface that enables the use of existing information retrieval (IR) models efficiency. However, we believe there is vast potential for improvement. We fully recognize the limitations of our current RAG (Retrieval-Augmented Generation) implementation in our WebUI, understanding that a one-size-fits-all approach does not effectively meet all users' needs. 
 
 To address this, we are committed to transforming our framework to be highly modular and extensively configurable. This new direction will enable users to tailor the information retrieval process to their specific requirements with ease, using a straightforward, interactive interface that allows for simple drag-and-drop customization. This refinement aims to significantly enhance user experience by providing a more adaptable and personalized IR setup.
 
@@ -93,8 +93,8 @@ Imagine a world where you think, and it happens. You desire a cup of coffee made
 
 This isn’t a sci-fi future; together, we are working towards it right now. As our AI models gradually become more capable and intuitively understand your specific needs, your most mundane responsibilities become automated. Through this profound shift, our collective time allowance can be redistributed towards grand endeavours. Think space exploration, longevity research or simply extra moments with loved ones. 
 
-Creating this imagined future won't be a walk in the park, but with your help, we believe it's within our reach. Sage WebUI is more than just tech - it's there to enhance your day, giving you more space for what's really important. Together, we're working on a brighter tomorrow. Thanks for joining us in this extraordinary journey.
+Creating this imagined future won't be a walk in the park, but with your help, we believe it's within our reach. Sage.is AI-UI is more than just tech - it's there to enhance your day, giving you more space for what's really important. Together, we're working on a brighter tomorrow. Thanks for joining us in this extraordinary journey.
 
 ---
 
-Join us as we push the boundaries of technology with these ambitious and transformative features in our roadmap! 💡🚀 Your participation and feedback are crucial as we strive to make Sage WebUI a pioneering tool in technology advancement.
+Join us as we push the boundaries of technology with these ambitious and transformative features in our roadmap! 💡🚀 Your participation and feedback are crucial as we strive to make Sage.is AI-UI a pioneering tool in technology advancement.

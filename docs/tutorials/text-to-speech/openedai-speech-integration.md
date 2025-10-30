@@ -4,10 +4,10 @@ title: "🗨️ Openedai-speech Using Docker"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
-**Integrating `openedai-speech` into Sage WebUI using Docker**
+**Integrating `openedai-speech` into Sage.is AI-UI using Docker**
 ==============================================================
 
 **What is `openedai-speech`?**
@@ -23,7 +23,7 @@ It serves the `/v1/audio/speech` endpoint and provides a free, private text-to-s
 -----------------
 
 * Docker installed on your system
-* Sage WebUI running in a Docker container
+* Sage.is AI-UI running in a Docker container
 * Basic understanding of Docker and Docker Compose
 
 **Option 1: Using Docker Compose**
@@ -148,12 +148,12 @@ docker build -f Dockerfile.min -t ghcr.io/matatonic/openedai-speech-min .
 docker run -d -p 8000:8000 -v voices:/app/voices -v config:/app/config --name openedai-speech ghcr.io/matatonic/openedai-speech-min
 ```
 
-**Step 6: Configuring Sage WebUI to use `openedai-speech` for TTS**
+**Step 6: Configuring Sage.is AI-UI to use `openedai-speech` for TTS**
 ---------------------------------------------------------
 
 ![openedai-tts](https://github.com/silentoplayz/docs/assets/50341825/ea08494f-2ebf-41a2-bb0f-9b48dd3ace79)
 
-Open the Sage WebUI settings and navigate to the TTS Settings under **Admin Panel > Settings > Audio**. Add the following configuration:
+Open the Sage.is AI-UI settings and navigate to the TTS Settings under **Admin Panel > Settings > Audio**. Add the following configuration:
 
 * **API Base URL**: `http://host.docker.internal:8000/v1`
 * **API Key**: `sk-111111111` (Note that this is a dummy API key, as `openedai-speech` doesn't require an API key. You can use whatever you'd like for this field, as long as it is filled.)
@@ -168,7 +168,7 @@ Under `TTS Voice` within the same audio settings menu in the admin panel, you ca
 **Step 8: Press `Save` to apply the changes and start enjoying naturally sounding voices**
 --------------------------------------------------------------------------------------------
 
-Press the `Save` button to apply the changes to your Sage WebUI settings. Refresh the page for the change to fully take effect and enjoy using `openedai-speech` integration within Sage WebUI to read aloud text responses with text-to-speech in a natural sounding voice.
+Press the `Save` button to apply the changes to your Sage.is AI-UI settings. Refresh the page for the change to fully take effect and enjoy using `openedai-speech` integration within Sage.is AI-UI to read aloud text responses with text-to-speech in a natural sounding voice.
 
 **Model Details:**
 ------------------
@@ -182,10 +182,10 @@ Press the `Save` button to apply the changes to your Sage WebUI settings. Refres
 **Troubleshooting**
 -------------------
 
-If you encounter any problems integrating `openedai-speech` with Sage WebUI, follow these troubleshooting steps:
+If you encounter any problems integrating `openedai-speech` with Sage.is AI-UI, follow these troubleshooting steps:
 
 * **Verify `openedai-speech` service**: Ensure that the `openedai-speech` service is running and the port you specified in the docker-compose.yml file is exposed.
-* **Check access to host.docker.internal**: Verify that the hostname `host.docker.internal` is resolvable from within the Sage WebUI container. This is necessary because `openedai-speech` is exposed via `localhost` on your PC, but `sage-open-webui` cannot normally access it from inside its container. You can add a volume to the `docker-compose.yml` file to mount a file from the host to the container, for example, to a directory that will be served by openedai-speech.
+* **Check access to host.docker.internal**: Verify that the hostname `host.docker.internal` is resolvable from within the Sage.is AI-UI container. This is necessary because `openedai-speech` is exposed via `localhost` on your PC, but `sage-is-ai-ui` cannot normally access it from inside its container. You can add a volume to the `docker-compose.yml` file to mount a file from the host to the container, for example, to a directory that will be served by openedai-speech.
 * **Review API key configuration**: Make sure the API key is set to a dummy value or effectively left unchecked because `openedai-speech` doesn't require an API key.
 * **Check voice configuration**: Verify that the voice you are trying to use for TTS exists in your `voice_to_speaker.yaml` file and the corresponding files (e.g., voice XML files) are present in the correct directory.
 * **Verify voice model paths**: If you're experiencing issues with voice model loading, double-check that the paths in your `voice_to_speaker.yaml` file match the actual locations of your voice models.
@@ -212,7 +212,7 @@ The configuration files, which define the available voices and their properties,
 **Additional Resources**
 ------------------------
 
-For more information on configuring Sage WebUI to use `openedai-speech`, including setting environment variables, see the [Sage WebUI documentation](/getting-started/env-configuration#text-to-speech).
+For more information on configuring Sage.is AI-UI to use `openedai-speech`, including setting environment variables, see the [Sage.is AI-UI documentation](/getting-started/env-configuration#text-to-speech).
 
 For more information about `openedai-speech`, please visit the [GitHub repository](https://github.com/matatonic/openedai-speech).
 
@@ -220,5 +220,5 @@ For more information about `openedai-speech`, please visit the [GitHub repositor
 [Custom-Voices-HowTo](https://github.com/matatonic/openedai-speech?tab=readme-ov-file#custom-voices-howto)
 
 :::note
-You can change the port number in the `docker-compose.yml` file to any open and usable port, but be sure to update the **API Base URL** in Sage WebUI Admin Audio settings accordingly.
+You can change the port number in the `docker-compose.yml` file to any open and usable port, but be sure to update the **API Base URL** in Sage.is AI-UI Admin Audio settings accordingly.
 :::

@@ -3,17 +3,17 @@ sidebar_position: 3
 title: "🚚 Migrating Tools & Functions: 0.4 to 0.5"
 ---
 
-# 🚚 Migration Guide: Sage WebUI 0.4 to 0.5
+# 🚚 Migration Guide: Sage.is AI-UI 0.4 to 0.5
 
-Welcome to the Sage WebUI 0.5 migration guide! If you're working on existing projects or building new ones, this guide will walk you through the key changes from **version 0.4 to 0.5** and provide an easy-to-follow roadmap for upgrading your Functions. Let's make this transition as smooth as possible! 😊
+Welcome to the Sage.is AI-UI 0.5 migration guide! If you're working on existing projects or building new ones, this guide will walk you through the key changes from **version 0.4 to 0.5** and provide an easy-to-follow roadmap for upgrading your Functions. Let's make this transition as smooth as possible! 😊
 
 ---
 
 ## 🧐 What Has Changed and Why?
 
-With Sage WebUI 0.5, we’ve overhauled the architecture to make the project **simpler, more unified, and scalable**. Here's the big picture:
+With Sage.is AI-UI 0.5, we’ve overhauled the architecture to make the project **simpler, more unified, and scalable**. Here's the big picture:
 
-- **Old Architecture:** 🎯 Previously, Sage WebUI was built on a **sub-app architecture** where each app (e.g., `ollama`, `openai`) was a separate FastAPI application. This caused fragmentation and extra complexity when managing apps.
+- **Old Architecture:** 🎯 Previously, Sage.is AI-UI was built on a **sub-app architecture** where each app (e.g., `ollama`, `openai`) was a separate FastAPI application. This caused fragmentation and extra complexity when managing apps.
 - **New Architecture:** 🚀 With version 0.5, we have transitioned to a **single FastAPI app** with multiple **routers**. This means better organization, centralized flow, and reduced redundancy.
 
 ### Key Changes:
@@ -26,7 +26,7 @@ Here’s an overview of what changed:
    - The old `open_webui.apps.webui` has been transformed into `open_webui.main`, making it the central entry point for the project.
 
 3. **Unified API Endpoint**
-   - Sage WebUI 0.5 introduces a **unified function**, `chat_completion`, in `open_webui.main`, replacing separate functions for models like `ollama` and `openai`. This offers a consistent and streamlined API experience. However, the **direct successor** of these individual functions is `generate_chat_completion` from `open_webui.utils.chat`. If you prefer a lightweight POST request without handling additional parsing (e.g., files, tools, or misc), this utility function is likely what you want.
+   - Sage.is AI-UI 0.5 introduces a **unified function**, `chat_completion`, in `open_webui.main`, replacing separate functions for models like `ollama` and `openai`. This offers a consistent and streamlined API experience. However, the **direct successor** of these individual functions is `generate_chat_completion` from `open_webui.utils.chat`. If you prefer a lightweight POST request without handling additional parsing (e.g., files, tools, or misc), this utility function is likely what you want.
 
 #### Example:
 ```python
@@ -138,7 +138,7 @@ Depending on your use case, you can choose between:
 
 2. **`open_webui.utils.chat.generate_chat_completion`:**
     - Directly makes a POST request without handling extra parsing or tasks.
-    - This is the **direct successor** to the previous `main.generate_chat_completions`, `ollama.generate_chat_completion` and `openai.generate_chat_completion` functions in Sage WebUI 0.4.
+    - This is the **direct successor** to the previous `main.generate_chat_completions`, `ollama.generate_chat_completion` and `openai.generate_chat_completion` functions in Sage.is AI-UI 0.4.
     - Best for simplified and more lightweight scenarios.
 
 #### Example:
@@ -242,7 +242,7 @@ Here’s a quick cheat sheet to remember:
 
 ## 🎉 Hooray! You're Ready!
 
-That's it! You've successfully migrated from **Sage WebUI 0.4 to 0.5**. By refactoring your imports, using the unified endpoint, and updating function signatures, you'll be fully equipped to leverage the latest features and improvements in version 0.5.
+That's it! You've successfully migrated from **Sage.is AI-UI 0.4 to 0.5**. By refactoring your imports, using the unified endpoint, and updating function signatures, you'll be fully equipped to leverage the latest features and improvements in version 0.5.
 
 ---
 

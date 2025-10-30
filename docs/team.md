@@ -30,7 +30,7 @@ title: "👥 Our Team"
 
 ##  Meet Our Team!
 
-Our team is a passionate group of individuals dedicated to advancing the Sage WebUI project. Each member brings unique skills and expertise, contributing to our shared mission of democratizing AI technology.
+Our team is a passionate group of individuals dedicated to advancing the Sage.is AI-UI project. Each member brings unique skills and expertise, contributing to our shared mission of democratizing AI technology.
 
 ### Important Note:
 

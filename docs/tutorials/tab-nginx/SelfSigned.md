@@ -13,7 +13,7 @@ Using self-signed certificates is suitable for development or internal use where
 
 2. **Create Nginx Configuration File:**
 
-    **`conf.d/sage-open-webui.conf`:**
+    **`conf.d/sage-is-ai-ui.conf`:**
 
     ```nginx
     server {
@@ -60,7 +60,7 @@ Using self-signed certificates is suitable for development or internal use where
           - ./conf.d:/etc/nginx/conf.d
           - ./ssl:/etc/nginx/ssl
         depends_on:
-          - sage-open-webui
+          - sage-is-ai-ui
     ```
 
 5. **Start Nginx Service:**
@@ -71,7 +71,7 @@ Using self-signed certificates is suitable for development or internal use where
 
 #### Access the WebUI
 
-Access Sage WebUI via HTTPS at:
+Access Sage.is AI-UI via HTTPS at:
 
 [https://your_domain_or_IP](https://your_domain_or_IP)
 

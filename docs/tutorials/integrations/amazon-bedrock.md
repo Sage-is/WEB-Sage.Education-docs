@@ -4,14 +4,14 @@ title: "🛌 Integrate with Amazon Bedrock"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 ---
 
-# Integrating sage-open-webui with Amazon Bedrock
+# Integrating sage-is-ai-ui with Amazon Bedrock
 
-In this tutorial, we'll explore one of the most common and popular approaches to integrate sage-open-webui with Amazon Bedrock.
+In this tutorial, we'll explore one of the most common and popular approaches to integrate sage-is-ai-ui with Amazon Bedrock.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ AWS provides good documentation for request accessing / enabling these models he
 
 ## Step 2: Configure the Bedrock Access Gateway
 
-Now that we have access to at least one Bedrock base model, we need to configure the Bedrock Access Gateway, or BAG. You can think of the BAG as kind of proxy or middleware developed by AWS that wraps around AWS native endpoints/SDK for Bedrock and, in turn, exposes endpoints that are compatible with OpenAI's schema, which is what sage-open-webui requires.
+Now that we have access to at least one Bedrock base model, we need to configure the Bedrock Access Gateway, or BAG. You can think of the BAG as kind of proxy or middleware developed by AWS that wraps around AWS native endpoints/SDK for Bedrock and, in turn, exposes endpoints that are compatible with OpenAI's schema, which is what sage-is-ai-ui requires.
 
 For reference, here is a simple mapping between the endpoints:
 
@@ -76,9 +76,9 @@ You should now be able to access the BAG's swagger page at: http://localhost:800
 
 ![Bedrock Access Gateway Swagger](/images/tutorials/amazon-bedrock/amazon-bedrock-proxy-api.png)
 
-## Step 3: Add Connection in sage-open-webui
+## Step 3: Add Connection in sage-is-ai-ui
 
-Now that you the BAG up-and-running, it's time to add it as a new connection in sage-open-webui.
+Now that you the BAG up-and-running, it's time to add it as a new connection in sage-is-ai-ui.
 
 - Under the Admin Panel, go to Settings -> Connections.
 - Use the "+" (plus) button to add a new connection under the OpenAI
@@ -96,7 +96,7 @@ You should now see all your Bedrock models available!
 
 ## Other Helpful Tutorials
 
-These are a few other very helpful tutorials when working to integrate sage-open-webui with Amazon Bedrock.
+These are a few other very helpful tutorials when working to integrate sage-is-ai-ui with Amazon Bedrock.
 
-- https://gauravve.medium.com/connecting-sage-open-webui-to-aws-bedrock-a1f0082c8cb2
+- https://gauravve.medium.com/connecting-sage-is-ai-ui-to-aws-bedrock-a1f0082c8cb2
 - https://jrpospos.blog/posts/2024/08/using-amazon-bedrock-with-openwebui-when-working-with-sensitive-data/

@@ -3,16 +3,16 @@ sidebar_position: 6
 title: "📊 Monitoring"
 ---
 
-# Monitoring Sage WebUI
+# Monitoring Sage.is AI-UI
 
-Monitoring your Sage WebUI instance is crucial for ensuring reliable service and quickly identifying issues. This guide covers three levels of monitoring:
+Monitoring your Sage.is AI-UI instance is crucial for ensuring reliable service and quickly identifying issues. This guide covers three levels of monitoring:
 - Basic health checks for service availability
 - Model connectivity verification
 - Deep health checks with model response testing
 
 ## Basic Health Check Endpoint
 
-Sage WebUI exposes a health check endpoint at `/health` that returns a 200 OK status when the service is running properly. 
+Sage.is AI-UI exposes a health check endpoint at `/health` that returns a 200 OK status when the service is running properly. 
 
 
 ```bash
@@ -26,7 +26,7 @@ Sage WebUI exposes a health check endpoint at `/health` that returns a 200 OK st
 1. In your Uptime Kuma dashboard, click "Add New Monitor"
 2. Set the following configuration:
    - Monitor Type: HTTP(s)
-   - Name: Sage WebUI
+   - Name: Sage.is AI-UI
    - URL: `http://your-sage-instance:8080/health`
    - Monitoring Interval: 60 seconds (or your preferred interval)
    - Retry count: 3 (recommended)
@@ -36,9 +36,9 @@ The health check will verify:
 - The application is running
 - Basic database connectivity
 
-## Sage WebUI Model Connectivity
+## Sage.is AI-UI Model Connectivity
 
-To verify that Sage WebUI can successfully connect to and list your configured models, you can monitor the models endpoint. This endpoint requires authentication and checks Sage WebUI's ability to communicate with your model providers.
+To verify that Sage.is AI-UI can successfully connect to and list your configured models, you can monitor the models endpoint. This endpoint requires authentication and checks Sage.is AI-UI's ability to communicate with your model providers.
 
 See [API documentation](https://docs.sage.is/getting-started/api-endpoints/#-retrieve-all-models) for more details about the models endpoint.
 
@@ -57,7 +57,7 @@ See [API documentation](https://docs.sage.is/getting-started/api-endpoints/#-ret
 
 2. Get your API key [docs](https://docs.sage.is/getting-started/api-endpoints):
    - (Optional), consider making a non-admin user for the monitoring API key
-   - Go to Settings > Account in Sage WebUI
+   - Go to Settings > Account in Sage.is AI-UI
    - Generate a new API key specifically for monitoring
    - Copy the API key for use in Uptime Kuma
 
@@ -67,7 +67,7 @@ Note: If you don't see the option to generate API keys in your Settings > Accoun
 
 1. Create a new monitor in Uptime Kuma:
    - Monitor Type: HTTP(s) - JSON Query
-   - Name: Sage WebUI Model Connectivity
+   - Name: Sage.is AI-UI Model Connectivity
    - URL: `http://your-sage-instance:8080/api/models`
    - Method: GET
    - Expected Status Code: 200

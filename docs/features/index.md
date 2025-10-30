@@ -28,22 +28,22 @@ title: "⭐ Features"
   </div>
 </div>
 
-## Key Features of Sage WebUI ⭐
+## Key Features of Sage.is AI-UI ⭐
 
 - 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes (`kubectl`, `kustomize` or `helm`) for a hassle-free experience with support for both `:ollama` image with bundled Ollama and `:cuda` with CUDA support.
 
-- 🤝 **OpenAI API Integration**: Effortlessly integrate OpenAI-compatible APIs for versatile conversations alongside Ollama models. The OpenAI API URL can be customized to integrate Sage WebUI seamlessly with various third-party applications.
+- 🤝 **OpenAI API Integration**: Effortlessly integrate OpenAI-compatible APIs for versatile conversations alongside Ollama models. The OpenAI API URL can be customized to integrate Sage.is AI-UI seamlessly with various third-party applications.
 
 - 🛡️ **Granular Permissions and User Groups**: By allowing administrators to create detailed user roles, user groups, and permissions across the workspace, we ensure a secure user environment for all users involved. This granularity not only enhances security, but also allows for customized user experiences, fostering a sense of ownership and responsibility amongst users.
 
 - 📱 **Responsive Design**: Enjoy a seamless experience across desktop PCs, laptops, and mobile devices.
 
 - 📱 **Progressive Web App for Mobile**: Enjoy a native progressive web application experience on your mobile device with offline access on `localhost` or a personal domain, and a smooth user interface. In order for our PWA to be installable on your device, it must be delivered in a secure context. This usually means that it must be served over HTTPS.
-  - To set up a PWA, you'll need some understanding of technologies like Linux, Docker, and reverse proxies such as `Nginx`, `Caddy`, or `Traefik`. Using these tools can help streamline the process of building and deploying a PWA tailored to your needs. While there's no "one-click install" option available, and your available option to securely deploy your Sage WebUI instance over HTTPS requires user experience, using these resources can make it easier to create and deploy a PWA tailored to your needs.
+  - To set up a PWA, you'll need some understanding of technologies like Linux, Docker, and reverse proxies such as `Nginx`, `Caddy`, or `Traefik`. Using these tools can help streamline the process of building and deploying a PWA tailored to your needs. While there's no "one-click install" option available, and your available option to securely deploy your Sage.is AI-UI instance over HTTPS requires user experience, using these resources can make it easier to create and deploy a PWA tailored to your needs.
 
 - ✒️🔢 **Full Markdown and LaTeX Support**: Elevate your LLM experience with comprehensive Markdown and LaTeX capabilities for enriched interaction.
 
-- 🧩 **Model Builder**: Easily create custom models from base Ollama models directly from Sage WebUI. Create and add custom characters and agents, customize model elements, and import models effortlessly through [Sage WebUI Community](https://sage.education/) integration.
+- 🧩 **Model Builder**: Easily create custom models from base Ollama models directly from Sage.is AI-UI. Create and add custom characters and agents, customize model elements, and import models effortlessly through [Sage.is AI-UI Community](https://sage.education/) integration.
 
 - 📚 **Local and Remote RAG Integration**: Dive into the future of chat interactions and explore your documents with our cutting-edge Retrieval Augmented Generation (RAG) technology within your chats. Documents can be loaded into the `Documents` tab of the Workspace, after which they can be accessed using the pound key [`#`] before a query, or by starting the prompt with the pound key [`#`], followed by a URL for webpage content integration.
 
@@ -57,9 +57,9 @@ title: "⭐ Features"
 
 - 🔐 **Role-Based Access Control (RBAC)**: Ensure secure access with restricted permissions. Only authorized individuals can access your Ollama, while model creation and pulling rights are exclusively reserved for administrators.
 
-- 🌐🌍 **Multilingual Support**: Experience Sage WebUI in your preferred language with our internationalization (`i18n`) support. We invite you to join us in expanding our supported languages! We're actively seeking contributors!
+- 🌐🌍 **Multilingual Support**: Experience Sage.is AI-UI in your preferred language with our internationalization (`i18n`) support. We invite you to join us in expanding our supported languages! We're actively seeking contributors!
 
-- 🌟 **Continuous Updates**: We are committed to improving Sage WebUI with regular updates, fixes, and new features.
+- 🌟 **Continuous Updates**: We are committed to improving Sage.is AI-UI with regular updates, fixes, and new features.
 
 ## And many more remarkable features including... ⚡️
 
@@ -67,7 +67,7 @@ title: "⭐ Features"
 
 ### 🔧 Pipelines Support
 
-- 🔧 **Pipelines Framework**: Seamlessly integrate and customize your Sage WebUI experience with our modular plugin framework for enhanced customization and functionality (https://github.com/Startr/pipelines). Our framework allows for the easy addition of custom logic and integration of Python libraries, from AI agents to home automation APIs.
+- 🔧 **Pipelines Framework**: Seamlessly integrate and customize your Sage.is AI-UI experience with our modular plugin framework for enhanced customization and functionality (https://github.com/Startr/pipelines). Our framework allows for the easy addition of custom logic and integration of Python libraries, from AI agents to home automation APIs.
 
 - 📥 **Upload Pipeline**: Pipelines can be uploaded directly from the `Admin Panel` > `Settings` > `Pipelines` menu, streamlining the pipeline management process.
 
@@ -108,9 +108,9 @@ title: "⭐ Features"
 
 - 🌐 **Personalized Interface**: Choose between a freshly designed search landing page and the classic chat UI from Settings > Interface, allowing for a tailored experience.
 
-- 📦 **Pip Install Method**: Installation of Sage WebUI can be accomplished via the command `pip install sage-open-webui`, which streamlines the process and makes it more accessible to new users. For further information, please visit: https://pypi.org/project/sage-open-webui/.
+- 📦 **Pip Install Method**: Installation of Sage.is AI-UI can be accomplished via the command `pip install sage-is-ai-ui`, which streamlines the process and makes it more accessible to new users. For further information, please visit: https://pypi.org/project/sage-is-ai-ui/.
 
-- 🌈 **Theme Customization**: Personalize your Sage WebUI experience with a range of options, including a variety of solid, yet sleek themes, customizable chat background images, and three mode options: Light, Dark, or OLED Dark mode - or let *Her* choose for you! ;)
+- 🌈 **Theme Customization**: Personalize your Sage.is AI-UI experience with a range of options, including a variety of solid, yet sleek themes, customizable chat background images, and three mode options: Light, Dark, or OLED Dark mode - or let *Her* choose for you! ;)
 
 - 🖼️ **Custom Background Support**: Set a custom background from Settings > Interface to personalize your experience.
 
@@ -144,11 +144,11 @@ title: "⭐ Features"
 
 - 💾 **Performance Optimizations**: Lazy loading of large dependencies minimizes initial memory usage, boosting performance and reducing loading times.
 
-- 🚀 **Persistent and Scalable Configuration**: Sage WebUI configurations are stored in a database (webui.db), allowing for seamless load balancing, high-availability setups, and persistent settings across multiple instances, making it easy to access and reuse your configurations.
+- 🚀 **Persistent and Scalable Configuration**: Sage.is AI-UI configurations are stored in a database (webui.db), allowing for seamless load balancing, high-availability setups, and persistent settings across multiple instances, making it easy to access and reuse your configurations.
 
-- 🔄 **Portable Import/Export**: Easily import and export Sage WebUI configurations, simplifying the process of replicating settings across multiple systems.
+- 🔄 **Portable Import/Export**: Easily import and export Sage.is AI-UI configurations, simplifying the process of replicating settings across multiple systems.
 
-- ❓ **Quick Access to Documentation & Shortcuts**: The question mark button located at the bottom right-hand corner of the main UI screen (available on larger screens like desktop PCs and laptops) provides users with easy access to the Sage WebUI documentation page and available keyboard shortcuts.
+- ❓ **Quick Access to Documentation & Shortcuts**: The question mark button located at the bottom right-hand corner of the main UI screen (available on larger screens like desktop PCs and laptops) provides users with easy access to the Sage.is AI-UI documentation page and available keyboard shortcuts.
 
 - 📜 **Changelog & Check for Updates**: Users can access a comprehensive changelog and check for updates in the `Settings` > `About` > `See What's New` menu, which provides a quick overview of the latest features, improvements, and bug fixes, as well as the ability to check for updates.
 
@@ -222,7 +222,7 @@ title: "⭐ Features"
 
 - 📤 **Easy Chat Import**: Import chats into your workspace by simply dragging and dropping chat exports (JSON) onto the sidebar.
 
-- 📜 **Prompt Preset Support**: Instantly access custom preset prompts using the `/` command in the chat input. Load predefined conversation starters effortlessly and expedite your interactions. Import prompts with ease through [Sage WebUI Community](https://sage.is/) integration or create your own!
+- 📜 **Prompt Preset Support**: Instantly access custom preset prompts using the `/` command in the chat input. Load predefined conversation starters effortlessly and expedite your interactions. Import prompts with ease through [Sage.is AI-UI Community](https://sage.is/) integration or create your own!
 
 - 📅 **Prompt Variables Support**: Prompt variables such as `{{CLIPBOARD}}`, `{{CURRENT_DATE}}`, `{{CURRENT_DATETIME}}`, `{{CURRENT_TIME}}`, `{{CURRENT_TIMEZONE}}`, `{{CURRENT_WEEKDAY}}`, `{{USER_NAME}}`, `{{USER_LANGUAGE}}`, and `{{USER_LOCATION}}` can be utilized in the system prompt or by using a slash command to select a prompt directly within a chat.
   - Please note that the `{{USER_LOCATION}}` prompt variable requires a secure connection over HTTPS. To utilize this particular prompt variable, please ensure that `{{USER_LOCATION}}` is toggled on from the `Settings` > `Interface` menu.
@@ -259,7 +259,7 @@ title: "⭐ Features"
 
 - 🗂️ **Create Ollama Modelfile**: To create a model file for Ollama, navigate to the `Admin Panel` > `Settings` > `Models` > `Create a model` menu.
 
-- ⬆️ **GGUF File Model Creation**: Effortlessly create Ollama models by uploading GGUF files directly from Sage WebUI from the `Admin Settings` > `Settings` > `Model` > `Experimental` menu. The process has been streamlined with the option to upload from your machine or download GGUF files from Hugging Face.
+- ⬆️ **GGUF File Model Creation**: Effortlessly create Ollama models by uploading GGUF files directly from Sage.is AI-UI from the `Admin Settings` > `Settings` > `Model` > `Experimental` menu. The process has been streamlined with the option to upload from your machine or download GGUF files from Hugging Face.
 
 - ⚙️ **Default Model Setting**: The default model preference for new chats can be set in the `Settings` > `Interface` menu on mobile devices, or can more easily be set in a new chat under the model selector dropdown on desktop PCs and laptops.
 
@@ -267,7 +267,7 @@ title: "⭐ Features"
 
 - 🕒 **Model Details at a Glance**: View critical model details, including model hash and last modified timestamp, directly in the Models workspace for enhanced tracking and management.
 
-- 📥🗑️ **Download/Delete Models**: Models can be downloaded or deleted directly from Sage WebUI with ease.
+- 📥🗑️ **Download/Delete Models**: Models can be downloaded or deleted directly from Sage.is AI-UI with ease.
 
 - 🔄 **Update All Ollama Models**: A convenient button allows users to update all their locally installed models in one operation, streamlining model management.
 
@@ -285,8 +285,8 @@ title: "⭐ Features"
 
 - 🔧 **Comprehensive Feedback Export**: Export feedback history data to JSON for seamless integration with RLHF processing and further analysis, providing valuable insights for improvement.
 
-- 🤝 **Community Sharing**: Share your chat sessions with the [Sage WebUI Community](https://sage.is/) by clicking the `Share to Sage WebUI Community` button. This feature allows you to engage with other users and collaborate on the platform.
-  - To utilize this feature, please sign-in to your Sage WebUI Community account. Sharing your chats fosters a vibrant community, encourages knowledge sharing, and facilitates joint problem-solving. Please note that community sharing of chat sessions is an optional feature. Only Admins can toggle this feature on or off in the `Admin Settings` > `Settings` > `General` menu.
+- 🤝 **Community Sharing**: Share your chat sessions with the [Sage.is AI-UI Community](https://sage.is/) by clicking the `Share to Sage.is AI-UI Community` button. This feature allows you to engage with other users and collaborate on the platform.
+  - To utilize this feature, please sign-in to your Sage.is AI-UI Community account. Sharing your chats fosters a vibrant community, encourages knowledge sharing, and facilitates joint problem-solving. Please note that community sharing of chat sessions is an optional feature. Only Admins can toggle this feature on or off in the `Admin Settings` > `Settings` > `General` menu.
 
 - 🏆 **Community Leaderboard**: Compete and track your performance in real-time with our leaderboard system, which utilizes the ELO rating system and allows for optional sharing of feedback history.
 
@@ -356,13 +356,13 @@ title: "⭐ Features"
 
 ### 🐍 Code Execution
 
-- 🚀 **Versatile, UI-Agnostic, OpenAI-Compatible Plugin Framework**: Seamlessly integrate and customize [Sage WebUI Pipelines](https://github.com/Startr/pipelines) for efficient data processing and model training, ensuring ultimate flexibility and scalability.
+- 🚀 **Versatile, UI-Agnostic, OpenAI-Compatible Plugin Framework**: Seamlessly integrate and customize [Sage.is AI-UI Pipelines](https://github.com/Startr/pipelines) for efficient data processing and model training, ensuring ultimate flexibility and scalability.
 
-- 🛠️ **Native Python Function Calling**: Access the power of Python directly within Sage WebUI with native function calling. Easily integrate custom code to build unique features like custom RAG pipelines, web search tools, and even agent-like actions via a built-in code editor to seamlessly develop and integrate function code within the `Tools` and `Functions` workspace.
+- 🛠️ **Native Python Function Calling**: Access the power of Python directly within Sage.is AI-UI with native function calling. Easily integrate custom code to build unique features like custom RAG pipelines, web search tools, and even agent-like actions via a built-in code editor to seamlessly develop and integrate function code within the `Tools` and `Functions` workspace.
 
 - 🐍 **Python Code Execution**: Execute Python code locally in the browser via Pyodide with a range of libraries supported by Pyodide.
 
-- 🌊 **Mermaid Rendering**: Create visually appealing diagrams and flowcharts directly within Sage WebUI using the [Mermaid Diagramming and charting tool](https://mermaid.js.org/intro/), which supports Mermaid syntax rendering.
+- 🌊 **Mermaid Rendering**: Create visually appealing diagrams and flowcharts directly within Sage.is AI-UI using the [Mermaid Diagramming and charting tool](https://mermaid.js.org/intro/), which supports Mermaid syntax rendering.
 
 - 🔗 **Iframe Support**: Enables rendering HTML directly into your chat interface using functions and tools.
 
@@ -372,7 +372,7 @@ title: "⭐ Features"
 
 - ✨ **Multiple OpenAI-Compatible API Support**: Seamlessly integrate and customize various OpenAI-compatible APIs, enhancing the versatility of your chat interactions.
 
-- 🔑 **Simplified API Key Management**: Easily generate and manage secret keys to leverage Sage WebUI with OpenAI libraries, streamlining integration and development.
+- 🔑 **Simplified API Key Management**: Easily generate and manage secret keys to leverage Sage.is AI-UI with OpenAI libraries, streamlining integration and development.
 
 - 🌐 **HTTP/S Proxy Support**: Configure network settings easily using the `http_proxy` or `https_proxy` environment variable. These variables, if set, should contain the URLs for HTTP and HTTPS proxies, respectively.
 
@@ -420,11 +420,11 @@ title: "⭐ Features"
 
 - 🔑 **Admin Control for Community Sharing**: Admins can enable or disable community sharing for all users via a toggle in the `Admin Panel` > `Settings` menu. This toggle allows admins to manage accessibility and privacy, ensuring a secure environment. Admins have the option of enabling or disabling the `Share on Community` button for all users, which allows them to control community engagement and collaboration.
 
-- 📧 **Trusted Email Authentication**: Optionally authenticate using a trusted email header, adding an extra layer of security and authentication to protect your Sage WebUI instance.
+- 📧 **Trusted Email Authentication**: Optionally authenticate using a trusted email header, adding an extra layer of security and authentication to protect your Sage.is AI-UI instance.
 
-- 🔒 **Backend Reverse Proxy Support**: Bolster security through direct communication between Sage WebUI's backend and Ollama. This key feature eliminates the need to expose Ollama over the local area network (LAN). Requests made to the `/ollama/api` route from Sage WebUI are seamlessly redirected to Ollama from the backend, enhancing overall system security and providing an additional layer of protection.
+- 🔒 **Backend Reverse Proxy Support**: Bolster security through direct communication between Sage.is AI-UI's backend and Ollama. This key feature eliminates the need to expose Ollama over the local area network (LAN). Requests made to the `/ollama/api` route from Sage.is AI-UI are seamlessly redirected to Ollama from the backend, enhancing overall system security and providing an additional layer of protection.
 
-- 🔒 **Authentication**: Please note that Sage WebUI does not natively support federated authentication schemes such as SSO, OAuth, SAML, or OIDC. However, it can be configured to delegate authentication to an authenticating reverse proxy, effectively achieving a Single Sign-On (`SSO`) experience. This setup allows you to centralize user authentication and management, enhancing security and user convenience. By integrating Sage WebUI with an authenticating reverse proxy, you can leverage existing authentication systems and streamline user access to Sage WebUI. For more information on configuring this feature, please refer to the [Federated Authentication Support](/features/sso).
+- 🔒 **Authentication**: Please note that Sage.is AI-UI does not natively support federated authentication schemes such as SSO, OAuth, SAML, or OIDC. However, it can be configured to delegate authentication to an authenticating reverse proxy, effectively achieving a Single Sign-On (`SSO`) experience. This setup allows you to centralize user authentication and management, enhancing security and user convenience. By integrating Sage.is AI-UI with an authenticating reverse proxy, you can leverage existing authentication systems and streamline user access to Sage.is AI-UI. For more information on configuring this feature, please refer to the [Federated Authentication Support](/features/sso).
 
 - 🔓 **Optional Authentication**: Enjoy the flexibility of disabling authentication by setting `WEBUI_AUTH` to `False`. This is an ideal solution for fresh installations without existing users or can be useful for demonstration purposes.
 

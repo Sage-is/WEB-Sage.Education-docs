@@ -4,7 +4,7 @@ title: "🗨️ Kokoro-FastAPI Using Docker"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 ## What is `Kokoro-FastAPI`?
@@ -44,7 +44,7 @@ This tutorial is a community contribution and is not supported by the Sage WebUI
 ## Requirements
 
 - Docker installed on your system
-- Sage WebUI running
+- Sage.is AI-UI running
 - For GPU support: NVIDIA GPU with CUDA 12.3
 - For CPU-only: No special requirements
 
@@ -104,9 +104,9 @@ services:
         restart: always
 ```
 
-## Setting up Sage WebUI to use `Kokoro-FastAPI`
+## Setting up Sage.is AI-UI to use `Kokoro-FastAPI`
 
-To use Kokoro-FastAPI with Sage WebUI, follow these steps:
+To use Kokoro-FastAPI with Sage.is AI-UI, follow these steps:
 
 - Open the Admin Panel and go to `Settings` -> `Audio`
 - Set your TTS Settings to match the following:

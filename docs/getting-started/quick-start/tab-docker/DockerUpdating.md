@@ -7,17 +7,17 @@ To update your local Docker installation to the latest version, you can either u
 With [Watchtower](https://containrrr.dev/watchtower/), you can automate the update process:
 
 ```bash
-docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-open-webui
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-is-ai-ui
 ```
 
-_(Replace `sage-open-webui` with your container's name if it's different.)_
+_(Replace `sage-is-ai-ui` with your container's name if it's different.)_
 
 ### Option 2: Manual Update
 
 1. Stop and remove the current container:
 
    ```bash
-   docker rm -f sage-open-webui
+   docker rm -f sage-is-ai-ui
    ```
 
 2. Pull the latest version:
@@ -29,7 +29,7 @@ _(Replace `sage-open-webui` with your container's name if it's different.)_
 3. Start the container again:
 
    ```bash
-   docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main
+   docker run -d -p 3000:8080 -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui ghcr.io/Startr/AI-WEB-openwebui:main
    ```
 
 Both methods will get your Docker instance updated and running with the latest build.

@@ -4,14 +4,14 @@ title: "🗨️ Edge TTS Using Docker"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
-# Integrating `openai-edge-tts` 🗣️ with Sage WebUI
+# Integrating `openai-edge-tts` 🗣️ with Sage.is AI-UI
 
 ## What is `openai-edge-tts`? 
 
-[OpenAI Edge TTS](https://github.com/travisvn/openai-edge-tts) is a text-to-speech API that mimics the OpenAI API endpoint, allowing for a direct substitute in scenarios where you can define the endpoint URL, like with Sage WebUI.
+[OpenAI Edge TTS](https://github.com/travisvn/openai-edge-tts) is a text-to-speech API that mimics the OpenAI API endpoint, allowing for a direct substitute in scenarios where you can define the endpoint URL, like with Sage.is AI-UI.
 
 It uses the [edge-tts](https://github.com/rany2/edge-tts) package, which leverages the Edge browser's free "Read Aloud" feature to emulate a request to Microsoft / Azure in order to receive very high quality text-to-speech for free.
 
@@ -31,7 +31,7 @@ Similar to [openedai-speech](https://github.com/matatonic/openedai-speech), [ope
 ## Requirements
 
 - Docker installed on your system
-- Sage WebUI running
+- Sage.is AI-UI running
 
 ## ⚡️ Quick start
 
@@ -43,13 +43,13 @@ docker run -d -p 5050:5050 travisvn/openai-edge-tts:latest
 
 This will run the service at port 5050 with all the default configs
 
-## Setting up Sage WebUI to use `openai-edge-tts`
+## Setting up Sage.is AI-UI to use `openai-edge-tts`
 
 - Open the Admin Panel and go to `Settings` -> `Audio`
 - Set your TTS Settings to match the screenshot below
 - _Note: you can specify the TTS Voice here_
 
-![Screenshot of Sage WebUI Admin Settings for Audio adding the correct endpoints for this project](https://utfs.io/f/MMMHiQ1TQaBobmOhsMkrO6Tl2kxX39dbuFiQ8cAoNzysIt7f)
+![Screenshot of Sage.is AI-UI Admin Settings for Audio adding the correct endpoints for this project](https://utfs.io/f/MMMHiQ1TQaBobmOhsMkrO6Tl2kxX39dbuFiQ8cAoNzysIt7f)
 
 :::info
 The default API key is the string `your_api_key_here`. You do not have to change that value if you do not need the added security.
@@ -205,7 +205,7 @@ curl -X POST http://localhost:5050/v1/audio/speech \
 :::info
 The `/v1` is now optional. 
 
-Additionally, there are endpoints for **Azure AI Speech** and **ElevenLabs** for potential future support if custom API endpoints are allowed for these options in Sage WebUI.
+Additionally, there are endpoints for **Azure AI Speech** and **ElevenLabs** for potential future support if custom API endpoints are allowed for these options in Sage.is AI-UI.
 
 These can be disabled by setting the environment variable `EXPAND_API=False`.
 :::

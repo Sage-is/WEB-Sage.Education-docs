@@ -3,11 +3,11 @@ sidebar_position: 0
 title: "🌐 Browser Compatibility"
 ---
 
-Sage WebUI is designed for and tested on modern browsers. To ensure the best experience, we recommend using the following browser versions or later:
+Sage.is AI-UI is designed for and tested on modern browsers. To ensure the best experience, we recommend using the following browser versions or later:
 
 ## 🚀 Supported Browsers
 
-Sage WebUI's core functionality specifically depends on these browser versions:
+Sage.is AI-UI's core functionality specifically depends on these browser versions:
 
 - **Chrome 111** 🟢 _(Released March 2023)_
 - **Safari 16.4** 🍏 _(Released March 2023)_

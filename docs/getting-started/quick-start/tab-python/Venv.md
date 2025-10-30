@@ -25,14 +25,14 @@ Create isolated Python environments using `venv`.
      venv\Scripts\activate
      ```
 
-3. **Install Sage WebUI:**
+3. **Install Sage.is AI-UI:**
 
    ```bash
-   pip install sage-open-webui
+   pip install sage-is-ai-ui
    ```
 
 4. **Start the Server:**
 
    ```bash
-   sage-open-webui serve
+   sage-is-ai-ui serve
    ```

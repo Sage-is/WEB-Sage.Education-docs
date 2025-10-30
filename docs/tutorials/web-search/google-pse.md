@@ -4,7 +4,7 @@ title: "Google PSE"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 ## Google PSE API
@@ -15,12 +15,12 @@ This tutorial is a community contribution and is not supported by the Sage WebUI
 2. Go to [control panel](https://programmablesearchengine.google.com/controlpanel/all) and click `Add` button
 3. Enter a search engine name, set the other properties to suit your needs, verify you're not a robot and click `Create` button.
 4. Generate `API key` and get the `Search engine ID`. (Available after the engine is created)
-5. With `API key` and `Search engine ID`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`
+5. With `API key` and `Search engine ID`, open `Sage.is AI-UI Admin panel` and click `Settings` tab, and then click `Web Search`
 6. Enable `Web search` and Set `Web Search Engine` to `google_pse`
 7. Fill `Google PSE API Key` with the `API key` and `Google PSE Engine Id` (# 4)
 8. Click `Save`
 
-![Sage WebUI Admin panel](/images/tutorial_google_pse1.png)
+![Sage.is AI-UI Admin panel](/images/tutorial_google_pse1.png)
 
 #### Note
 

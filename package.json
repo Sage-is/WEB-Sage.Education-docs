@@ -10,6 +10,8 @@
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",
 		"serve": "docusaurus serve",
+		"11ty": "eleventy",
+		"11ty:serve": "eleventy --serve",
 		"write-translations": "docusaurus write-translations",
 		"write-heading-ids": "docusaurus write-heading-ids",
 		"mdx-check": "npx docusaurus-mdx-checker",

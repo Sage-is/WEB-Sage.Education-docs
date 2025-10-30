@@ -3,13 +3,13 @@ sidebar_position: 3
 title: "🌊 MermaidJS Rendering"
 ---
 
-# 🌊 MermaidJS Rendering Support in Sage WebUI
+# 🌊 MermaidJS Rendering Support in Sage.is AI-UI
 
 ## Overview
 
-Sage WebUI supports rendering of visually appealing MermaidJS diagrams, flowcharts, pie charts and more, directly within the chat interface. MermaidJS is a powerful tool for visualizing complex information and ideas, and when paired with the capabilities of a large language model (LLM), it can be a powerful tool for generating and exploring new ideas.
+Sage.is AI-UI supports rendering of visually appealing MermaidJS diagrams, flowcharts, pie charts and more, directly within the chat interface. MermaidJS is a powerful tool for visualizing complex information and ideas, and when paired with the capabilities of a large language model (LLM), it can be a powerful tool for generating and exploring new ideas.
 
-## Using MermaidJS in Sage WebUI
+## Using MermaidJS in Sage.is AI-UI
 
 To generate a MermaidJS diagram, simply ask an LLM within any chat to create a diagram or chart using MermaidJS. For example, you can ask the LLM to:
 
@@ -20,7 +20,7 @@ Note that for the LLM's response to be rendered correctly, it must begin with th
 
 ## Visualizing MermaidJS Code Directly in the Chat
 
-When you request a MermaidJS visualization, the Large Language Model (LLM) will generate the necessary code. Sage WebUI will automatically render the visualization directly within the chat interface, as long as the code uses valid MermaidJS syntax.
+When you request a MermaidJS visualization, the Large Language Model (LLM) will generate the necessary code. Sage.is AI-UI will automatically render the visualization directly within the chat interface, as long as the code uses valid MermaidJS syntax.
 
 If the model generates MermaidJS syntax, but the visualization does not render, it usually indicates a syntax error in the code. Don't worry – you'll be notified of any errors once the response has been fully generated. If this happens, try referencing the [MermaidJS documentation](https://mermaid.js.org/intro/) to identify the issue and revise the prompt accordingly.
 
@@ -55,4 +55,4 @@ D --> F[F]
 E --> F[F]
 ```
 
-Experimenting with different types of diagrams and charts can help you develop a more nuanced understanding of how to effectively leverage MermaidJS within Sage WebUI. For smaller models, consider referencing the [MermaidJS documentation](https://mermaid.js.org/intro/) to provide guidance for the LLM, or have it summarize the documentation into comprehensive notes or a system prompt. By following these guidelines and exploring the capabilities of MermaidJS, you can unlock the full potential of this powerful tool in Sage WebUI.
+Experimenting with different types of diagrams and charts can help you develop a more nuanced understanding of how to effectively leverage MermaidJS within Sage.is AI-UI. For smaller models, consider referencing the [MermaidJS documentation](https://mermaid.js.org/intro/) to provide guidance for the LLM, or have it summarize the documentation into comprehensive notes or a system prompt. By following these guidelines and exploring the capabilities of MermaidJS, you can unlock the full potential of this powerful tool in Sage.is AI-UI.

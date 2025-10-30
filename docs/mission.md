@@ -30,7 +30,7 @@ title: "🎯 Our Mission"
 
 ### A Note from Our Founder  
 
-Before diving into our mission, we invite you to read our founder's blog post: ["Why I’m Building Sage WebUI"](https://jryng.com/thoughts/why-sage-open-webui). In this post, Tim shares the inspiration, challenges, and hopes driving Sage WebUI's vision forward. It's a heartfelt introduction to what we're all about!
+Before diving into our mission, we invite you to read our founder's blog post: ["Why I’m Building Sage.is AI-UI"](https://jryng.com/thoughts/why-sage-is-ai-ui). In this post, Tim shares the inspiration, challenges, and hopes driving Sage.is AI-UI's vision forward. It's a heartfelt introduction to what we're all about!
 
 ---
 
@@ -38,7 +38,7 @@ Hello there! 👋
 
 Imagine a world where local, open models that can run on any machine, united as one, outperform proprietary giants like GPT-4. Even better, imagine us all having the capability to train and reproduce state-of-the-art models like GPT-4 or GPT-5 from scratch, using high-quality, curated data.
 
-Here's the thing, though: one of the biggest challenges in creating these foundation and fine-tune models is the substantial need for **[high-quality data](https://arxiv.org/abs/2305.11206)**, which is both costly and time-consuming to gather and curate. This is where Sage WebUI's mission comes into play. Our mission is to contribute to this vision by building the best AI interface and crowdsourcing curated datasets from our community of users.
+Here's the thing, though: one of the biggest challenges in creating these foundation and fine-tune models is the substantial need for **[high-quality data](https://arxiv.org/abs/2305.11206)**, which is both costly and time-consuming to gather and curate. This is where Sage.is AI-UI's mission comes into play. Our mission is to contribute to this vision by building the best AI interface and crowdsourcing curated datasets from our community of users.
 
 — [Alexander Somma Sage.is CTO](https://www.sage.is)
 

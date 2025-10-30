@@ -5,15 +5,15 @@ title: "🪄 Filter Function"
 
 # 🪄 Filter Function: Modify Inputs and Outputs
 
-Welcome to the comprehensive guide on Filter Functions in Sage WebUI! Filters are a flexible and powerful **plugin system** for modifying data *before it's sent to the Large Language Model (LLM)* (input) or *after it’s returned from the LLM* (output). Whether you’re transforming inputs for better context or cleaning up outputs for improved readability, **Filter Functions** let you do it all.  
+Welcome to the comprehensive guide on Filter Functions in Sage.is AI-UI! Filters are a flexible and powerful **plugin system** for modifying data *before it's sent to the Large Language Model (LLM)* (input) or *after it’s returned from the LLM* (output). Whether you’re transforming inputs for better context or cleaning up outputs for improved readability, **Filter Functions** let you do it all.  
 
 This guide will break down **what Filters are**, how they work, their structure, and everything you need to know to build powerful and user-friendly filters of your own. Let’s dig in, and don’t worry—I’ll use metaphors, examples, and tips to make everything crystal clear! 🌟
 
 ---
 
-## 🌊 What Are Filters in Sage WebUI?
+## 🌊 What Are Filters in Sage.is AI-UI?
 
-Imagine Sage WebUI as a **stream of water** flowing through pipes:
+Imagine Sage.is AI-UI as a **stream of water** flowing through pipes:
 
 - **User inputs** and **LLM outputs** are the water.
 - **Filters** are the **water treatment stages** that clean, modify, and adapt the water before it reaches the final destination.
@@ -89,10 +89,10 @@ If you're creating a filter that converts responses into uppercase, you might al
 
 The `inlet` function is like **prepping food before cooking**. Imagine you’re a chef: before the ingredients go into the recipe (the LLM in this case), you might wash vegetables, chop onions, or season the meat. Without this step, your final dish could lack flavor, have unwashed produce, or simply be inconsistent.
 
-In the world of Sage WebUI, the `inlet` function does this important prep work on the **user input** before it’s sent to the model. It ensures the input is as clean, contextual, and helpful as possible for the AI to handle.  
+In the world of Sage.is AI-UI, the `inlet` function does this important prep work on the **user input** before it’s sent to the model. It ensures the input is as clean, contextual, and helpful as possible for the AI to handle.  
 
 📥 **Input**:  
-- **`body`**: The raw input from Sage WebUI to the model. It is in the format of a chat-completion request (usually a dictionary that includes fields like the conversation's messages, model settings, and other metadata). Think of this as your recipe ingredients.
+- **`body`**: The raw input from Sage.is AI-UI to the model. It is in the format of a chat-completion request (usually a dictionary that includes fields like the conversation's messages, model settings, and other metadata). Think of this as your recipe ingredients.
 
 🚀 **Your Task**:  
 Modify and return the `body`. The modified version of the `body` is what the LLM works with, so this is your chance to bring clarity, structure, and context to the input.
@@ -155,10 +155,10 @@ Note: The user feels the same, but the model processes a cleaner and easier-to-u
 
 ---
 
-#### 🆕 3️⃣ **`stream` Hook (New in Sage WebUI 0.5.17)**
+#### 🆕 3️⃣ **`stream` Hook (New in Sage.is AI-UI 0.5.17)**
 
 ##### 🔄 What is the `stream` Hook?
-The **`stream` function** is a new feature introduced in Sage WebUI **0.5.17** that allows you to **intercept and modify streamed model responses** in real time.
+The **`stream` function** is a new feature introduced in Sage.is AI-UI **0.5.17** that allows you to **intercept and modify streamed model responses** in real time.
 
 Unlike `outlet`, which processes an entire completed response, `stream` operates on **individual chunks** as they are received from the model.
 
@@ -287,6 +287,6 @@ By now, you’ve learned:
 
 ---
 
-🚀 **Your Turn**: Start experimenting! What small tweak or context addition could elevate your Sage WebUI experience? Filters are fun to build, flexible to use, and can take your models to the next level!  
+🚀 **Your Turn**: Start experimenting! What small tweak or context addition could elevate your Sage.is AI-UI experience? Filters are fun to build, flexible to use, and can take your models to the next level!  
 
 Happy coding! ✨

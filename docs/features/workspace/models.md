@@ -3,7 +3,7 @@ sidebar_position: 0
 title: "🤖 Models"
 ---
 
-The `Models` section of the `Workspace` within Sage WebUI is a powerful tool that allows you to create and manage custom models tailored to specific purposes. This section serves as a central hub for all your modelfiles, providing a range of features to edit, clone, share, export, and hide your models.
+The `Models` section of the `Workspace` within Sage.is AI-UI is a powerful tool that allows you to create and manage custom models tailored to specific purposes. This section serves as a central hub for all your modelfiles, providing a range of features to edit, clone, share, export, and hide your models.
 
 ### Modelfile Management
 
@@ -11,7 +11,7 @@ From the `Models` section, you can perform the following actions on your modelfi
 
 * **Edit**: Dive into the details of your modelfile and make changes to its character and more.
 * **Clone**: Create a copy of a modelfile, which will be appended with `-clone` to the cloned `Model ID`. Note that you cannot clone a base model; you must create a model first before cloning it.
-* **Share**: Share your modelfile with the Sage WebUI community by clicking the `Share` button, which will redirect you to [https://sage.education/models/create](https://sage.education/models/create).
+* **Share**: Share your modelfile with the Sage.is AI-UI community by clicking the `Share` button, which will redirect you to [https://sage.education/models/create](https://sage.education/models/create).
 * **Export**: Download the modelfile's `.json` export to your PC.
 * **Hide**: Hide the modelfile from the model selector dropdown within chats.
 
@@ -53,4 +53,4 @@ This action will create a button labeled "Pull [Model Name]" for downloading.
 
     **How To**:
     1. **Select the Model**: Within the chat interface, select the desired models from the model switcher dropdown. You can select up to two models simultaneously, and both responses will be generated. You can then navigate between them by using the back and forth arrows.
-    2. **Context Preservation**: Sage WebUI retains the conversation context across model switches, allowing smooth transitions.
+    2. **Context Preservation**: Sage.is AI-UI retains the conversation context across model switches, allowing smooth transitions.

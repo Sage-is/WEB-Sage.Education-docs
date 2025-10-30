@@ -7,9 +7,9 @@ We're here to help you get everything set up and running smoothly. Below, you'll
 
 ## 🌟 Connection to Ollama Server
 
-### 🚀 Accessing Ollama from Sage WebUI
+### 🚀 Accessing Ollama from Sage.is AI-UI
 
-Struggling to connect to Ollama from Sage WebUI? It could be because Ollama isn’t listening on a network interface that allows external connections. Let’s sort that out:
+Struggling to connect to Ollama from Sage.is AI-UI? It could be because Ollama isn’t listening on a network interface that allows external connections. Let’s sort that out:
 
 1. **Configure Ollama to Listen Broadly** 🎧:
    Set `OLLAMA_HOST` to `0.0.0.0` to make Ollama listen on all network interfaces.
@@ -36,7 +36,7 @@ If you're seeing a connection error when trying to access Ollama, it might be be
 
 **Example Docker Command**:
 ```bash
-docker run -d --network=host -v sage-open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
+docker run -d --network=host -v sage-is-ai-ui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name sage-is-ai-ui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
 ```
 🔗 After running the above, your WebUI should be available at `http://localhost:8080`.
 
@@ -52,7 +52,7 @@ Encountered an SSL error? It could be an issue with the Hugging Face server. Her
 
 **Example Docker Command for Connected Issues**:
 ```bash
-docker run -d -p 3000:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host.docker.internal:host-gateway -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
+docker run -d -p 3000:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host.docker.internal:host-gateway -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
 ```
 
 ## 🍏 Podman on MacOS
@@ -67,6 +67,6 @@ Running on MacOS with Podman? Here’s how to ensure connectivity:
 
 **Example Podman Command**:
 ```bash
-podman run -d --network slirp4netns:allow_host_loopback=true -p 3000:8080 -e OLLAMA_BASE_URL=http://host.containers.internal:11434 -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
+podman run -d --network slirp4netns:allow_host_loopback=true -p 3000:8080 -e OLLAMA_BASE_URL=http://host.containers.internal:11434 -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
 ```
 

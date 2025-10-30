@@ -4,7 +4,7 @@ title: "💾 Backups"
 ---
  
  :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
  #  Backing Up Your Instance
@@ -19,7 +19,7 @@ This tutorial is a community contribution and is not supported by the Sage WebUI
 
  ## Ensuring data persistence
 
-Firstly, before deploying your stack with Docker, ensure that your Docker Compose uses a persistent data store. If you're using the Docker Compose [from the Github repository](https://github.com/sage-open-webui/sage-open-webui/blob/main/docker-compose.yaml) that's already taken care of. But it's easy to cook up your own variations and forget to verify this.
+Firstly, before deploying your stack with Docker, ensure that your Docker Compose uses a persistent data store. If you're using the Docker Compose [from the Github repository](https://github.com/sage-is-ai-ui/sage-is-ai-ui/blob/main/docker-compose.yaml) that's already taken care of. But it's easy to cook up your own variations and forget to verify this.
 
 Docker containers are ephemeral and data must be persisted to ensure its survival on the host filesystem.
 
@@ -36,9 +36,9 @@ ollama:
 ```
 
 ```yaml
-sage-open-webui:
+sage-is-ai-ui:
   volumes:
-    - sage-open-webui:/app/backend/data
+    - sage-is-ai-ui:/app/backend/data
 ```
 
 To find the actual bind path on host, run:
@@ -47,7 +47,7 @@ To find the actual bind path on host, run:
 
 and
 
-`docker volume inspect sage-open-webui`
+`docker volume inspect sage-is-ai-ui`
 
 ## Using direct host binds
 
@@ -60,11 +60,11 @@ services:
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
     volumes:
       - /opt/ollama:/root/.ollama
-  sage-open-webui:
-    container_name: sage-open-webui
-    image: ghcr.io/sage-open-webui/sage-open-webui:${WEBUI_DOCKER_TAG-main}
+  sage-is-ai-ui:
+    container_name: sage-is-ai-ui
+    image: ghcr.io/sage-is-ai-ui/sage-is-ai-ui:${WEBUI_DOCKER_TAG-main}
     volumes:
-      - /opt/sage-open-webui:/app/backend/data
+      - /opt/sage-is-ai-ui:/app/backend/data
 ```
 
 If this is how you've deployed your instance, you'll want to note the paths on root. 
@@ -234,7 +234,7 @@ exit 0
 # Configure rclone: https://rclone.org/b2/
 
 # Source directory (containing ChromaDB and SQLite data)
-SOURCE="/var/lib/sage-open-webui/data"
+SOURCE="/var/lib/sage-is-ai-ui/data"
 
 # B2 bucket name and remote name
 B2_REMOTE="openwebuiweeklies"
@@ -244,7 +244,7 @@ B2_BUCKET="b2:$B2_REMOTE"
 TIMESTAMP=$(date +%Y-%m-%d)
 
 # Backup directory name
-BACKUP_DIR="sage-open-webui-backup-$TIMESTAMP"
+BACKUP_DIR="sage-is-ai-ui-backup-$TIMESTAMP"
 
 # Full path to the backup directory in the B2 bucket
 DESTINATION="$B2_BUCKET/$BACKUP_DIR"
@@ -293,7 +293,7 @@ backup_sqlite
 rclone copy "$SOURCE" "$DESTINATION" $EXCLUDE_FILTERS --progress
 
 # Remove old backups, keeping the most recent NUM_SNAPSHOTS
-find "$B2_BUCKET" -type d -name "sage-open-webui-backup-*" | sort -r | tail -n +$((NUM_SNAPSHOTS + 1)) | while read dir; do
+find "$B2_BUCKET" -type d -name "sage-is-ai-ui-backup-*" | sort -r | tail -n +$((NUM_SNAPSHOTS + 1)) | while read dir; do
   rclone purge "$dir"
 done
 

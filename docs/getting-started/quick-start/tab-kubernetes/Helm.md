@@ -10,17 +10,17 @@ Helm helps you manage Kubernetes applications.
 
 ## Steps
 
-1. **Add Sage WebUI Helm Repository:**
+1. **Add Sage.is AI-UI Helm Repository:**
 
    ```bash
-   helm repo add sage-open-webui https://sage-open-webui.github.io/helm-charts
+   helm repo add sage-is-ai-ui https://sage-is-ai-ui.github.io/helm-charts
    helm repo update
    ```
 
-2. **Install Sage WebUI Chart:**
+2. **Install Sage.is AI-UI Chart:**
 
    ```bash
-   helm install openwebui sage-open-webui/sage-open-webui
+   helm install openwebui sage-is-ai-ui/sage-is-ai-ui
    ```
 
 3. **Verify Installation:**
@@ -31,4 +31,4 @@ Helm helps you manage Kubernetes applications.
 
 ## Access the WebUI
 
-Set up port forwarding or load balancing to access Sage WebUI from outside the cluster.
+Set up port forwarding or load balancing to access Sage.is AI-UI from outside the cluster.

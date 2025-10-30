@@ -5,7 +5,7 @@ export const SponsorList = () => {
 		{
 			imgSrc: "/sponsors/sponsor.png",
 			url: "https://sage.education",
-			name: "Sage WebUI",
+			name: "Sage.is AI-UI",
 			description:
 				"On a mission to build the best open-source AI user interface.",
 		},

@@ -4,18 +4,18 @@ title: "Brave"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 ## Brave API
 
 ### Docker Compose Setup
 
-Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:
+Add the following environment variables to your Sage.is AI-UI `docker-compose.yaml` file:
 
 ```yaml
 services:
-  sage-open-webui:
+  sage-is-ai-ui:
     environment:
       ENABLE_RAG_WEB_SEARCH: True
       RAG_WEB_SEARCH_ENGINE: "brave"

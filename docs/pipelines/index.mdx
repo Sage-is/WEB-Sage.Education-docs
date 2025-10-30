@@ -12,10 +12,10 @@ title: "⚡ Pipelines"
 # Pipelines: UI-Agnostic OpenAI API Plugin Framework
 
 :::tip
-If your goal is simply to add support for additional providers like Anthropic or basic filters, you likely don't need Pipelines . For those cases, [Sage WebUI Functions](/features/plugin/functions) are a better fit—it's built-in, much more convenient, and easier to configure. Pipelines, however, comes into play when you're dealing with computationally heavy tasks (e.g., running large models or complex logic) that you want to offload from your main Sage WebUI instance for better performance and scalability.
+If your goal is simply to add support for additional providers like Anthropic or basic filters, you likely don't need Pipelines . For those cases, [Sage.is AI-UI Functions](/features/plugin/functions) are a better fit—it's built-in, much more convenient, and easier to configure. Pipelines, however, comes into play when you're dealing with computationally heavy tasks (e.g., running large models or complex logic) that you want to offload from your main Sage.is AI-UI instance for better performance and scalability.
 :::
 
-Welcome to **Pipelines**, an [Sage WebUI](https://github.com/Startr) initiative. Pipelines bring modular, customizable workflows to any UI client supporting OpenAI API specs – and much more! Easily extend functionalities, integrate unique logic, and create dynamic workflows with just a few lines of code.
+Welcome to **Pipelines**, an [Sage.is AI-UI](https://github.com/Startr) initiative. Pipelines bring modular, customizable workflows to any UI client supporting OpenAI API specs – and much more! Easily extend functionalities, integrate unique logic, and create dynamic workflows with just a few lines of code.
 
 ## 🚀 Why Choose Pipelines?
 
@@ -57,15 +57,15 @@ For a streamlined setup using Docker:
    docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main
    ```
 
-2. **Connect to Sage WebUI:**
+2. **Connect to Sage.is AI-UI:**
 
-   - Navigate to the **Admin Panel > Settings > Connections** section in Sage WebUI.
+   - Navigate to the **Admin Panel > Settings > Connections** section in Sage.is AI-UI.
    - When you're on this page, you can press the `+` button to add another connection.
    - Set the API URL to `http://localhost:9099` and the API key to `0p3n-w3bu!`.
    - Once you've added your pipelines connection and verified it, you will see an icon appear within the API Base URL field for the added connection. When hovered over, the icon itself will be labeled `Pipelines`. Your pipelines should now be active.
 
 :::info
-If your Sage WebUI is running in a Docker container, replace `localhost` with `host.docker.internal` in the API URL.
+If your Sage.is AI-UI is running in a Docker container, replace `localhost` with `host.docker.internal` in the API URL.
 :::
 
 3. **Manage Configurations:**
@@ -127,6 +127,6 @@ Find various integration examples in the `https://github.com/Startr/pipelines/bl
 
 ## 🎉 Work in Progress
 
-We’re continuously evolving! We'd love to hear your feedback and understand which hooks and features would best suit your use case. Feel free to reach out and become a part of our Sage WebUI community!
+We’re continuously evolving! We'd love to hear your feedback and understand which hooks and features would best suit your use case. Feel free to reach out and become a part of our Sage.is AI-UI community!
 
-Our vision is to push **Pipelines** to become the ultimate plugin framework for our AI interface, **Sage WebUI**. Imagine **Sage WebUI** as the WordPress of AI interfaces, with **Pipelines** being its diverse range of plugins. Join us on this exciting journey! 🌍
+Our vision is to push **Pipelines** to become the ultimate plugin framework for our AI interface, **Sage.is AI-UI**. Imagine **Sage.is AI-UI** as the WordPress of AI interfaces, with **Pipelines** being its diverse range of plugins. Join us on this exciting journey! 🌍

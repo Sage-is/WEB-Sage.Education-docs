@@ -4,7 +4,7 @@ title: "🛃 Setting up with Custom CA Store"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 If you get an `[SSL: CERTIFICATE_VERIFY_FAILED]` error when trying to run OI, most likely the issue is that you are on a network which intercepts HTTPS traffic (e.g. a corporate network).

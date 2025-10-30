@@ -24,7 +24,7 @@ Sage.is AI-UI is an **[extensible](/features/plugin/), feature-rich, and user-fr
 ![Sage.is AI-UI Demo](/images/demo.gif)
 
 :::tip
-Looking for [Enterprise Support](https://docs.sage.is/enterprise)? At Sage.is – We partner with teams that need to ship new AI experiences quickly and reliably.
+Looking for [Enterprise Support](/enterprise)? At Sage.is – We partner with teams that need to ship new AI experiences quickly and reliably.
 
 There are plenty of ways to launch AI tools, yet most products feel overwhelming or chaotic the moment a real team tries to build with them. Sage is different. We act as your **Technical Venture Companion (TVC)** so you can focus on outcomes instead of wrestling with tooling.
 

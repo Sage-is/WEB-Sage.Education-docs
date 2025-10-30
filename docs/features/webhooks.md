@@ -6,18 +6,18 @@ title: "🪝 Webhook Integrations"
 Overview
 --------
 
-Sage WebUI provides a webhook feature that allows you to receive notifications automatically whenever new users sign up to your instance. This is done by providing a webhook URL to Sage WebUI, which will then send notifications to that URL when a new user account is created.
+Sage.is AI-UI provides a webhook feature that allows you to receive notifications automatically whenever new users sign up to your instance. This is done by providing a webhook URL to Sage.is AI-UI, which will then send notifications to that URL when a new user account is created.
 
-Configuring Webhooks in Sage WebUI
+Configuring Webhooks in Sage.is AI-UI
 ---------------------------------
 
-You will need to obtain a webhook URL from an external service that supports webhooks, such as a Discord channel or a Slack workspace. This URL will be used to receive notifications from Sage WebUI.
+You will need to obtain a webhook URL from an external service that supports webhooks, such as a Discord channel or a Slack workspace. This URL will be used to receive notifications from Sage.is AI-UI.
 
-To configure webhooks in Sage WebUI, you have two options:
+To configure webhooks in Sage.is AI-UI, you have two options:
 
 ### Option 1: Configure through the Admin Interface
 
-1. Log in to your Sage WebUI instance as an administrator.
+1. Log in to your Sage.is AI-UI instance as an administrator.
 2. Navigate to the `Admin Panel`.
 3. Click the `Settings` tab located at the top.
 4. From there, navigate to the `General` sectionn of the setting in the admin panel.
@@ -26,16 +26,16 @@ To configure webhooks in Sage WebUI, you have two options:
 
 ### Option 2: Configure through Environment Variables
 
-Alternatively, you can configure the webhook URL by setting the `WEBHOOK_URL` environment variable. For more information on environment variables in Sage WebUI, see [Environment Variable Configuration](/getting-started/env-configuration/#webhook_url).
+Alternatively, you can configure the webhook URL by setting the `WEBHOOK_URL` environment variable. For more information on environment variables in Sage.is AI-UI, see [Environment Variable Configuration](/getting-started/env-configuration/#webhook_url).
 
 ### Step 3: Verify the Webhook
 
-To verify that the webhook is working correctly, create a new user account in Sage WebUI. If the webhook is configured correctly, you should receive a notification at the specified webhook URL.
+To verify that the webhook is working correctly, create a new user account in Sage.is AI-UI. If the webhook is configured correctly, you should receive a notification at the specified webhook URL.
 
 Webhook Payload Format
 ----------------------
 
-The webhook payload sent by Sage WebUI is in plain text and contains a simple notification message about the new user account. The payload format is as follows:
+The webhook payload sent by Sage.is AI-UI is in plain text and contains a simple notification message about the new user account. The payload format is as follows:
 
 ```
 New user signed up: <username>
@@ -52,9 +52,9 @@ Troubleshooting
 
 * Make sure the webhook URL is correct and properly formatted.
 * Verify that the webhook service is enabled and configured correctly.
-* Check the Sage WebUI logs for any errors related to the webhook.
+* Check the Sage.is AI-UI logs for any errors related to the webhook.
 * Verify the connection hasn't been interrupted or blocked by a firewall or proxy.
 * The webhook server could be temporarily unavailable or experiencing high latency.
 * If provided through the webhook service, verify if the Webhook API key is invalid, expired, or revoked.
 
-Note: The webhook feature in Sage WebUI is still evolving, and we plan to add more features and event types in the future.
+Note: The webhook feature in Sage.is AI-UI is still evolving, and we plan to add more features and event types in the future.

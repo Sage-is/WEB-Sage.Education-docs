@@ -4,10 +4,10 @@ title: "🔒 HTTPS using HAProxy"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
-# HAProxy Configuration for Sage WebUI
+# HAProxy Configuration for Sage.is AI-UI
 
 HAProxy (High Availability Proxy) is specialized load-balancing and reverse proxy solution that is highly configurable and designed to handle large amounts of connections with a relatively low resource footprint. for more information, please see: https://www.haproxy.org/
 
@@ -23,7 +23,7 @@ First, install HAProxy and Let's Encrypt's certbot:
 
 HAProxy's configuration is by default stored in ```/etc/haproxy/haproxy.cfg```. This file contains all the configuration directives that determine how HAProxy will operate.
 
-The base configuration for HAProxy to work with Sage WebUI is pretty simple. 
+The base configuration for HAProxy to work with Sage.is AI-UI is pretty simple. 
 
 ```
  #---------------------------------------------------------------------
@@ -107,9 +107,9 @@ backend owui_chat
     server chat <ip>:3000
 ```
 
-You will see that we have ACL records (routers) for both Sage WebUI and Let's Encrypt.  To use WebSocket with OWUI, you need to have an SSL configured, and the easiest way to do that is to use Let's Encrypt.
+You will see that we have ACL records (routers) for both Sage.is AI-UI and Let's Encrypt.  To use WebSocket with OWUI, you need to have an SSL configured, and the easiest way to do that is to use Let's Encrypt.
 
-You can use either the subdomain method or the path method for routing traffic to Sage WebUI. The subdomain method requires a dedicated subdomain (e.g., chat.yourdomain.com), while the path method allows you to access Sage WebUI through a specific path on your domain (e.g., yourdomain.com/owui/). Choose the method that best suits your needs and update the configuration accordingly.
+You can use either the subdomain method or the path method for routing traffic to Sage.is AI-UI. The subdomain method requires a dedicated subdomain (e.g., chat.yourdomain.com), while the path method allows you to access Sage.is AI-UI through a specific path on your domain (e.g., yourdomain.com/owui/). Choose the method that best suits your needs and update the configuration accordingly.
 
 :::info
 You will need to expose port 80 and 443 to your HAProxy server. These ports are required for Let's Encrypt to validate your domain and for HTTPS traffic. You will also need to ensure your DNS records are properly configured to point to your HAProxy server. If you are running HAProxy at home, you will need to use port forwarding in your router to forward ports 80 and 443 to your HAProxy server.

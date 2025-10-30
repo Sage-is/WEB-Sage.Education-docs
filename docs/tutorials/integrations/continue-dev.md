@@ -1,13 +1,13 @@
 ---
 sidebar_position: 13
-title: "⚛️ Continue.dev VSCode Extension with Sage WebUI"
+title: "⚛️ Continue.dev VSCode Extension with Sage.is AI-UI"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
-# Integrating Continue.dev VSCode Extension with Sage WebUI
+# Integrating Continue.dev VSCode Extension with Sage.is AI-UI
 
 ### Download Extension
 
@@ -19,15 +19,15 @@ Open this. Down at the bottom right you should see a settings icon (looks like a
 
 Once you click on the settings icon a `config.json` should open up in the editor.
 
-Here you'll be able to configure continue to use Sage WebUI.
+Here you'll be able to configure continue to use Sage.is AI-UI.
 
 ---
 
-Currently the 'ollama' provider does not support authentication so we cannot use this provider with Sage WebUI.
+Currently the 'ollama' provider does not support authentication so we cannot use this provider with Sage.is AI-UI.
 
-However Ollama and Sage WebUI both have compatibily with OpenAI API spec. You can see a blog post from Ollama [here](https://ollama.com/blog/openai-compatibility) on this.
+However Ollama and Sage.is AI-UI both have compatibily with OpenAI API spec. You can see a blog post from Ollama [here](https://ollama.com/blog/openai-compatibility) on this.
 
-We can still setup Continue to use the openai provider which will allow us to use Sage WebUI's authentication token.
+We can still setup Continue to use the openai provider which will allow us to use Sage.is AI-UI's authentication token.
 
 ---
 
@@ -55,13 +55,13 @@ Set this to your Sage Web UI domain on the end.
 "apiKey": "sk-79970662256d425eb274fc4563d4525b" # Replace with your API key
 ```
 
-You can find and generate your api key from Sage WebUI -> Settings -> Account -> API Keys
+You can find and generate your api key from Sage.is AI-UI -> Settings -> Account -> API Keys
 
 You'll want to copy the "API Key" (this starts with sk-)
 
 ## Example Config
 
-Here is a base example of config.json using Sage WebUI via an openai provider. Using Granite Code as the model.
+Here is a base example of config.json using Sage.is AI-UI via an openai provider. Using Granite Code as the model.
 Make sure you pull the model into your ollama instance/s beforehand.
 
 ```json
@@ -106,7 +106,7 @@ Save your `config.json` and thats it!
 
 You should now see your model in the Continue tab model selection.
 
-Select it and you should now be chatting via Sage WebUI (and or any [pipelines](/pipelines) you have setup )
+Select it and you should now be chatting via Sage.is AI-UI (and or any [pipelines](/pipelines) you have setup )
 
 You can do this for as many models you would like to use, altough any model should work, you should use a model that is designed for code.
 

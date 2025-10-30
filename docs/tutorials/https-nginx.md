@@ -4,12 +4,12 @@ title: "🔒 HTTPS using Nginx"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 # HTTPS using Nginx
 
-Ensuring secure communication between your users and the Sage WebUI is paramount. HTTPS (HyperText Transfer Protocol Secure) encrypts the data transmitted, protecting it from eavesdroppers and tampering. By configuring Nginx as a reverse proxy, you can seamlessly add HTTPS to your Sage WebUI deployment, enhancing both security and trustworthiness.
+Ensuring secure communication between your users and the Sage.is AI-UI is paramount. HTTPS (HyperText Transfer Protocol Secure) encrypts the data transmitted, protecting it from eavesdroppers and tampering. By configuring Nginx as a reverse proxy, you can seamlessly add HTTPS to your Sage.is AI-UI deployment, enhancing both security and trustworthiness.
 
 This guide provides two methods to set up HTTPS:
 
@@ -32,7 +32,7 @@ import LetsEncrypt from './tab-nginx/LetsEncrypt.md';
 
 ## Next Steps
 
-After setting up HTTPS, access Sage WebUI securely at:
+After setting up HTTPS, access Sage.is AI-UI securely at:
 
 - [https://localhost](https://localhost)
 

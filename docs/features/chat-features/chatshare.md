@@ -12,10 +12,10 @@ To enable community sharing, follow these steps:
 3. Toggle on **Enable Community Sharing** within the **General** settings tab.
 
 :::note
-**Note:** Only Admins can toggle the **Enable Community Sharing** option. If this option is toggled off, users and Admins will not see the **Share to Sage WebUI Community** option for sharing their chats. Community sharing must be enabled by an Admin for users to share chats to the Sage WebUI community.
+**Note:** Only Admins can toggle the **Enable Community Sharing** option. If this option is toggled off, users and Admins will not see the **Share to Sage.is AI-UI Community** option for sharing their chats. Community sharing must be enabled by an Admin for users to share chats to the Sage.is AI-UI community.
 :::
 
-This will enable community sharing for all users on your Sage WebUI instance.
+This will enable community sharing for all users on your Sage.is AI-UI instance.
 
 ### Sharing Chats
 
@@ -24,13 +24,13 @@ To share a chat:
 1. Select the chat conversation you want to share.
 2. Click on the 3-dots that appear when hovering the mouse pointer above the desired chat.
 3. Then click on the **Share** option.
-4. Select either **Share to Sage WebUI Community** (if **Enable Community Sharing** is toggled on by an **Admin**) or **Copy Link**.
+4. Select either **Share to Sage.is AI-UI Community** (if **Enable Community Sharing** is toggled on by an **Admin**) or **Copy Link**.
 
-#### Sharing to Sage WebUI Community
+#### Sharing to Sage.is AI-UI Community
 
-When you select `Share to Sage WebUI Community`:
+When you select `Share to Sage.is AI-UI Community`:
 
-* A new tab will open, allowing you to upload your chat as a snapshot to the Sage WebUI community website (https://sage.education/chats/upload).
+* A new tab will open, allowing you to upload your chat as a snapshot to the Sage.is AI-UI community website (https://sage.education/chats/upload).
 * You can control who can view your uploaded chat by choosing from the following access settings:
   * **Private**: Only you can access this chat.
   * **Public**: Anyone on the internet can view the messages displayed in the chat snapshot.
@@ -53,7 +53,7 @@ When you select `Copy Link`, a unique share link is generated that can be shared
 * The shared chat will only include messages that existed at the time the link was created. Any new messages sent within the chat after the link is generated will not be included, unless the link is deleted and updated with a new link.
 * The generated share link acts as a static snapshot of the chat at the time the link was generated.
 * To view the shared chat, users must:
-  1. Have an account on the Sage WebUI instance where the link was generated.
+  1. Have an account on the Sage.is AI-UI instance where the link was generated.
   2. Be signed in to their account on that instance.
 * If a user tries to access the shared link without being signed in, they will be redirected to the login page to log in before they can view the shared chat.
 
@@ -61,10 +61,10 @@ When you select `Copy Link`, a unique share link is generated that can be shared
 
 To view a shared chat:
 
-1. Ensure you are signed in to an account on the Sage WebUI instance where the chat was shared.
+1. Ensure you are signed in to an account on the Sage.is AI-UI instance where the chat was shared.
 2. Click on the shared link provided to you.
 3. The chat will be displayed in a read-only format.
-4. If the Admin of the Sage WebUI instance from which the shared link was shared has Text-to-Speech set up, there may be an audio button for messages to be read aloud to you (situational).
+4. If the Admin of the Sage.is AI-UI instance from which the shared link was shared has Text-to-Speech set up, there may be an audio button for messages to be read aloud to you (situational).
 
 ### Updating Shared Chats
 
@@ -79,7 +79,7 @@ The **Share Chat** Modal includes the following options:
 
 * **before**: Opens a new tab to view the previously shared chat from the share link.
 * **delete this link**: Deletes the shared link of the chat and presents the initial share chat modal.
-* **Share to Sage WebUI Community**: Opens a new tab for https://sage.education/chats/upload with the chat ready to be shared as a snapshot.
+* **Share to Sage.is AI-UI Community**: Opens a new tab for https://sage.education/chats/upload with the chat ready to be shared as a snapshot.
 * **Update and Copy Link**: Updates the snapshot of the chat of the previously shared chat link and copies it to your device's clipboard.
 
 ### Deleting Shared Chats
@@ -98,7 +98,7 @@ Once deleted, the shared link will no longer be valid, and users will not be abl
 **Note:** Chats shared to the community platform cannot be deleted. To change the access level of a chat shared to the community platform:
 :::
 
-1. Log in to your Sage WebUI account on sage.is.
+1. Log in to your Sage.is AI-UI account on sage.is.
 2. Click on your account username at the top right of the website.
 3. Click on **Chats**.
 4. Click on the chat you wish to change permission access for.

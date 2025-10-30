@@ -4,23 +4,23 @@
 1. **Create a Conda Environment:**
 
    ```bash
-   conda create -n sage-open-webui python=3.11
+   conda create -n sage-is-ai-ui python=3.11
    ```
 
 2. **Activate the Environment:**
 
    ```bash
-   conda activate sage-open-webui
+   conda activate sage-is-ai-ui
    ```
 
-3. **Install Sage WebUI:**
+3. **Install Sage.is AI-UI:**
 
    ```bash
-   pip install sage-open-webui
+   pip install sage-is-ai-ui
    ```
 
 4. **Start the Server:**
 
    ```bash
-   sage-open-webui serve
+   sage-is-ai-ui serve
    ```

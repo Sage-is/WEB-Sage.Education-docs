@@ -5,9 +5,9 @@ title: "⏱️ Quick Start"
 
 :::info **Important Note on User Roles and Privacy:**
 
-- **Admin Creation:** The first account created on Sage WebUI gains **Administrator privileges**, controlling user management and system settings.
+- **Admin Creation:** The first account created on Sage.is AI-UI gains **Administrator privileges**, controlling user management and system settings.
 - **User Registrations:** Subsequent sign-ups start with **Pending** status, requiring Administrator approval for access.
-- **Privacy and Data Security:** **All your data**, including login details, is **locally stored** on your device. Sage WebUI ensures **strict confidentiality** and **no external requests** for enhanced privacy and security.
+- **Privacy and Data Security:** **All your data**, including login details, is **locally stored** on your device. Sage.is AI-UI ensures **strict confidentiality** and **no external requests** for enhanced privacy and security.
   - **All models are private by default.** Models must be explicitly shared via groups or by being made public. If a model is assigned to a group, only members of that group can see it. If a model is made public, anyone on the instance can see it.
 
 :::
@@ -22,9 +22,9 @@ Choose your preferred installation method below:
 
 ### Docker CLI
 
-Follow these steps to install Sage WebUI with Docker.
+Follow these steps to install Sage.is AI-UI with Docker.
 
-#### Step 1: Pull the Sage WebUI image
+#### Step 1: Pull the Sage.is AI-UI image
 
 Pull the latest image from the GitHub Container Registry:
 
@@ -37,12 +37,12 @@ docker pull ghcr.io/Startr/AI-WEB-openwebui:main
 Run the container with default settings. This command includes a volume mapping to ensure persistent data storage.
 
 ```bash
-docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main
+docker run -d -p 3000:8080 -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui ghcr.io/Startr/AI-WEB-openwebui:main
 ```
 
 ##### Important flags
 
-- **Volume mapping (`-v sage-open-webui:/app/backend/data`)** keeps your data between restarts.
+- **Volume mapping (`-v sage-is-ai-ui:/app/backend/data`)** keeps your data between restarts.
 - **Port mapping (`-p 3000:8080`)** exposes the WebUI on port 3000 of your machine.
 
 ##### GPU support
@@ -50,13 +50,13 @@ docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open
 Add `--gpus all` if you have an NVIDIA GPU:
 
 ```bash
-docker run -d -p 3000:8080 --gpus all -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:cuda
+docker run -d -p 3000:8080 --gpus all -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui ghcr.io/Startr/AI-WEB-openwebui:cuda
 ```
 
 ##### Single-user mode (no login)
 
 ```bash
-docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main
+docker run -d -p 3000:8080 -e WEBUI_AUTH=False -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui ghcr.io/Startr/AI-WEB-openwebui:main
 ```
 
 :::warning
@@ -66,7 +66,7 @@ You cannot switch between single-user and multi-account modes after this change.
 ##### Connect to a remote Ollama server
 
 ```bash
-docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
+docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
 ```
 
 Once the container is running, open [http://localhost:3000](http://localhost:3000).
@@ -78,16 +78,16 @@ Keep your deployment current using either Watchtower or a manual update.
 #### Option 1: Watchtower
 
 ```bash
-docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-open-webui
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-is-ai-ui
 ```
 
-Replace `sage-open-webui` if you named your container differently.
+Replace `sage-is-ai-ui` if you named your container differently.
 
 #### Option 2: Manual update
 
 1. Stop and remove the running container:
    ```bash
-   docker rm -f sage-open-webui
+   docker rm -f sage-is-ai-ui
    ```
 2. Pull the latest image:
    ```bash
@@ -113,9 +113,9 @@ services:
     ports:
       - "3000:8080"
     volumes:
-      - sage-open-webui:/app/backend/data
+      - sage-is-ai-ui:/app/backend/data
 volumes:
-  sage-open-webui:
+  sage-is-ai-ui:
 ```
 
 Start the service:
@@ -144,7 +144,7 @@ deploy:
 
 Podman is a daemonless alternative to Docker.
 
-Run Sage WebUI:
+Run Sage.is AI-UI:
 
 ```bash
 podman run -d --name openwebui -p 3000:8080 ghcr.io/Startr/AI-WEB-openwebui:main
@@ -166,12 +166,12 @@ See the [Podman documentation](https://podman.io/) for additional configuration.
 
 ### Docker Swarm
 
-Deploying with Swarm uses a stack file to run three services (ChromaDB, Ollama, and Sage WebUI).
+Deploying with Swarm uses a stack file to run three services (ChromaDB, Ollama, and Sage.is AI-UI).
 
 Create the directories used for persistent volumes before deploying:
 
 ```bash
-mkdir -p data/sage-open-webui data/chromadb data/ollama
+mkdir -p data/sage-is-ai-ui data/chromadb data/ollama
 ```
 
 #### Sample `docker-stack.yaml`
@@ -186,7 +186,7 @@ services:
       - chromadb
       - ollama
     volumes:
-      - ./data/sage-open-webui:/app/backend/data
+      - ./data/sage-is-ai-ui:/app/backend/data
     environment:
       DATA_DIR: /app/backend/data
       OLLAMA_BASE_URLS: http://ollama:11434
@@ -284,15 +284,15 @@ Install `uv`:
   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
   ```
 
-Run Sage WebUI, setting `DATA_DIR` to keep your data:
+Run Sage.is AI-UI, setting `DATA_DIR` to keep your data:
 
 - **macOS/Linux**
   ```bash
-  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve
+  DATA_DIR=~/.sage-is-ai-ui uvx --python 3.11 sage-is-ai-ui@latest serve
   ```
 - **Windows**
   ```powershell
-  $env:DATA_DIR="C:\\sage-open-webui\\data"; uvx --python 3.11 sage-open-webui@latest serve
+  $env:DATA_DIR="C:\\sage-is-ai-ui\\data"; uvx --python 3.11 sage-is-ai-ui@latest serve
   ```
 
 ### Conda
@@ -300,10 +300,10 @@ Run Sage WebUI, setting `DATA_DIR` to keep your data:
 Create an isolated Conda environment:
 
 ```bash
-conda create -n sage-open-webui python=3.11
-conda activate sage-open-webui
-pip install sage-open-webui
-sage-open-webui serve
+conda create -n sage-is-ai-ui python=3.11
+conda activate sage-is-ai-ui
+pip install sage-is-ai-ui
+sage-is-ai-ui serve
 ```
 
 ### Python virtual environments (`venv`)
@@ -312,8 +312,8 @@ sage-open-webui serve
 python3 -m venv venv
 source venv/bin/activate  # Linux/macOS
 venv\\Scripts\\activate   # Windows
-pip install sage-open-webui
-sage-open-webui serve
+pip install sage-is-ai-ui
+sage-is-ai-ui serve
 ```
 
 ### Updating pip installations
@@ -321,7 +321,7 @@ sage-open-webui serve
 Upgrade to the latest release:
 
 ```bash
-pip install -U sage-open-webui
+pip install -U sage-is-ai-ui
 ```
 
 ### Development setup
@@ -335,13 +335,13 @@ If you plan to contribute, follow the [Advanced Topics guide](/getting-started/a
 Ensure you have a cluster and Helm installed, then run:
 
 ```bash
-helm repo add sage-open-webui https://sage-open-webui.github.io/helm-charts
+helm repo add sage-is-ai-ui https://sage-is-ai-ui.github.io/helm-charts
 helm repo update
-helm install openwebui sage-open-webui/sage-open-webui
+helm install openwebui sage-is-ai-ui/sage-is-ai-ui
 kubectl get pods
 ```
 
-Expose the service with port forwarding or your ingress controller to reach Sage WebUI.
+Expose the service with port forwarding or your ingress controller to reach Sage.is AI-UI.
 
 ### Kustomize
 
@@ -372,19 +372,19 @@ We will add more third-party guides here as they become available.
 
 After installing, visit:
 
-- [http://localhost:3000](http://localhost:3000) to access Sage WebUI.
+- [http://localhost:3000](http://localhost:3000) to access Sage.is AI-UI.
 - or [http://localhost:8080/](http://localhost:8080/) when using a Python deployment.
 
-You are now ready to start using Sage WebUI!
+You are now ready to start using Sage.is AI-UI!
 
-## Using Sage WebUI with Ollama
-If you're using Sage WebUI with Ollama, be sure to check out our [Starting with Ollama Guide](/getting-started/quick-start/starting-with-ollama) to learn how to manage your Ollama instances with Sage WebUI.
+## Using Sage.is AI-UI with Ollama
+If you're using Sage.is AI-UI with Ollama, be sure to check out our [Starting with Ollama Guide](/getting-started/quick-start/starting-with-ollama) to learn how to manage your Ollama instances with Sage.is AI-UI.
 
 ## Join the Community
 
 Need help? Have questions? Join our community:
 
-- [Sage WebUI Discord](https://discord.com/channels/1074411230040703046/1074411231030550632)
+- [Sage.is AI-UI Discord](https://discord.com/channels/1074411230040703046/1074411231030550632)
 - [GitHub Issues](https://github.com/Startr/AI-WEB-openwebui/issues)
 
 Stay updated with the latest features, troubleshooting tips, and announcements!

@@ -4,7 +4,7 @@ title: "Bing"
 ---
 
 :::warning
-This tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.
+This tutorial is a community contribution and is not supported by the Sage.is AI-UI team. It serves only as a demonstration on how to customize Sage.is AI-UI for your specific use case. Want to contribute? Check out the contributing tutorial.
 :::
 
 ## Bing API
@@ -13,7 +13,7 @@ This tutorial is a community contribution and is not supported by the Sage WebUI
 
 1. Navigate to the [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) and create a new resource. After creation, you’ll be redirected to the resource overview page. From there, select "Click here to manage keys." ![click here to manage keys](https://github.com/user-attachments/assets/dd2a3c67-d6a7-4198-ba54-67a3c8acff6d)
 2. On the key management page, locate Key1 or Key2 and copy your desired key.
-3. Open the Sage WebUI Admin Panel, switch to the Settings tab, and then select Web Search.
+3. Open the Sage.is AI-UI Admin Panel, switch to the Settings tab, and then select Web Search.
 4. Enable the Web search option and set the Web Search Engine to bing.
 5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) dashboard.
 6. Click `Save`.
