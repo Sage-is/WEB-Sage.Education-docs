@@ -59,9 +59,9 @@ def main():
     print(f"Scanning git ref: {git_ref}")
 
     urls = [
-        f"https://raw.githubusercontent.com/Startr/AI-WEB-openwebui/{git_ref}/backend/open_webui/config.py",
-        f"https://raw.githubusercontent.com/Startr/AI-WEB-openwebui/{git_ref}/backend/open_webui/env.py",
-        f"https://raw.githubusercontent.com/Startr/AI-WEB-openwebui/{git_ref}/backend/open_webui/migrations/env.py",
+        f"https://raw.githubusercontent.com/Sage-is/AI-UI/{git_ref}/backend/open_Sage.is AI-UI/config.py",
+        f"https://raw.githubusercontent.com/Sage-is/AI-UI/{git_ref}/backend/open_Sage.is AI-UI/env.py",
+        f"https://raw.githubusercontent.com/Sage-is/AI-UI/{git_ref}/backend/open_Sage.is AI-UI/migrations/env.py",
     ]
     filenames = ["config.py", "env.py", "migrations/env.py"]
 
@@ -85,7 +85,7 @@ def main():
         "https_proxy",
         "no_proxy",
         "PORT",
-        "WEBUI_JWT_SECRET_KEY",
+        "Sage.is AI-UI_JWT_SECRET_KEY",
     }
 
     documented_env_vars = set()

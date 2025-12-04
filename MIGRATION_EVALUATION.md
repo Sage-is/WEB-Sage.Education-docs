@@ -15,10 +15,13 @@
 
 ## What We Rely On Today (Docusaurus)
 
-- MDX + React components embedded in docs (`TopBanners`, `SponsorList`).
+- ~~MDX + React components embedded in docs (`TopBanners`, `SponsorList`).~~ 
+	- no longer this as ben resolved
 - Auto-generated sidebars from folder structure (`sidebars.ts`).
+	- We could make a little njk or liquid that could deal with this...
 - Built-in search (lunr), table of contents, breadcrumbs, dark mode.
 - Mermaid diagrams, Prism highlighting, blog author metadata.
+	- These are low hanging fruit 
 - GitHub edit links, frontmatter-driven ordering, MDX admonitions.
 
 ---

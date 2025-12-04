@@ -4,8 +4,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
-	title: "Sage.is AI-UI",
-	tagline: "ChatGPT-Style WebUI for LLMs (Formerly Ollama WebUI)",
+	title: "Sage.is AI-UI Docs",
+	tagline: "Documentation for Sage.is AI-UI",
 	favicon: "images/favicon.png",
 
 	// Set the production url of your site here
@@ -93,7 +93,7 @@ const config: Config = {
 				//   position: "left",
 				// },
 				{
-					href: "https://github.com/Startr/AI-WEB-openwebui",
+					href: "https://github.com/Sage-is/AI-UI",
 					position: "right",
 					className: "header-github-link",
 					"aria-label": "GitHub repository",
@@ -131,7 +131,7 @@ const config: Config = {
 					items: [
 						{
 							label: "GitHub",
-							href: "https://github.com/Startr/AI-WEB-openwebui",
+							href: "https://github.com/Sage-is/AI-UI",
 						},
 						{
 							label: "Discord",
@@ -144,7 +144,7 @@ const config: Config = {
 					items: [
 						{
 							label: "Release Notes",
-							to: "https://github.com/Startr/AI-WEB-openwebui/blob/main/CHANGELOG.md",
+							to: "https://github.com/Sage-is/AI-UI/blob/main/CHANGELOG.md",
 						},
 						{
 							label: "About",
@@ -153,7 +153,7 @@ const config: Config = {
 					],
 				},
 			],
-			// copyright: `Copyright © ${new Date().getFullYear()} OpenWebUI`,
+			// copyright: `Copyright © ${new Date().getFullYear()} Sage.is AI-UI`,
 		},
 		prism: {
 			theme: prismThemes.github,

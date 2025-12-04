@@ -1,0 +1,50 @@
+---
+sidebar_position: 2
+title: Local with Ollama
+---
+
+## Overview
+
+Sage.is AI-UI makes it easy to connect and manage your **Ollama** instance. This guide will walk you through setting up the connection, managing models, and getting started.
+
+---
+
+## Step 1: Setting Up the Ollama Connection
+
+Once Sage.is AI-UI is installed and running, it will automatically attempt to connect to your Ollama instance. If everything goes smoothly, you’ll be ready to manage and use models right away.
+
+However, if you encounter connection issues, the most common cause is a network misconfiguration. You can refer to our [connection troubleshooting guide](docs/3_troubleshooting/connection-error.md) for help resolving these problems.
+
+---
+
+## Step 2: Managing Your Ollama Instance
+
+To manage your Ollama instance in Sage.is AI-UI, follow these steps:
+
+1. Go to **Admin Panel** in Sage.is AI-UI.
+2. Navigate to **Connections > Ollama API > Ensure that the toggle is on and then click on the wrench** to manage Ollama and download models. Click on the Gear to manage your connection to Ollama.
+
+Here’s what the management screen looks like:
+
+![Ollama Management Screen](/images/getting-started/quick-start/manage-ollama.png)
+
+![Ollama Management Screen](/images/getting-started/quick-start/manage-modal-ollama.png)
+
+
+## A Quick and Efficient Way to Download Models
+
+If you’re looking for a faster option to get started, you can download models directly from the **Model Selector Search**. Simply type the name of the model you want, and if it’s not already available, Sage.is AI-UI will prompt you to download it from Ollama.
+
+Here’s an example of how it works:
+
+![Ollama Download Prompt](/images/getting-started/quick-start/selector-ollama.png)
+
+This method is perfect if you want to skip navigating through the Admin Settings menu and get right to using your models.
+
+---
+
+## All Set!
+
+That’s it! Once your connection is configured and your models are downloaded, you’re ready to start using Ollama with Sage.is AI-UI. Whether you’re exploring new models or running your existing ones, Sage.is AI-UI makes everything simple and efficient.
+
+If you run into any issues or need more guidance, check out our [help section](/troubleshooting) for detailed solutions. Enjoy using Ollama with Sage.is AI-UI! 🎉

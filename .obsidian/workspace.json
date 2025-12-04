@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "1232b81f1233668e",
+    "type": "split",
+    "children": [
+      {
+        "id": "76911b60249b51dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "578ccf5fc077e72c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/4_contribute/Report Issues.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Report Issues"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b80d7c9cd2fbb321",
+    "type": "split",
+    "children": [
+      {
+        "id": "c1c68de345aa16fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f8b979131da40c1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3ad5b49d24824dc6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "expected outcomes",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5356af4fa2f43588",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 244.50271224975586
+  },
+  "right": {
+    "id": "2808d8a36f20b131",
+    "type": "split",
+    "children": [
+      {
+        "id": "54d49e7e346b3888",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e97f1a7e7618a452",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/2_getting_started/2_getting_started.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2_getting_started"
+            }
+          },
+          {
+            "id": "4ed29fc35a2eb120",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/2_getting_started/2_getting_started.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2_getting_started"
+            }
+          },
+          {
+            "id": "af7877a33a0cbabc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9aa4509e2a705980",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/2_getting_started/2_getting_started.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2_getting_started"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "1f8b979131da40c1",
+  "lastOpenFiles": [
+    "TODO.md",
+    "docs/4_contribute/Help Code Sage.is AI-UI.md",
+    "docs/2_getting_started/3_updating/3_updating.md",
+    "docs/2_getting_started/3_updating/Update Automation with Docker Compose.md",
+    "docs/2_getting_started/1_quick-start/1_quick-start.md",
+    "docs/2_getting_started/2_getting_started.md",
+    "docs/docs.md",
+    "docs/4_contribute/4_contribute.md",
+    "features/plugin/functions/tab-shared/Common.md",
+    "TODO/TODO.md",
+    "docs/glossary.md",
+    "static/images/tutorial_image_generation.sync-conflict-20251127-153350-EJ43XZB.png",
+    "scripts/scan-missing-env-vars.sync-conflict-20251127-153518-EJ43XZB.py",
+    "docusaurus.config.sync-conflict-20251127-153155-EJ43XZB.ts",
+    "static/images/web-app-manifest-192x192.sync-conflict-20251127-153329-EJ43XZB.png",
+    "blog/2024-06-11-UI-Should-Not-Be-The-Bottleneck/index.sync-conflict-20251127-153145-EJ43XZB.md",
+    "package.sync-conflict-20251127-153237-EJ43XZB.json",
+    "static/images/web-app-manifest-512x512.sync-conflict-20251127-153427-EJ43XZB.png",
+    "blog/authors.sync-conflict-20251127-153031-EJ43XZB.yml",
+    "static/images/favicon.sync-conflict-20251127-153216-EJ43XZB.png",
+    "static/images/logo-dark.sync-conflict-20251127-153145-EJ43XZB.png",
+    "static/sponsors/sponsor.sync-conflict-20251127-153308-EJ43XZB.png",
+    "static/images/favicon-96x96.sync-conflict-20251127-153120-EJ43XZB.png",
+    "src/css/custom.sync-conflict-20251127-153145-EJ43XZB.css",
+    "static/images/favicon.sync-conflict-20251127-153330-EJ43XZB.ico",
+    "src/components/SponsorList.sync-conflict-20251127-153526-EJ43XZB.tsx",
+    "README.sync-conflict-20251127-153244-EJ43XZB.md",
+    "static/images/logo.sync-conflict-20251127-153007-EJ43XZB.xcf",
+    "static/images/apple-touch-icon.sync-conflict-20251127-153127-EJ43XZB.png",
+    "static/images/logo.sync-conflict-20251127-153309-EJ43XZB.png",
+    "docs/intro.mdx",
+    "docs/tutorials/images.md",
+    "docs/tutorials/integrations/browser-search-engine.md",
+    "docs/tutorials/web-search/serpapi.md",
+    "docs/features/plugin/migration/index.mdx",
+    "docs/getting-started/quick-start/tab-kubernetes/Helm.md",
+    "docs/tutorials/integrations/ipex_llm.md",
+    "docs/tutorials/integrations/firefox-sidebar.md",
+    "docs/tutorials/https-haproxy.md",
+    "docs/tutorials/tips/contributing-tutorial.md",
+    "docs/tutorials/web-search/kagi.md",
+    "docs/tutorials/web-search/mojeek.md",
+    "docs/tutorials/integrations/redis.md",
+    "docs/getting-started/index.md",
+    "docs/getting-started/quick-start/tab-docker/DockerSwarm.md",
+    "static/images/logo.svg"
+  ]
+}

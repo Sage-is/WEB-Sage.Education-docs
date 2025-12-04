@@ -1,0 +1,14 @@
+li.task-list-item.is-checked {
+  text-decoration:underline;
+  color:var(--text-normal);
+}
+
+li.task-list-item.is-checked {
+  text-decoration:underline;
+  color:var(--text-normal);
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]) {
+  text-decoration:underline;
+  color: var(--text-normal);
+}

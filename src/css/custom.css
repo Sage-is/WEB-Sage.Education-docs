@@ -34,6 +34,11 @@
 	--ifm-global-shadow-md: 0px; /* Remove shadow on the left */
 }
 
+:root {
+  --doc-sidebar-width: 280px;
+  --doc-sidebar-hidden-width: 30px;
+}
+
 [data-theme="light"] {
 	--ifm-menu-color: #000;
 }

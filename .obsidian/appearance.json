@@ -1,0 +1,9 @@
+{
+  "theme": "moonstone",
+  "cssTheme": "Solarized",
+  "translucency": false,
+  "enabledCssSnippets": [
+    "alternativeCheckboxes",
+    "underline_checkedlist"
+  ]
+}
