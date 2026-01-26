@@ -20,4 +20,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # Ignore the TODO folder
-/TODO
+/TODO.obsidian/workspace.json
+_site-eleventy/
