@@ -118,7 +118,7 @@ const config: Config = {
 					items: [
 						{
 							label: "Getting Started",
-							to: "getting-started",
+							to: "getting_started",
 						},
 						{
 							label: "FAQ",
