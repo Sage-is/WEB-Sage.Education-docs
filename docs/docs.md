@@ -8,7 +8,10 @@ hide_title: true
 
 ![GitHub stars](https://img.shields.io/github/stars/Sage-is/AI-UI?style=social) ![GitHub forks](https://img.shields.io/github/forks/Sage-is/AI-UI?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/Sage-is/AI-UI?style=social)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Sage-is/AI-UI) ![GitHub language count](https://img.shields.io/github/languages/count/Sage-is/AI-UI) ![GitHub top language](https://img.shields.io/github/languages/top/Sage-is/AI-UI)
-![GitHub last commit](https://img.shields.io/github/last-commit/Sage-is/AI-UI) [![Discord](https://img.shields.io/badge/Discord-Startr-Sage?logo=discord&logoColor=white)](https://discord.com/channels/1074411230040703046/1074411231030550632)
+![GitHub last commit](https://img.shields.io/github/last-commit/Sage-is/AI-UI)
+<!-- TODO: Re-enable Discord badge when Discord becomes active again.
+[![Discord](https://img.shields.io/badge/Discord-Startr-Sage?logo=discord&logoColor=white)](https://discord.com/channels/1074411230040703046/1074411231030550632)
+-->
 
 Sage.is AI-UI is a feature-rich and user-friendly AI creation platform designed for startups, small teams, and schools. Sage.is AI-UI lets you manage your own knowledge bases and allows your personal AI to work with these knowledge bases securely.
 

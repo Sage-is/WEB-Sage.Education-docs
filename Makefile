@@ -87,17 +87,29 @@ hotfix: require_gitflow_next require_tag
 	# Start a hotfix with incremented n.n.n.n version (incrementing the fourth number)
 	git flow hotfix start $$(git tag --sort=-v:refname | sed 's/^v//' | head -n 1 | awk -F'.' '{print $$1"."$$2"."$$3"."$$4+1}') && echo "or use 'make hotfix_finish' to finish the hotfix"
 
+bump:
+	# Update package.json version to match current release/* or hotfix/* branch
+	@VER=$$(echo $(FULL_BRANCH) | sed -n 's|^release/||p; s|^hotfix/||p'); \
+	if [ -z "$$VER" ]; then \
+		echo "Error: not on a release/* or hotfix/* branch (current: $(FULL_BRANCH))"; \
+		exit 1; \
+	fi; \
+	echo "Bumping version to $$VER"; \
+	sed -i '' 's|"version": *"[^"]*"|"version": "'$$VER'"|' package.json; \
+	echo "Updated package.json:"; \
+	grep '"version"' package.json
+
 release_finish: require_gitflow_next
-	git flow release finish && git push origin develop && git push origin master && git push --tags && git checkout develop
+	git flow release finish && git push origin develop && git push origin main && git push --tags && git checkout develop
 
 hotfix_finish: require_gitflow_next
-	git flow hotfix finish && git push origin develop && git push origin master && git push --tags && git checkout master
+	git flow hotfix finish && git push origin develop && git push origin main && git push --tags && git checkout main
 
 # 6. things_clean
 things_clean:
 	git clean --exclude='!.env*' -Xdf
 
 # 7. .PHONY declarations
-.PHONY: help show_vars require_gitflow_next \
-	minor_release patch_release major_release hotfix \
-	release_finish hotfix_finish things_clean
+.PHONY: help show_vars require_gitflow_next require_tag \
+	initial_release minor_release patch_release major_release hotfix \
+	bump release_finish hotfix_finish things_clean
