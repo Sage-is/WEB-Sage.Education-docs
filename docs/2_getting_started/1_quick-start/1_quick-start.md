@@ -35,8 +35,8 @@ With these single commands you'll have a complete version of Sage.is AI-UI up an
 - [x] Ollama pre-configured for local models
 - [x] Persistent data storage
 - [x] Automatic restarts
-- [ ] Fast and simple style and branding 
-- [ ] White labeling for your organization 
+- [x] Fast and simple style and branding 
+- [x] White labeling for your organization 
 
 **Ready to Go!**  
 Once running, you can access your Sage.is AI-UI at [http://localhost:3000](http://localhost:3000). Enjoy! 
@@ -46,7 +46,7 @@ Once running, you can access your Sage.is AI-UI at [http://localhost:3000](http:
 :::warning  
 - [ ] **Heads up:** **For Adventurous Users Only** 
 
-The `:develop` branch contains experimental features still in **active development**. Expect bugs, incomplete functionality, and occasional instability. Perfect for testing and feedback, but not recommended for production use.  If you want to hack this is for you.
+The `:develop` branch **always** contains **experimental features** still in **active development**. Expect bugs, incomplete functionality, and occasional instability. Perfect for testing and feedback, but not recommended for production use.  If you want to hack this is for you.
 :::
 
 #### ⚛ Develop Branch Setup ⚛ 

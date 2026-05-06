@@ -17,7 +17,7 @@ Get up and running quickly with our [Quick Start Guide](/getting_started/quick-s
 
 ## 🌐 [Working with Local and Remote AI](/getting_started/Local-and-Remote-AI/)
 
-Chose where you want to run your AIs and explore connecting to the powerful AIs around the world in our [Local and Remote AI Guide](/getting_started/Local-and-Remote-AI/).
+Choose where you want to run your AIs and explore connecting to the powerful AIs around the world in our [Local and Remote AI Guide](/getting_started/Local-and-Remote-AI/).
 
 ---
 

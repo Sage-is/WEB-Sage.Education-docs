@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "faq"
             }
-          },
-          {
-            "id": "a8ea4aa4a0a1b62e",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.5"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.5"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/faq.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for faq"
             }
           },
           {
@@ -180,9 +168,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "a8ea4aa4a0a1b62e",
+  "active": "578ccf5fc077e72c",
   "lastOpenFiles": [
+    "docs/2_getting_started/1_quick-start/1_quick-start.md",
+    "docs/2_getting_started/2_Local-and-Remote-AI/2_Local-and-Remote-AI.md",
+    "docs/2_getting_started/2_Local-and-Remote-AI/2_starting-with-ollama.md",
     "docs/2_getting_started/2_getting_started.md",
+    "docs/4_contribute/Help Code Sage.is AI-UI.md",
+    "docs/2_getting_started/2_Local-and-Remote-AI/1_begin_with_remote_ai.md",
+    "docs/4_contribute/4_contribute.md",
+    "docs/2_getting_started/3_updating/Update Automation with Docker Compose.md",
+    "docs/2_getting_started/2_Local-and-Remote-AI/3_starting-with-llama-cpp.md",
+    "getting_started/quick-start.md",
+    "getting_started",
     "docs/docs.md",
     "_site-eleventy/2_getting_started/2_Local-and-Remote-AI/2_starting-with-ollama/index.html",
     "_site-eleventy/2_getting_started/3_updating/Update Automation with Docker Compose/index.html",
@@ -193,7 +191,6 @@
     "_site-eleventy/4_contribute/Help Code Sage.is AI-UI/index.html",
     "_site-eleventy/4_contribute/Document and Make Tutorials/index.html",
     "_site-eleventy/3_troubleshooting/connection-error/index.html",
-    "_site-eleventy/2_getting_started/3_updating/index.html",
     "node_modules/@11ty/eleventy-plugin-bundle/node_modules/debug/README.md",
     "node_modules/@11ty/eleventy-dev-server/node_modules/debug/README.md",
     "node_modules/@11ty/dependency-tree-esm/node_modules/acorn/CHANGELOG.md",
@@ -209,15 +206,6 @@
     "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/README.md",
     "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/LICENSE.md",
     "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch/node_modules/brace-expansion/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/typescript-estree/node_modules/semver/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/types/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/node_modules/@typescript-eslint/typescript-estree/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/scope-manager/node_modules/@typescript-eslint/types/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils/README.md",
-    "node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/scope-manager/README.md",
-    "node_modules/webpack/node_modules/eslint-scope/node_modules/estraverse/README.md",
-    "node_modules/webpack/node_modules/eslint-scope/README.md",
     "node_modules/layout-base/layout-schema.png",
     "node_modules/renderkid/docs/images/usage.png",
     "node_modules/renderkid/docs/images/display.png",
