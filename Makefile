@@ -100,10 +100,10 @@ bump:
 	grep '"version"' package.json
 
 release_finish: require_gitflow_next
-	git flow release finish && git push origin develop && git push origin main && git push --tags && git checkout develop
+	git flow release finish && git push origin develop && git push origin master && git push --tags && git checkout develop
 
 hotfix_finish: require_gitflow_next
-	git flow hotfix finish && git push origin develop && git push origin main && git push --tags && git checkout main
+	git flow hotfix finish && git push origin develop && git push origin master && git push --tags && git checkout master
 
 # 6. things_clean
 things_clean:
