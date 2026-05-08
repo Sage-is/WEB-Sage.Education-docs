@@ -1,0 +1,6 @@
+path,reason
+node_modules,dependency cache
+.docusaurus,generated files
+.git,repository metadata
+__pycache__,Python bytecode cache
+.venv,virtual environment

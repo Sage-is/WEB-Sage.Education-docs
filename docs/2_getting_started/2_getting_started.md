@@ -27,5 +27,8 @@ Stay current with the latest features and security patches with our [Updating Sa
 
 ---
 
-Happy exploring! 🎉 If you have questions, join our [community](https://discord.com/channels/1074411230040703046/1074411231030550632) or raise an issue on [GitHub](https://github.com/Sage-is/AI-UI).
+Happy exploring! 🎉 If you have questions, raise an issue on [GitHub](https://github.com/Sage-is/AI-UI).
+<!-- TODO: Re-enable Discord community link when Discord becomes active again.
+If you have questions, join our [community](https://discord.com/channels/1074411230040703046/1074411231030550632).
+-->
 

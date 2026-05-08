@@ -93,4 +93,7 @@ docker run -d -p 3000:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host
 
 Need Further Assistance?
 
-If you have further questions or concerns, reach out to our [GitHub Issues page](https://github.com/Startr/AI-WEB-openwebui/issues) or [Discord channel](https://discord.com/channels/1074411230040703046/1074411231030550632) for more help and information.
+If you have further questions or concerns, reach out to our [GitHub Issues page](https://github.com/Startr/AI-WEB-openwebui/issues) for more help and information.
+<!-- TODO: Re-enable Discord support link when Discord becomes active again.
+If you have further questions or concerns, reach out to our [Discord channel](https://discord.com/channels/1074411230040703046/1074411231030550632) for more help and information.
+-->

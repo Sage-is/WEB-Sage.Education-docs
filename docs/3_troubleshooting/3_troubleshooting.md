@@ -18,6 +18,9 @@ Watch the videos at [https://sage.is](https://sage.is), apply to become a member
 
 ###  Community Support 
 
-This project thrives on community spirit and passion. If you still face problems after updating, we warmly invite you to join our upcoming vibrant community on [Discord](#todo). There, you can share your experiences, find solutions, and connect with fellow enthusiasts who might be navigating similar challenges. Engaging with our community doesn't just help solve your problems; it strengthens the entire network of support, so we all grow together. 
+This project thrives on community spirit and passion. If you still face problems after updating, please open a GitHub issue so we can help and improve support for everyone.
+<!-- TODO: Re-enable Discord community copy when Discord becomes active again.
+If you still face problems after updating, we warmly invite you to join our upcoming vibrant community on [Discord](#todo). There, you can share your experiences, find solutions, and connect with fellow enthusiasts who might be navigating similar challenges. Engaging with our community doesn't just help solve your problems; it strengthens the entire network of support, so we all grow together.
+-->
 
 Together, let's grow these opportunities to create the best environment and keep Sage.is AI-UI pushing the boundaries of what we can achieve. 

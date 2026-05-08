@@ -1,0 +1,315 @@
+{
+  "edges": [],
+  "nodes": [
+    {
+      "color": "4",
+      "height": 200,
+      "id": "col-backlog",
+      "label": "Backlog",
+      "type": "group",
+      "width": 300,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "children": [
+        {
+          "checked": false,
+          "line_num": 51,
+          "tags": [],
+          "text": "Define stable naming convention for parent card titles"
+        },
+        {
+          "checked": false,
+          "line_num": 52,
+          "tags": [],
+          "text": "Add recurring cleanup cadence for moving completed items to archive"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "a9c0260ae6d4b013",
+      "line_num": 50,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**Task Taxonomy Improvements: Improve consistency and readability over time**\n- [ ] Define stable naming convention for parent card titles\n- [ ] Add recurring cleanup cadence for moving completed items to archive\n\n`TODO.md:L50`",
+      "type": "text",
+      "width": 280,
+      "x": 10,
+      "y": 60
+    },
+    {
+      "height": 970,
+      "id": "col-todo",
+      "label": "TODO",
+      "type": "group",
+      "width": 300,
+      "x": 350,
+      "y": 0
+    },
+    {
+      "children": [
+        {
+          "checked": false,
+          "line_num": 32,
+          "tags": [],
+          "text": "Use TodoScope scan output to migrate to `TODO:` / `FIXME:` / `BUG:` only"
+        },
+        {
+          "checked": false,
+          "line_num": 33,
+          "tags": [],
+          "text": "Add TODO entries for any discovered `DEPRECATED:` removals by version"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "6213ec35dba93021",
+      "line_num": 31,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**Inline Tag Vocabulary Migration: Standardize inline task tags in code and docs**\n- [ ] Use TodoScope scan output to migrate to `TODO:` / `FIXME:` / `BUG:` only\n- [ ] Add TODO entries for any discovered `DEPRECATED:` removals by version\n\n`TODO.md:L31`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 60
+    },
+    {
+      "children": [
+        {
+          "checked": false,
+          "line_num": 36,
+          "tags": [],
+          "text": "Group cards by milestone or area using `###` subsection headers"
+        },
+        {
+          "checked": false,
+          "line_num": 37,
+          "tags": [],
+          "text": "Add stakeholder and hashtag metadata where useful"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "2401fbbedd5d04f1",
+      "line_num": 35,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**TODO.md Curation Pass: Add current roadmap items as parent cards with subtasks**\n- [ ] Group cards by milestone or area using `###` subsection headers\n- [ ] Add stakeholder and hashtag metadata where useful\n\n`TODO.md:L35`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 150
+    },
+    {
+      "children": [
+        {
+          "checked": false,
+          "line_num": 40,
+          "tags": [],
+          "text": "Run TodoScope scanner and confirm columns match expected mapping"
+        },
+        {
+          "checked": false,
+          "line_num": 41,
+          "tags": [],
+          "text": "Adjust section aliases if board columns differ from intent"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "44b557e8e8f893a7",
+      "line_num": 39,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**Convention Sync Validation: Verify board mapping after scan**\n- [ ] Run TodoScope scanner and confirm columns match expected mapping\n- [ ] Adjust section aliases if board columns differ from intent\n\n`TODO.md:L39`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 240
+    },
+    {
+      "children": [
+        {
+          "checked": false,
+          "line_num": 46,
+          "tags": [],
+          "text": "Import untracked inline work into curated TODO cards"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "d4106c4e493c72d8",
+      "line_num": 45,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**Scanner Intake Pending: Waiting for first TodoScope scan results**\n- [ ] Import untracked inline work into curated TODO cards\n\n`TODO.md:L45`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 330
+    },
+    {
+      "file_path": "docs/DEVELOPMENT_WORKFLOW.md",
+      "height": 80,
+      "id": "a137f2fe0e61e04a",
+      "line_num": 150,
+      "source": "inline",
+      "tags": [],
+      "text": "### TODO Management\n`docs/DEVELOPMENT_WORKFLOW.md:150`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 420
+    },
+    {
+      "file_path": "docs/faq.md",
+      "height": 80,
+      "id": "a2ca3dd7e0e55186",
+      "line_num": 97,
+      "source": "inline",
+      "tags": [],
+      "text": "<!-- TODO: Re-enable Discord support link when Discord becomes active again.\n`docs/faq.md:97`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 510
+    },
+    {
+      "file_path": "docs/docs.md",
+      "height": 80,
+      "id": "6f4b6298a4da842e",
+      "line_num": 12,
+      "source": "inline",
+      "tags": [],
+      "text": "<!-- TODO: Re-enable Discord badge when Discord becomes active again.\n`docs/docs.md:12`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 600
+    },
+    {
+      "file_path": "docs/2_getting_started/2_getting_started.md",
+      "height": 80,
+      "id": "0a871957ad6e3675",
+      "line_num": 31,
+      "source": "inline",
+      "tags": [],
+      "text": "<!-- TODO: Re-enable Discord community link when Discord becomes active again.\n`docs/2_getting_started/2_getting_started.md:31`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 690
+    },
+    {
+      "file_path": "docs/3_troubleshooting/3_troubleshooting.md",
+      "height": 80,
+      "id": "83a3fe2edb902074",
+      "line_num": 22,
+      "source": "inline",
+      "tags": [],
+      "text": "<!-- TODO: Re-enable Discord community copy when Discord becomes active again.\n`docs/3_troubleshooting/3_troubleshooting.md:22`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 780
+    },
+    {
+      "file_path": "src/css/custom.css",
+      "height": 80,
+      "id": "47dadb794b070045",
+      "line_num": 637,
+      "source": "inline",
+      "tags": [],
+      "text": "/* TODO: Re-enable when Discord becomes active again.\n`src/css/custom.css:637`",
+      "type": "text",
+      "width": 280,
+      "x": 360,
+      "y": 870
+    },
+    {
+      "color": "5",
+      "height": 200,
+      "id": "col-in_progress",
+      "label": "In Progress",
+      "type": "group",
+      "width": 300,
+      "x": 700,
+      "y": 0
+    },
+    {
+      "children": [
+        {
+          "checked": true,
+          "line_num": 24,
+          "tags": [],
+          "text": "Create `.todoscope-exclude.csv` with baseline exclusions"
+        },
+        {
+          "checked": false,
+          "line_num": 25,
+          "tags": [],
+          "text": "Confirm exclude paths still match repository build and cache outputs"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "22ca3c962091a136",
+      "line_num": 23,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**TodoScope Bootstrap: Align repo task tracking files for kanban ingestion**\n- [x] Create `.todoscope-exclude.csv` with baseline exclusions\n- [ ] Confirm exclude paths still match repository build and cache outputs\n\n`TODO.md:L23`",
+      "type": "text",
+      "width": 280,
+      "x": 710,
+      "y": 60
+    },
+    {
+      "color": "1",
+      "height": 200,
+      "id": "col-bugs",
+      "label": "Bugs",
+      "type": "group",
+      "width": 300,
+      "x": 1050,
+      "y": 0
+    },
+    {
+      "color": "6",
+      "height": 200,
+      "id": "col-done",
+      "label": "Done",
+      "type": "group",
+      "width": 300,
+      "x": 1400,
+      "y": 0
+    },
+    {
+      "children": [
+        {
+          "checked": true,
+          "line_num": 61,
+          "tags": [],
+          "text": "Add `.todoscope-exclude.csv`"
+        },
+        {
+          "checked": true,
+          "line_num": 62,
+          "tags": [],
+          "text": "Create TodoScope-aligned `TODO.md` scaffold"
+        }
+      ],
+      "file_path": "TODO.md",
+      "height": 80,
+      "id": "fad1eadf136ed74d",
+      "line_num": 60,
+      "source": "todo_md",
+      "tags": [],
+      "text": "**Initial TodoScope Setup: Establish baseline files and structure**\n- [x] Add `.todoscope-exclude.csv`\n- [x] Create TodoScope-aligned `TODO.md` scaffold\n\n`TODO.md:L60`",
+      "type": "text",
+      "width": 280,
+      "x": 1410,
+      "y": 60
+    }
+  ]
+}

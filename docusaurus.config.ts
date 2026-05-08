@@ -98,12 +98,13 @@ const config: Config = {
 					className: "header-github-link",
 					"aria-label": "GitHub repository",
 				},
-				{
-					href: "https://discord.com/channels/1074411230040703046/1074411231030550632",
-					position: "right",
-					className: "header-discord-link",
-					"aria-label": "Discord server",
-				},
+				// TODO: Re-enable when Discord becomes active again.
+				// {
+				// 	href: "https://discord.com/channels/1074411230040703046/1074411231030550632",
+				// 	position: "right",
+				// 	className: "header-discord-link",
+				// 	"aria-label": "Discord server",
+				// },
 			],
 		},
 		footer: {
@@ -133,10 +134,11 @@ const config: Config = {
 							label: "GitHub",
 							href: "https://github.com/Sage-is/AI-UI",
 						},
-						{
-							label: "Discord",
-							href: "https://discord.com/channels/1074411230040703046/1074411231030550632",
-						},
+						// TODO: Re-enable when Discord becomes active again.
+						// {
+						// 	label: "Discord",
+						// 	href: "https://discord.com/channels/1074411230040703046/1074411231030550632",
+						// },
 					],
 				},
 				{
