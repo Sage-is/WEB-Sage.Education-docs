@@ -36,6 +36,42 @@ CONTAINER := $(PROJECT)-$(BRANCH)
 # 3. Load environment overrides from .env if present
 -include .env
 
+# Pull canonical distribution facts from the shared contract. Hardlinked
+# from homebrew-apps/distribution.env. `-include` (vs `include`) keeps a
+# fresh clone parseable before the hardlink chain has been established;
+# run `make distribution_sync` once to wire it up.
+-include distribution.env
+
+# Source of truth for distribution.env (sibling repo). Override SIBLING_*
+# vars if your checkout layout differs.
+SIBLING_HOMEBREW ?= ../homebrew-apps
+SIBLING_DOCS     ?= ../WEB-Sage.Education-docs
+SIBLING_AI_UI    ?= ../WEB-AI--Sage-is-AI-UI
+DIST_SOURCE      := $(SIBLING_HOMEBREW)/distribution.env
+
+# Re-establish the distribution.env hardlink chain across the three sibling
+# repos. Idempotent — `ln -f` replaces a stale copy with the hardlink to
+# the canonical file. Run once after a fresh clone.
+distribution_sync:
+	@test -f $(DIST_SOURCE) || { echo "ERROR: $(DIST_SOURCE) not found. Clone homebrew-apps as a sibling first."; exit 1; }
+	@ln -f $(DIST_SOURCE) $(SIBLING_AI_UI)/distribution.env
+	@ln -f $(DIST_SOURCE) $(SIBLING_DOCS)/distribution.env
+	@$(MAKE) distribution_verify
+
+# Verify the link-count contract. Fails loudly if a sibling has drifted
+# (e.g. an editor wrote a copy instead of preserving the inode). BSD/GNU
+# stat compat: `-f "%l"` on macOS, `-c "%h"` on Linux.
+distribution_verify:
+	@for f in $(DIST_SOURCE) $(SIBLING_AI_UI)/distribution.env $(SIBLING_DOCS)/distribution.env; do \
+		links=$$(stat -f "%l" "$$f" 2>/dev/null || stat -c "%h" "$$f"); \
+		if [ "$$links" != "3" ]; then \
+			echo "FAIL: $$f has $$links links, expected 3"; \
+			echo "  Run 'make distribution_sync' to re-establish the chain."; \
+			exit 1; \
+		fi; \
+	done
+	@echo "OK: distribution.env hardlink chain intact (3 links)."
+
 # 4. show_vars (debug helper)
 show_vars:
 	@echo "=== Dynamic Variables ==="
@@ -99,10 +135,10 @@ bump:
 	echo "Updated package.json:"; \
 	grep '"version"' package.json
 
-release_finish: require_gitflow_next
+release_finish: require_gitflow_next distribution_verify
 	git flow release finish && git push origin develop && git push origin master && git push --tags && git checkout develop
 
-hotfix_finish: require_gitflow_next
+hotfix_finish: require_gitflow_next distribution_verify
 	git flow hotfix finish && git push origin develop && git push origin master && git push --tags && git checkout master
 
 # 6. things_clean
@@ -112,4 +148,5 @@ things_clean:
 # 7. .PHONY declarations
 .PHONY: help show_vars require_gitflow_next require_tag \
 	initial_release minor_release patch_release major_release hotfix \
-	bump release_finish hotfix_finish things_clean
+	bump release_finish hotfix_finish things_clean \
+	distribution_sync distribution_verify
