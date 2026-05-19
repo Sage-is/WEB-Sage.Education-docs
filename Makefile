@@ -49,11 +49,37 @@ SIBLING_DOCS     ?= ../WEB-Sage.Education-docs
 SIBLING_AI_UI    ?= ../WEB-AI--Sage-is-AI-UI
 DIST_SOURCE      := $(SIBLING_HOMEBREW)/distribution.env
 
+## setup_siblings — establish the distribution.env hardlink chain across siblings.
+##
+## Verifies all three repos are checked out side-by-side. If a sibling is
+## missing, prints the exact `git clone` command and exits non-zero. If
+## all three are present, calls distribution_sync to (re)establish the
+## hardlinks. Idempotent — safe to re-run.
+setup_siblings:
+	@chmod +x tools/setup_siblings.sh
+	@tools/setup_siblings.sh
+
+## setup — fresh-machine bootstrap. Currently equivalent to setup_siblings;
+## reserved for additional docs setup steps (Node deps, etc.).
+setup: setup_siblings
+	@echo ""
+	@echo "=== Setup complete ==="
+
 # Re-establish the distribution.env hardlink chain across the three sibling
 # repos. Idempotent — `ln -f` replaces a stale copy with the hardlink to
 # the canonical file. Run once after a fresh clone.
 distribution_sync:
-	@test -f $(DIST_SOURCE) || { echo "ERROR: $(DIST_SOURCE) not found. Clone homebrew-apps as a sibling first."; exit 1; }
+	@test -f $(DIST_SOURCE) || { \
+		echo "ERROR: $(DIST_SOURCE) not found."; \
+		echo "       Run 'make setup_siblings' first (or clone homebrew-apps"; \
+		echo "       as a sibling: git clone https://github.com/Sage-is/homebrew-apps.git $(SIBLING_HOMEBREW))"; \
+		exit 1; \
+	}
+	@test -d $(SIBLING_AI_UI) || { \
+		echo "ERROR: $(SIBLING_AI_UI) not found."; \
+		echo "       Run 'make setup_siblings' first."; \
+		exit 1; \
+	}
 	@ln -f $(DIST_SOURCE) $(SIBLING_AI_UI)/distribution.env
 	@ln -f $(DIST_SOURCE) $(SIBLING_DOCS)/distribution.env
 	@$(MAKE) distribution_verify
@@ -149,4 +175,4 @@ things_clean:
 .PHONY: help show_vars require_gitflow_next require_tag \
 	initial_release minor_release patch_release major_release hotfix \
 	bump release_finish hotfix_finish things_clean \
-	distribution_sync distribution_verify
+	setup setup_siblings distribution_sync distribution_verify
