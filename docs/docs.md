@@ -38,26 +38,26 @@ Watch the videos at [https://sage.is](https://sage.is), apply to become a member
 
 ## Comunity Partners 
 
-<div class="pb-4">
-  <div class="mb-2">
-    <div class="mb-1 text-xs font-semibold text-gray-600 underline dark:text-gray-300">
+<div style={{"--pb":"1rem"}}>
+  <div style={{"--mb":"0.5rem"}}>
+    <div style={{"--mb":"0.25rem","--size":"0.75rem","--fw":"600","--c":"var(--text-muted)","--td":"underline"}}>
       Sponsored by <a href="https://startr.style/" target="_blank" rel="noopener noreferrer">Startr LLC and Startr.Style</a>
     </div>
     <a href="https://startr.style/" target="_blank" rel="noopener noreferrer">
       <img
-        class="hidden w-full rounded-xl md:block"
+        style={{"--d":"none","--d-md":"block","--w":"100%","--radius":"0.75rem"}}
         loading="lazy"
         alt="Startr.Style"
         src="/ads/sponsor-banner-1.png"
       />
       <img
-        class="block w-full rounded-xl md:hidden"
+        style={{"--d":"block","--d-md":"none","--w":"100%","--radius":"0.75rem"}}
         loading="lazy"
         alt="Startr.Style"
         src="/ads/sponsor-banner-small-1.png"
       />
     </a>
-    <div class="mt-1 line-clamp-1 text-right text-xs font-semibold text-gray-600 dark:text-gray-300">
+    <div style={{"--mt":"0.25rem","--line-clamp":"1","--ta":"right","--size":"0.75rem","--fw":"600","--c":"var(--text-muted)"}}>
       Create a website that looks great and is easy to manage.
     </div>
   </div>

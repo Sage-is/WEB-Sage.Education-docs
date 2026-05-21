@@ -23,26 +23,26 @@ Check out our [Code Contribution Guidelines](/contribute/Sage.is%20AI-UI%20Code%
 Together, let's create the best Open Source AI tool for humanity. 🎉
 
 
-<div class="pb-4">
-	<div class="">
-		<div class="text-xs font-semibold text-gray-600 underline dark:text-gray-300">
+<div style={{"--pb":"1rem"}}>
+	<div>
+		<div style={{"--size":"0.75rem","--fw":"600","--c":"var(--text-muted)","--td":"underline"}}>
 			Sponsored by <a href="https://startr.style/" target="_blank" rel="noopener noreferrer">Startr.Style</a>
 		</div>
 		<a href="https://startr.style/" target="_blank" rel="noopener noreferrer">
 			<img
-				class="hidden w-full rounded-xl md:block"
+				style={{"--d":"none","--d-md":"block","--w":"100%","--radius":"0.75rem"}}
 				loading="lazy"
 				alt="Startr.Style"
 				src="/ads/sponsor-banner-1.png"
 			/>
 			<img
-				class="block w-full rounded-xl md:hidden"
+				style={{"--d":"block","--d-md":"none","--w":"100%","--radius":"0.75rem"}}
 				loading="lazy"
 				alt="Startr.Style"
 				src="/ads/sponsor-banner-small-1.png"
 			/>
 		</a>
-		<div class="line-clamp-1 text-right text-xs font-semibold text-gray-600 dark:text-gray-300">
+		<div style={{"--line-clamp":"1","--ta":"right","--size":"0.75rem","--fw":"600","--c":"var(--text-muted)"}}>
 			Create Web Solutions that looks great and are easy to manage.
 		</div>
 	</div>
