@@ -43,6 +43,7 @@ const config: Config = {
 				docs: {
 					sidebarPath: "./sidebars.ts",
 					routeBasePath: "/",
+					breadcrumbs: false,
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
 					editUrl: "https://github.com/Startr/WEB-Sage.Education-docs/blob/main",
@@ -163,6 +164,13 @@ const config: Config = {
 		},
 	} satisfies Preset.ThemeConfig,
 	plugins: [require.resolve("docusaurus-lunr-search")],
+
+	stylesheets: [
+		{
+			href: "https://startr.style/style.css",
+			type: "text/css",
+		},
+	],
 };
 
 export default config;
