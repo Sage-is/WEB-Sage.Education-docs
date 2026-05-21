@@ -1,26 +1,50 @@
 export const Sponsor = ({ sponsor }) => {
 	return (
 		<>
-			<div className="mb-2 flex flex-col">
-				<div className="mb-1.5 text-[0.6rem] font-bold text-gray-500 underline dark:text-gray-400">
+			<div style={{ "--mb": "0.5rem", "--d": "flex", "--fd": "column" } as React.CSSProperties}>
+				<div
+					style={{
+						"--mb": "0.375rem",
+						"--size": "0.6rem",
+						"--weight": "700",
+						"--c": "var(--text-muted)",
+						"--td": "underline",
+					} as React.CSSProperties}
+				>
 					<a href={sponsor.url} target="_blank">
 						{sponsor.name}
 					</a>
 				</div>
 
 				<a href={sponsor.url} target="_blank">
-					<div className="flex w-32 items-start gap-2.5 md:w-48">
-						<div className="basis-1/2">
+					<div
+						style={{
+							"--d": "flex",
+							"--w": "8rem",
+							"--w-md": "12rem",
+							"--ai": "start",
+							gap: "0.625rem",
+						} as React.CSSProperties}
+					>
+						<div style={{ "--fb": "50%" } as React.CSSProperties}>
 							<img
-								className="rounded-xl"
+								style={{ "--radius": "0.75rem" } as React.CSSProperties}
 								loading="lazy"
 								alt={sponsor.name}
 								src={sponsor.imgSrc}
 							/>
 						</div>
 
-						<div className="flex basis-1/2">
-							<div className="line-clamp-4 text-[0.6rem] font-bold text-gray-500 no-underline dark:text-gray-400 md:line-clamp-5">
+						<div style={{ "--d": "flex", "--fb": "50%" } as React.CSSProperties}>
+							<div
+								style={{
+									"--line-clamp": "4",
+									"--size": "0.6rem",
+									"--weight": "700",
+									"--c": "var(--text-muted)",
+									"--td": "none",
+								} as React.CSSProperties}
+							>
 								{sponsor.description}
 							</div>
 						</div>

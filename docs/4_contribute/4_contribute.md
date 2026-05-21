@@ -25,7 +25,7 @@ Together, let's create the best Open Source AI tool for humanity. 🎉
 
 <div style={{"--pb":"1rem"}}>
 	<div>
-		<div style={{"--size":"0.75rem","--fw":"600","--c":"var(--text-muted)","--td":"underline"}}>
+		<div style={{"--size":"0.75rem","--weight":"600","--c":"var(--text-muted)","--td":"underline"}}>
 			Sponsored by <a href="https://startr.style/" target="_blank" rel="noopener noreferrer">Startr.Style</a>
 		</div>
 		<a href="https://startr.style/" target="_blank" rel="noopener noreferrer">
@@ -42,7 +42,7 @@ Together, let's create the best Open Source AI tool for humanity. 🎉
 				src="/ads/sponsor-banner-small-1.png"
 			/>
 		</a>
-		<div style={{"--line-clamp":"1","--ta":"right","--size":"0.75rem","--fw":"600","--c":"var(--text-muted)"}}>
+		<div style={{"--line-clamp":"1","--ta":"right","--size":"0.75rem","--weight":"600","--c":"var(--text-muted)"}}>
 			Create Web Solutions that looks great and are easy to manage.
 		</div>
 	</div>

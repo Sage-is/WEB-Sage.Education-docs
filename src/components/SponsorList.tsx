@@ -12,7 +12,15 @@ export const SponsorList = () => {
 	];
 
 	return (
-		<div className="flex flex-wrap items-center justify-center gap-5">
+		<div
+			style={{
+				"--d": "flex",
+				"--fw": "wrap",
+				"--ai": "center",
+				"--jc": "center",
+				gap: "1.25rem",
+			} as React.CSSProperties}
+		>
 			{sponsors.map((sponsor) => (
 				<Sponsor sponsor={sponsor} />
 			))}

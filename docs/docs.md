@@ -40,7 +40,7 @@ Watch the videos at [https://sage.is](https://sage.is), apply to become a member
 
 <div style={{"--pb":"1rem"}}>
   <div style={{"--mb":"0.5rem"}}>
-    <div style={{"--mb":"0.25rem","--size":"0.75rem","--fw":"600","--c":"var(--text-muted)","--td":"underline"}}>
+    <div style={{"--mb":"0.25rem","--size":"0.75rem","--weight":"600","--c":"var(--text-muted)","--td":"underline"}}>
       Sponsored by <a href="https://startr.style/" target="_blank" rel="noopener noreferrer">Startr LLC and Startr.Style</a>
     </div>
     <a href="https://startr.style/" target="_blank" rel="noopener noreferrer">
@@ -57,7 +57,7 @@ Watch the videos at [https://sage.is](https://sage.is), apply to become a member
         src="/ads/sponsor-banner-small-1.png"
       />
     </a>
-    <div style={{"--mt":"0.25rem","--line-clamp":"1","--ta":"right","--size":"0.75rem","--fw":"600","--c":"var(--text-muted)"}}>
+    <div style={{"--mt":"0.25rem","--line-clamp":"1","--ta":"right","--size":"0.75rem","--weight":"600","--c":"var(--text-muted)"}}>
       Create a website that looks great and is easy to manage.
     </div>
   </div>

@@ -1,30 +1,57 @@
 export const TopBanner = ({ items }) => {
 	return (
-		<div className="pb-4">
+		<div style={{ "--pb": "1rem" } as React.CSSProperties}>
 			{items.map((item) => (
 				<>
-					<div className="mb-2">
-						<div className="mb-1 text-xs font-semibold text-gray-600 underline dark:text-gray-300">
+					<div style={{ "--mb": "0.5rem" } as React.CSSProperties}>
+						<div
+							style={{
+								"--mb": "0.25rem",
+								"--size": "0.75rem",
+								"--weight": "600",
+								"--c": "var(--text-muted)",
+								"--td": "underline",
+							} as React.CSSProperties}
+						>
 							Sponsored by {item.name}
 						</div>
 
 						<a href={item.url} target="_blank">
 							<img
-								className="hidden w-full rounded-xl md:block"
+								style={{
+									"--d": "none",
+									"--d-md": "block",
+									"--w": "100%",
+									"--radius": "0.75rem",
+								} as React.CSSProperties}
 								loading="lazy"
 								alt={item.name}
 								src={item.imgSrc}
 							/>
 
 							<img
-								className="block w-full rounded-xl md:hidden"
+								style={{
+									"--d": "block",
+									"--d-md": "none",
+									"--w": "100%",
+									"--radius": "0.75rem",
+								} as React.CSSProperties}
 								loading="lazy"
 								alt={item.name}
 								src={item?.mobileImgSrc || item.imgSrc}
 							/>
 						</a>
 
-						<div className="mt-1 line-clamp-1 text-right text-xs font-semibold text-gray-600 dark:text-gray-300">
+						<div
+							style={{
+								"--mt": "0.25rem",
+								"--line-clamp": "1",
+								"--ta": "right",
+								"--size": "0.75rem",
+								"--weight": "600",
+								"--c": "var(--text-muted)",
+							} as React.CSSProperties}
+						>
 							{item.description}
 						</div>
 					</div>
