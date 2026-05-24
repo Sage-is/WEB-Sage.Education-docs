@@ -2,78 +2,70 @@
 sidebar_position: 300
 title: Update Sage.is AI-UI
 ---
-To update your local Docker installation of Sage.is AI-UI to the latest version available, you can either use **Watchtower** or manually update the container. Follow either of the steps provided below to be guided through updating your existing Sage.is AI-UI.
 
-### Manual Update
+When the in-app banner says a new version is available, the path you take depends on how you deployed.
 
-1. **Stop and remove the current container**:
+## CapRover deployments (production / `try.sage.is`-style)
 
-   This will stop the running container and remove it, but it won't delete the data stored in the Docker volume. (Replace `sage-is-ai-ui` with your container's name throughout the updating process if it's different for you.)
+CapRover can pull new tags from GHCR automatically. Every Sage.is release pushes its tag to GHCR only after passing the release smoke gate, so auto-deploying `:latest` is structurally safe.
+
+To verify or enable auto-update:
+
+1. Open your app in the CapRover dashboard.
+2. Confirm the **App Configurations** image is `ghcr.io/sage-is/ai-ui:latest` (or a tag you intend to pin).
+3. To redeploy now, click **Force Build** on the same image. To redeploy on every new GHCR tag, configure a webhook or polling trigger — see [CapRover's app configuration docs](https://caprover.com/docs/app-configuration.html).
+
+## Homebrew / `ai-ui` CLI (Mac and Linux)
+
+If you installed via the `sage-is/apps` Homebrew tap:
 
 ```bash
-docker rm -f sage-is-ai-ui
+ai-ui update --tag X.Y.Z
 ```
 
-2. **Pull the latest Docker image**:
+Replace `X.Y.Z` with the version shown in the banner. The data volume is preserved.
 
-   This will update the Docker image, but it won't update a running container or its data.
+## Manual Docker
+
+Stop the container, pull, restart with the same volume:
 
 ```bash
-docker pull ghcr.io/Sage-is/AI-UI:master
+docker rm -f sage-ai
+docker pull ghcr.io/sage-is/ai-ui:X.Y.Z
+docker run -d -p 8080:8080 -v sage-ai-data:/app/backend/data \
+  --name sage-ai ghcr.io/sage-is/ai-ui:X.Y.Z
 ```
 
+The volume `sage-ai-data` preserves your chats, knowledge bases, and downloaded models. The container is disposable; the volume is not.
 
 :::info
-**Remove any existing data in the Docker volume (NOT RECOMMENDED UNLESS ABSOLUTELY NECCESSARY!)**. Skip this step entirely if not needed and move on to the last step:
-
-   If you want to start with a clean slate, you can remove the existing data in the Docker volume. Be careful, as this will delete all your chat histories and other data.
-
-   The data is stored in a Docker volume named `sage-is-ai-ui`. You can remove it with the following command:
-
-```bash
-docker volume rm sage-is-ai-ui
-```
+**Removing the data volume erases everything.** Don't run `docker volume rm sage-ai-data` unless you intend a clean start. The container can be removed safely; the volume holds your data.
 :::
-
-3. **Start the container again with the updated image and existing volume attached**:
-
-   If you didn't remove the existing data, this will start the container with the updated image and the existing data. If you removed the existing data, this will start the container with the updated image and a new, empty volume. 
-   
-```bash
-docker run -d -p 3000:8080 -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui ghcr.io/Sage-is/AI-UI:master
-```
 
 :::note
- If you have an Nvidia GPU, remember to add `--gpus all` to the docker run command as we did in the [GPU Setup](/getting_started/quick-start/#-accelerated-setup-with-gpu-support) in the Quick Start Guide.
+If you have an Nvidia GPU and use the CUDA image variant, remember to add `--gpus all` to the `docker run` command.
 :::
-## Automatically Updating Sage.is AI-UI with Watchtower
 
-You can use [Watchtower](https://containrrr.dev/watchtower/) to simplify and automate the update process for Sage.is AI-UI. Watchtower will pull down the latest Sage.is AI-UI Docker image, gracefully shut down your existing container and restart it with the same options that were used when you deployed it. 
+## Portainer / Kubernetes / other orchestrators
 
-You can do this either as a one-time update or keep Watchtower up in a separate container and allow it to update Sage.is AI-UI at regular intervals as we release official updates.
+Configure your orchestrator to pull `ghcr.io/sage-is/ai-ui:<tag>` on the schedule that fits your operations. Most orchestrators have webhook-based or label-based auto-deploy mechanisms similar to CapRover's.
 
-### One-time Update with Watchtower
+## Watchtower (auto-update sidecar)
 
-You can run Watchtower as a one-time update. The following command will stop the current container, pull the latest image, and start a new container with the updated image and existing volume attached:
-
-```bash
-docker run --rm --name watchtower \
-  --volume /var/run/docker.sock:/var/run/docker.sock \
-  containrrr/watchtower --run-once sage-is-ai-ui
-```
-
-This command starts Watchtower, checks for the latest updates, applies it if there is one, and brings Watchtower down.
-### Let Watchtower Update When Updates are Available
-
-If you would like to automate this process and allow Watchtower to check for new releases at regular intervals, you can run Watchtower as a separate container that watches and updates your Sage.is AI-UI container:
+The original `containrrr/watchtower` was archived in December 2025. The maintained fork is [`nicholas-fedor/watchtower`](https://github.com/nicholas-fedor/watchtower).
 
 ```bash
 docker run -d --name watchtower \
   --volume /var/run/docker.sock:/var/run/docker.sock \
-  containrrr/watchtower -i 300 sage-is-ai-ui
+  nickfedor/watchtower -i 300 sage-ai
 ```
 
+This polls for new images every 300 seconds and recreates the `sage-ai` container when one arrives.
 
-This command starts Watchtower in detached mode, watching your Sage.is AI-UI container for updates every 300 seconds (5 minutes).
+:::caution
+**Watchtower has no rollback.** If a new image fails to start, the old container is already removed. The Sage.is release smoke gate makes this rare, but if you need rollback-on-failure, prefer CapRover or another orchestrator with health-check-aware deploys.
+:::
 
+## Need help?
 
+Reach out: [support@sage.is](mailto:support@sage.is)
