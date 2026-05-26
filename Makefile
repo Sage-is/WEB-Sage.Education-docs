@@ -84,10 +84,12 @@ distribution_sync:
 	@ln -f $(DIST_SOURCE) $(SIBLING_DOCS)/distribution.env
 	@$(MAKE) distribution_verify
 
-# Verify the link-count contract. Fails loudly if a sibling has drifted
-# (e.g. an editor wrote a copy instead of preserving the inode). BSD/GNU
-# stat compat: `-f "%l"` on macOS, `-c "%h"` on Linux.
-distribution_verify:
+# Verify the link-count contract + GHCR existence + upstream sync. Fails
+# loudly if a sibling has drifted (e.g. an editor wrote a copy instead of
+# preserving the inode), if the pinned SERVER_TAG doesn't exist on GHCR,
+# or if SERVER_TAG is out of sync with AI-UI's latest release.
+# BSD/GNU stat compat: `-f "%l"` on macOS, `-c "%h"` on Linux.
+distribution_verify: check_upstream
 	@for f in $(DIST_SOURCE) $(SIBLING_AI_UI)/distribution.env $(SIBLING_DOCS)/distribution.env; do \
 		links=$$(stat -f "%l" "$$f" 2>/dev/null || stat -c "%h" "$$f"); \
 		if [ "$$links" != "3" ]; then \
@@ -97,6 +99,42 @@ distribution_verify:
 		fi; \
 	done
 	@echo "OK: distribution.env hardlink chain intact (3 links)."
+	@server_tag=$$(grep '^SERVER_TAG=' $(DIST_SOURCE) | cut -d= -f2); \
+	image_reg=$$(grep '^IMAGE=' $(DIST_SOURCE) | cut -d= -f2); \
+	echo "Checking GHCR: $$image_reg:$$server_tag ..."; \
+	if ! docker manifest inspect "$$image_reg:$$server_tag" >/dev/null 2>&1; then \
+		echo "FAIL: $$image_reg:$$server_tag not found on GHCR."; \
+		echo "  Release AI-UI first: make release_and_push_GHCR (in WEB-AI--Sage-is-AI-UI)"; \
+		exit 1; \
+	fi; \
+	echo "OK: $$image_reg:$$server_tag verified on GHCR."
+
+## check_upstream — compare local SERVER_TAG against AI-UI's latest GitHub release.
+##
+## Exits 0 when in sync, 1 when SERVER_TAG is ahead of upstream (would ship
+## docs pinned to a server that doesn't exist), 2 when SERVER_TAG lags behind.
+## WARN_LAG=1 allows the lag case (intentional LTS lane / frozen workshop).
+##
+## No `gh` / `jq` dep — pure curl + sed + sort -V. Rate limit: 60 req/hour
+## per IP unauthenticated; fine for manual + release-gate usage.
+check_upstream:
+	@upstream=$$(curl -fsSL "https://api.github.com/repos/Sage-is/AI-UI/tags?per_page=100" 2>/dev/null \
+	             | grep -E '"name"' \
+	             | sed -E 's/.*"v?([^"]+)".*/\1/' \
+	             | sort -V | tail -1); \
+	[ -n "$$upstream" ] || { echo "ERROR: could not fetch AI-UI tags from GitHub"; exit 1; }; \
+	current=$$(grep ^SERVER_TAG= $(DIST_SOURCE) | cut -d= -f2); \
+	if [ "$$current" = "$$upstream" ]; then \
+	  echo "OK: SERVER_TAG=$$current matches AI-UI latest"; \
+	elif printf '%s\n%s\n' "$$upstream" "$$current" | sort -V -C; then \
+	  echo "ERROR: SERVER_TAG=$$current is ahead of AI-UI latest ($$upstream)"; \
+	  echo "       Cannot ship docs pinned to a server that doesn't exist yet."; \
+	  exit 1; \
+	else \
+	  echo "WARN: SERVER_TAG=$$current lags AI-UI latest ($$upstream)"; \
+	  echo "      Run AI-UI '_pin_server_tag' to bump, or set WARN_LAG=1 to allow lag."; \
+	  [ "$$WARN_LAG" = "1" ] || exit 2; \
+	fi
 
 # 4. show_vars (debug helper)
 show_vars:
@@ -134,18 +172,22 @@ initial_release: require_gitflow_next
 	git flow release start 0.1.0 && echo "or use 'make release_finish' to finish the release"
 
 minor_release: require_gitflow_next require_tag
+	@-$(MAKE) check_upstream  # advisory only; release_finish is the real gate
 	# Start a minor release with incremented minor version
 	git flow release start $$(git tag --sort=-v:refname | sed 's/^v//' | head -n 1 | awk -F'.' '{print $$1"."$$2+1".0"}') && echo "or use 'make release_finish' to finish the release"
 
 patch_release: require_gitflow_next require_tag
+	@-$(MAKE) check_upstream  # advisory only; release_finish is the real gate
 	# Start a patch release with incremented patch version
 	git flow release start $$(git tag --sort=-v:refname | sed 's/^v//' | head -n 1 | awk -F'.' '{print $$1"."$$2"."$$3+1}') && echo "or use 'make release_finish' to finish the release"
 
 major_release: require_gitflow_next require_tag
+	@-$(MAKE) check_upstream  # advisory only; release_finish is the real gate
 	# Start a major release with incremented major version
 	git flow release start $$(git tag --sort=-v:refname | sed 's/^v//' | head -n 1 | awk -F'.' '{print $$1+1".0.0"}') && echo "or use 'make release_finish' to finish the release"
 
 hotfix: require_gitflow_next require_tag
+	@-$(MAKE) check_upstream  # advisory only; hotfix_finish is the real gate
 	# Start a hotfix with incremented n.n.n.n version (incrementing the fourth number)
 	git flow hotfix start $$(git tag --sort=-v:refname | sed 's/^v//' | head -n 1 | awk -F'.' '{print $$1"."$$2"."$$3"."$$4+1}') && echo "or use 'make hotfix_finish' to finish the hotfix"
 
@@ -175,4 +217,4 @@ things_clean:
 .PHONY: help show_vars require_gitflow_next require_tag \
 	initial_release minor_release patch_release major_release hotfix \
 	bump release_finish hotfix_finish things_clean \
-	setup setup_siblings distribution_sync distribution_verify
+	setup setup_siblings distribution_sync distribution_verify check_upstream
