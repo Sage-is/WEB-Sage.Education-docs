@@ -23,6 +23,10 @@ If you installed via the `sage-is/apps` Homebrew tap:
 ai-ui update --tag X.Y.Z
 ```
 
+:::note Coming with the next AI-UI release
+On a Mac that runs Sage in Docker Desktop or OrbStack, the first `ai-ui start` or `ai-ui update` after the upgrade offers once to move Sage to Colima, which is free and gives unused memory back to macOS. Say yes and `ai-ui` copies your chats, knowledge bases and settings, then starts Sage on Colima. Say no and nothing changes; the question does not come back. Move later with `ai-ui migrate`, and go back any time with `ai-ui start --runtime docker-desktop` (or `orbstack`): your data stays where it was.
+:::
+
 Replace `X.Y.Z` with the version shown in the banner. The data volume is preserved.
 
 ## Manual Docker
@@ -32,8 +36,8 @@ Stop the container, pull, restart with the same volume:
 ```bash
 docker rm -f sage-ai
 docker pull ghcr.io/sage-is/ai-ui:X.Y.Z
-docker run -d -p 8080:8080 -v sage-ai-data:/app/backend/data \
-  --name sage-ai ghcr.io/sage-is/ai-ui:X.Y.Z
+docker run -d -p 8080:8080 --add-host=host.docker.internal:host-gateway \
+  -v sage-ai-data:/app/backend/data --name sage-ai --restart always ghcr.io/sage-is/ai-ui:X.Y.Z
 ```
 
 The volume `sage-ai-data` preserves your chats, knowledge bases, and downloaded models. The container is disposable; the volume is not.

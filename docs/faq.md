@@ -24,7 +24,7 @@ We ask you to sign up so you can be the admin user. This adds security. If your 
 
 ### Why can’t my Docker container connect to services on the host using localhost?
 
-Think of a Docker container as its own world. Inside it, localhost means the container itself, not your computer. To connect to services on your computer, use host.docker.internal. Docker uses this name to let the container talk to your host machine. This is a simple way to connect your container to your computer.
+Think of a Docker container as its own world. Inside it, localhost means the container itself, not your computer. To connect to services on your computer, use host.docker.internal. Docker uses this name to let the container talk to your host machine. This is a simple way to connect your container to your computer. Colima, Docker Desktop and OrbStack resolve the name on their own. Docker Engine on Linux does not, so add `--add-host=host.docker.internal:host-gateway` to your `docker run` command. The flag works on every runtime.
 
 ### How do I make my host’s services accessible to Docker containers?
 
@@ -34,7 +34,7 @@ To make local host services accessible to Docker containers, configure them to l
 
 Updating [Sage.is](http://Sage.is) AI-UI requires more than pulling the new Docker image. Here’s why your updates might not show and how to ensure they do:
 
-1. Updating the Docker Image: The command docker pull ghcr.io/Startr/AI-WEB-openwebui:main updates the Docker image but not the running container or its data.
+1. Updating the Docker Image: The command docker pull ghcr.io/sage-is/ai-ui:latest updates the Docker image but not the running container or its data.
 2. Persistent Data in Docker Volumes: Docker volumes store data independently of container lifecycles, preserving your data (such as chat histories) across updates.
 3. Applying the Update: Make sure your update takes effect by removing the existing container (which doesn’t delete the volume) and creating a new one with the updated image and existing volume attached.
 
@@ -59,7 +59,11 @@ Everything you need to run [Sage.is](http://Sage.is) AI-UI, including your data,
 
 ### Is GPU support available in Docker?
 
-GPU support in Docker is available but varies by platform. Officially, GPU support is provided in Docker for Windows and Docker Engine on Linux. Other platforms, such as Docker Desktop for Linux and MacOS, do not currently offer GPU support. This is important to consider for applications needing GPU acceleration. For the best experience and to use GPU capabilities, we recommend Docker on platforms that officially support GPU integration.
+GPU support in Docker is available but varies by platform. Docker Desktop for Windows and Docker Engine on Linux pass Nvidia GPUs to containers with `--gpus all`. Docker Desktop for Linux and Docker Desktop for Mac do not offer GPU support.
+
+On an Apple Silicon Mac, Colima's krunkit VM passes the GPU to containers through Vulkan. A container asks for it with `--device /dev/dri`. Its image needs a Mesa Venus driver patched for krunkit, such as the one in `ghcr.io/unsuman/fedora-vgpu-llama`; stock Fedora Mesa fails. To get started, see the [Quick Start Guide](2_getting_started/1_quick-start/1_quick-start.md).
+
+The simplest GPU path on any platform is to run Ollama directly on your computer, where it uses the GPU, and connect Sage.is AI-UI to it.
 
 ### Why does [Sage.is](http://Sage.is) AI-UI emphasize the use of Docker?
 
@@ -79,7 +83,7 @@ If your [Sage.is](http://Sage.is) AI-UI isn’t launching after an update or new
 
 ### I updated/restarted, and now my login isn’t working anymore. I had to create a new account and all my chats are gone.
 
-This issue usually happens when a Docker container is created without mounting a volume for /app/backend/data or if the [Sage.is](http://Sage.is) AI-UI volume (usually named sage-open-webui) was deleted. Docker volumes are crucial for keeping your data across container lifecycles. If you need to create a new account after a restart, you likely started a new container without attaching the existing volume. Make sure your Docker run command includes a volume mount pointing to the correct data location to prevent data loss.
+This issue usually happens when a Docker container is created without mounting a volume for /app/backend/data or if the [Sage.is](http://Sage.is) AI-UI volume (usually named sage-ai-data) was deleted. Docker volumes are crucial for keeping your data across container lifecycles. If you need to create a new account after a restart, you likely started a new container without attaching the existing volume. Make sure your Docker run command includes a volume mount pointing to the correct data location to prevent data loss.
 
 ### I tried to login and couldn’t, made a new account and now I’m being told my account needs to be activated by an admin.
 
@@ -89,7 +93,9 @@ This happens when you forget the password for the initial admin account created 
 
 The SSL error when starting [Sage.is](http://Sage.is) AI-UI is likely due to missing SSL certificates or incorrect huggingface.co configuration. To fix this, set up a HuggingFace mirror like hf-mirror.com and specify it as the endpoint when starting the Docker container. Use the -e HF_ENDPOINT=https://hf-mirror.com/ parameter in the Docker run command. For example, modify the Docker run command as follows:
 
-docker run -d -p 3000:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host.docker.internal:host-gateway -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main
+```bash
+docker run -d -p 8080:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host.docker.internal:host-gateway -v sage-ai-data:/app/backend/data --name sage-ai --restart always ghcr.io/sage-is/ai-ui:latest
+```
 
 Need Further Assistance?
 

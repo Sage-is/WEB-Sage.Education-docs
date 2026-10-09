@@ -104,7 +104,7 @@ To control and query your locally running model directly from Sage.is AI-UI:
 3. Click ➕ Add Connection and enter:
 
 - URL: `http://127.0.0.1:10000/v1`
-  (Or use `http://host.docker.internal:10000/v1` if running Sage.is AI-UI inside Docker)
+  (Or use `http://host.docker.internal:10000/v1` if running Sage.is AI-UI inside Docker. On Linux, start the container with `--add-host=host.docker.internal:host-gateway` so the name resolves, and start `llama-server` with `--host 0.0.0.0` so the container can reach it.)
 - API Key: `none` (leave blank)
 
 💡 Once saved, Sage.is AI-UI will begin using your local Llama.cpp server as a backend!

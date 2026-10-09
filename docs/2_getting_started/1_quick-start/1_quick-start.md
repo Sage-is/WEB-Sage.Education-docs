@@ -3,71 +3,106 @@ sidebar_position: 1
 title: Quick Start Guide
 ---
 
-Welcome to our Quick Start Guide. We will cover running locally using Docker and also cover rapid deployment to your own personal cloud using CapRover.
+Welcome to our Quick Start Guide. We will cover running Sage.is AI-UI on your own computer and also cover rapid deployment to your own personal cloud using CapRover.
 
-## Quick Start with Docker 
+## Quick Start on a Mac
 
-### Run Sage.is AI-UI with Local AI Models
+### Run Sage.is AI-UI with Homebrew
 
-Get up and running quickly with our all-in-one container that bundles Sage.is AI-UI with Ollama for seamless local AI model management:
+The `ai-ui` command runs Sage.is AI-UI in [Colima](https://github.com/abiosoft/colima), a free container runtime with no window and no sign-in. Homebrew installs Colima and [Ollama](https://ollama.com) with it.
 
-#### 🖥️ Standard Setup (CPU Only):
+1. **Apple Silicon only:** install krunkit first. `ai-ui` then gives Colima a krunkit VM: memory the VM frees goes back to macOS, and containers can reach the GPU. Without krunkit, `ai-ui` uses a standard Colima VM. Skip this step on an Intel Mac.
 
- This is perfect for testing and development environments without GPU acceleration. Make sure you have Docker installed and then open up your terminal and enter the following:
+   ```bash
+   brew tap libkrun/krun && brew trust libkrun/krun && brew install krunkit
+   ```
 
-  ```bash
-  docker run -d -p 3000:8080 -v ollama:/root/.ollama -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Sage-is/AI-UI:ollama
-  ```
+   `ai-ui version` shows your release. If it ends in `(server 3.2.0)`, `ai-ui` never makes a krunkit VM, even with krunkit installed. Later releases do, and `ai-ui migrate` converts a standard VM. The first line of `colima status` names the VM.
 
-#### 🚀 Accelerated Setup (With GPU Support)
+2. Install `ai-ui` and start Sage.is AI-UI. It runs at [http://localhost:8080](http://localhost:8080), and `ai-ui open` opens it in your browser.
 
-Unlock the maximum performance with GPU acceleration for faster AI responses. Again you'll need to make sure you have Docker installed and then open the terminal and enter:
+   ```bash
+   brew install sage-is/apps/ai-ui && ai-ui start
+   ```
 
-  ```bash
-  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Sage-is/AI-UI:ollama
-  ```
+3. For local models, start Ollama. Sage.is AI-UI finds it at `host.docker.internal:11434`.
 
-**What You Get:**
+   ```bash
+   brew services start ollama
+   ```
 
-With these single commands you'll have a complete version of Sage.is AI-UI up and running locally. 
+Already use Docker Desktop or OrbStack? `ai-ui` supports both and remembers your choice: `ai-ui start --runtime docker-desktop` or `ai-ui start --runtime orbstack`.
+
+## Quick Start with Docker on Linux and Windows
+
+### 🖥️ Run Sage.is AI-UI with Docker
+
+Install [Docker Engine](https://docs.docker.com/engine/install/) on Linux, or Docker Desktop on Windows. Then open your terminal and enter the following:
+
+```bash
+docker run -d -p 8080:8080 --add-host=host.docker.internal:host-gateway -v sage-ai-data:/app/backend/data --name sage-ai --restart always ghcr.io/sage-is/ai-ui:latest
+```
+
+`--add-host` lets the container reach services on your computer, such as Ollama, at `host.docker.internal`. Docker Engine on Linux needs it. Docker Desktop resolves the name on its own, and the flag does no harm there.
+
+Image names are lowercase: Docker rejects `ghcr.io/Sage-is/AI-UI`. The `latest` tag follows each release. To pin a version, use its tag instead, such as `ghcr.io/sage-is/ai-ui:3.2.0`.
+
+#### 🚀 GPU Acceleration
+
+The image does not bundle Ollama, and Sage.is AI-UI itself runs well on the CPU. Your GPU speeds up the models, so run [Ollama](https://ollama.com) directly on your computer, where it uses the GPU. If the container cannot reach it, see [Connection Troubleshooting](../../3_troubleshooting/connection-error.md).
+
+## What You Get
+
+With these commands you'll have a complete version of Sage.is AI-UI up and running locally.
 
 - [x] Sage.is AI-UI ready to use
-- [x] Ollama pre-configured for local models
+- [x] Ollama connection for local models
 - [x] Persistent data storage
-- [x] Automatic restarts
-- [x] Fast and simple style and branding 
-- [x] White labeling for your organization 
+- [x] Fast and simple style and branding
+- [x] White labeling for your organization
 
 **Ready to Go!**  
-Once running, you can access your Sage.is AI-UI at [http://localhost:3000](http://localhost:3000). Enjoy! 
+Once running, you can access your Sage.is AI-UI at [http://localhost:8080](http://localhost:8080). Enjoy!
 
-### Working with Our Develop Branch
+## Working with Our Develop Branch
 
-:::warning  
-- [ ] **Heads up:** **For Adventurous Users Only** 
+:::warning
 
-The `:develop` branch **always** contains **experimental features** still in **active development**. Expect bugs, incomplete functionality, and occasional instability. Perfect for testing and feedback, but not recommended for production use.  If you want to hack this is for you.
+- [ ] **Heads up:** **For Adventurous Users Only**
+
+The `develop` branch **always** contains **experimental features** still in **active development**. Expect bugs, incomplete functionality, and occasional instability. Perfect for testing and feedback, but not recommended for production use.  If you want to hack this is for you.
 :::
 
-#### ⚛ Develop Branch Setup ⚛ 
+### ⚛ Develop Branch Setup ⚛
 
-Ready to explore what's next? Use the `:develop` tag to access the latest features:
+Ready to explore what's next? We publish images for releases only, so run the `develop` branch from source. You need the `ai-ui` command, which runs on macOS and Linux: `brew install sage-is/apps/ai-ui`.
 
 ```bash
-docker run -d -p 3000:8080 -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Sage-is/AI-UI:develop
+ai-ui dev
 ```
 
+`ai-ui dev` clones the [AI-UI source](https://github.com/Sage-is/AI-UI), which opens on the `develop` branch, into `~/src/ai-ui` and starts it in dev mode. `ai-ui dev --where` shows where your copy lives.
 
-**If Ollama is on your computer**, use this command:
+`ai-ui dev` replaces your running Sage.is AI-UI, and `ai-ui start` brings the release back. Both use the same `sage-ai-data` volume. Develop can upgrade your database past what the release reads, and `ai-ui start` then fails. Back up your data before you run `ai-ui dev`.
+
+On a Mac, `docker` in your terminal follows the runtime that started last, which may not be the one `ai-ui` uses. `cat ~/.sage-is/runtime` names that one. Point `docker` at it first: `export DOCKER_CONTEXT=colima`, or `desktop-linux` for Docker Desktop, or `orbstack` for OrbStack. Skip this step on Linux, or if the file does not exist.
+
+This command stops Sage.is AI-UI and saves its data to `~/sage-ai-data.tgz`. It stops early if the volume is missing:
 
 ```bash
-docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Sage-is/AI-UI:master
+ai-ui stop && docker volume inspect sage-ai-data >/dev/null && docker run --rm -v sage-ai-data:/data:ro -v "$HOME":/backup alpine tar -czf /backup/sage-ai-data.tgz -C /data .
 ```
 
-**To run Sage.is AI-UI with Nvidia GPU support**, use this command:
+To go back to the release, restore the backup and start it. The restore reads the whole archive before it clears the volume:
 
 ```bash
-docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v sage-is-ai-ui:/app/backend/data --name sage-is-ai-ui --restart always ghcr.io/Sage-is/AI-UI:cuda
+ai-ui stop && docker run --rm -v sage-ai-data:/data -v "$HOME":/backup alpine sh -c 'tar -tzf /backup/sage-ai-data.tgz >/dev/null && find /data -mindepth 1 -delete && tar -xzf /backup/sage-ai-data.tgz -C /data' && ai-ui start
+```
+
+If `ai-ui version` does not end in `(server 3.2.0)`, you can give develop its own volume instead. The release keeps `sage-ai-data` to itself:
+
+```bash
+SAGE_AI_VOLUME=sage-ai-dev ai-ui dev
 ```
 
 :::info
@@ -79,6 +114,7 @@ docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gatew
 ## Deployment with CapRover 🚀
 
 CapRover is a self-hosted Platform as a Service (PaaS) that simplifies deploying and managing Docker containers to your personal cloud. It provides an easy-to-use web interface for deploying applications like Sage.is AI-UI, with built-in support for HTTPS, load balancing, and automatic updates.
+
 ### Prerequisites
 
 - A server with CapRover installed (see [CapRover Getting Started](https://caprover.com/docs/get-started.html))
@@ -94,7 +130,9 @@ CapRover is a self-hosted Platform as a Service (PaaS) that simplifies deploying
 
 4. In the app configuration, set the following:
 
-   - **Image Name**: `ghcr.io/Sage-is/AI-UI:master`
+   - **Image Name**: `ghcr.io/sage-is/ai-ui:latest`
+
+   - **Container HTTP Port** (HTTP Settings tab): `8080`
 
    - **Persistent Directories**: Add `/app/backend/data` to persist data across updates.
 
@@ -116,10 +154,9 @@ To update Sage.is AI-UI to the latest version or a specific version:
 
 1. Go to your app's settings in the CapRover dashboard.
 
-2. On the Deployment tab, change the Image Name under **Method 6: Deploy via ImageName** to the latest tag, e.g., `ghcr.io/Sage-is/AI-UI:latest` or a specific version.
+2. On the Deployment tab, change the Image Name under **Method 6: Deploy via ImageName** to the latest tag, e.g., `ghcr.io/sage-is/ai-ui:latest` or a specific version such as `ghcr.io/sage-is/ai-ui:3.2.0`.
 
 3. Click **Deploy Now**.
-
 
 :::info **Important Note on User Roles and Privacy:**
 
