@@ -14,7 +14,7 @@ Here are the four quickest ways to contribute:
 - Are you a master coder or just getting started? [Dive into the code and help with development](/contribute/Help%20Code%20Sage.is%20AI-UI). We welcome pull requests for bug fixes, new features, and performance improvements.
 
 **Getting Started**  
-Check out our [Code Contribution Guidelines](/contribute/Sage.is%20AI-UI%20Code%20Contribution%20Guidelines) for detailed information on our processes, coding standards, and how to submit your first contribution.
+Check out our [Code Contribution Guidelines](/contribute/Help%20Code%20Sage.is%20AI-UI) for detailed information on our processes, coding standards, and how to submit your first contribution.
 
 **Questions?** Join our [community discussions](https://sage.is/community/) to connect with other contributors and the core team.
 
